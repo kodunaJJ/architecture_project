@@ -1,0 +1,32 @@
+########### PYTHON FUNCTION INTERFACE DEFINITION #################
+
+lecture d'image
+
+*Inputs --> image file
+
+*Output -> 1 matrice + image_info(width, height, max color value ??)
+
+Ecriture d'image
+
+*Input --> 1 matrice + image_info + filemname
+
+
+Calcul convolution
+
+*Input --> 1 matrice + image_info + 1 kernel + kernel_info("block size")
+
+*Output --> 1 matrice
+
+ReLU
+
+*Input --> 1 matrice + taille matrice (m,n)
+
+*Output --> 1 matrice
+
+Pooling
+
+*Input --> 1 matrice + matrice_info + pooling_type(max, average) + stride
+
+*Output --> 1 matrice + taille matrice
+
+### other definition comming ########
