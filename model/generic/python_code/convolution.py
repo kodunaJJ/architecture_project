@@ -89,7 +89,7 @@ def convolution_nb_kernel(image,kernel):
 
 
 	for num in range(0,nb_kernel):
-		new_image[:,:,num-1]=convolution_rgb(image[:,:,:],kernel[num-1,:,:,:])
+		new_image[:,:,num]=convolution_rgb(image[:,:,:],kernel[num,:,:,:])
 
 	return new_image
 
