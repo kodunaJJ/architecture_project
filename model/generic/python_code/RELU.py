@@ -39,12 +39,12 @@ def RELU_3D(image):
 
 
 
-kernel=np.array([1,-1,0,-8,9,-9,10,-11,0,-1,11,12,13,14,15,-6,17,18]).reshape(3,3,2)#image(y,x,nb_rgb)
+#kernel=np.array([1,-1,0,-8,9,-9,10,-11,0,-1,11,12,13,14,15,-6,17,18]).reshape(3,3,2)#image(y,x,nb_rgb)
 
-print(kernel)
-new_image=RELU_3D(kernel)
+#print(kernel)
+#new_image=RELU_3D(kernel)
 
-print("new")
-print(new_image)
+#print("new")
+#print(new_image)
 
 
