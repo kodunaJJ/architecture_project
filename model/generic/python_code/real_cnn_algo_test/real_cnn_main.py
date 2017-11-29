@@ -23,10 +23,10 @@ def initKernel(kernel,channelNum,convLayerID):
         kernel[0,i,:,:]=np.loadtxt('convLayer'+str(convLayerID)
                                             +'_kernel_'+str(i))
 
-def initVector(vector,unitSize,classNum,fcLayerID):
+def initVector(vector,fcLayerID):
     vector[:,:]=np.loadtxt('fullyConnectedLayer'+str(fcLayerID))
 
-img_in_folder = "./database"
+img_in_folder = "./database/ppm/"
 img_in_name = "1a.ppm"
 #img_out_folder = "../../image/test/"
 #img_out_name = "img_test_2_out.ppm"
@@ -41,7 +41,7 @@ cnnInputLayerMatrix = imgOp.img2nparray(imgIn)
 
 # Kernel parameters init process
 kernel=np.zeros((1,convLayer1_channelNum,kernelConvSize,kernelConvSize))
-initKernel(kernel_test,convLayer1_channelNum,1)
+initKernel(kernel,convLayer1_channelNum,1)
 
 
 # First convolution layer processing (conv + pooling + relu)
@@ -64,15 +64,17 @@ cnnConv2LayerMatrix=pool.pooling(cnnConv1LayerMatrix,poolType='max')
 # Fully connected Layer1 processing
 
 #first layer vector(7*7*36,128)
-#second layer vector(128,10)
 
-# layer vector init
-classNum=10# number of class
-unitSize=128 # number of neurons
-
-initVector(fcVector,unitSize,classNum,1)
+initVector(fcVectorLayer1,1)
 
 cnnConv2LayerReshape=rshape.reshape(cnnConv2LayerMatrix)
-cnnFullyConnectedLayer=matmul(cnnConv2LayerReshape,fcVector)
+cnnFullyConnectedLayer1=matmul.matrixMult_CHn(cnnConv2LayerReshape,fcVectorLayer1)
 
-outputVector=smax.softmax(cnnFullyConnectedLayer)
+#second layer vector(128,10)
+initVector(fcVectorLayer2,2)
+
+cnnFullyConnectedLayer2=matmul.matrixMult_CHn(cnnFullyConnectedLayer1,fcVectorLayer2)
+
+outputVector=smax.softmax(cnnFullyConnectedLayer2)
+
+print(outputVector)
