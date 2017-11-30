@@ -59,8 +59,8 @@ def maxPooling_mod(matrix,poolSize=2,poolStride=2):
     #channelNum = 1
     poolMatrixOutHeight= math.ceil(float(matrixHeight-poolSize+1)/float(poolStride))
     poolMatrixOutWidth= math.ceil(float(matrixWidth-poolSize+1)/float(poolStride))
-    poolMatrixOut = np.zeros((poolMatrixOutHeight,
-                              poolMatrixOutWidth,channelNum))
+    poolMatrixOut = np.zeros((int(poolMatrixOutHeight),
+                              int(poolMatrixOutWidth),channelNum))
 
     for channel in range (0,channelNum):    
         for column in range (0,matrixHeight-(poolSize-1),poolStride):
