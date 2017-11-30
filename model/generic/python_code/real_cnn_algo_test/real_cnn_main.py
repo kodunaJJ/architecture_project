@@ -50,6 +50,7 @@ cnnInputLayerMatrix = imgOp.img2nparray(imgIn)
 kernel=np.zeros((kernelImageChannelConvLayer1,convLayer1_channelNum,kernelConvSize,kernelConvSize))
 initKernel(kernel,convLayer1_channelNum,1,kernelImageChannelConvLayer1)
 print(kernel.shape)
+print(kernel)
 # First convolution layer processing (conv + pooling + relu)
 poolingSizeConvLayer1=2
 poolingStrideConvLayer1=2
