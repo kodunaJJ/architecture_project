@@ -35,7 +35,7 @@ def matrixMult_CHn(vectorIn,fcVector):
     
     for i in range(0,channelNum):
         vectorBuff=np.copy(fcVector[:,i])
-        vectorOut[0][i]=matrixMult(vectorIn,vectorBuff))
+        vectorOut[0][i]=matrixMult(vectorIn,vectorBuff)
         
     return vectorOut
 

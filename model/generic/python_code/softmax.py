@@ -6,12 +6,12 @@ import math as math
 
 def softmax(vector):
     #sum of vector value calculation
-    vectorLength = vector.shape[0]
+    vectorLength = vector.shape[1]
     vectorSum = 0
-    vectorOut = np.zeros((vectorLength))
+    vectorOut = np.zeros((1,vectorLength))
     for i in range(0,vectorLength):
-        vectorOut[i] = math.exp(vector[i])
-        vectorSum += vectorOut[i]
+        vectorOut[0][i] = math.exp(vector[0][i])
+        vectorSum += vectorOut[0][i]
         
     # Output vector calculation
     return vectorOut/vectorSum
