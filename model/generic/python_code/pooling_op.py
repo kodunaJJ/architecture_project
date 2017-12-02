@@ -23,9 +23,9 @@ def getPaddings(pad_along_height,pad_along_width):
         pad_left = np.floor( pad_along_width / 2 )
         pad_right = np.floor( pad_along_width / 2 ) +1
         #
-    return pad_top,pad_bottom,pad_left,pad_right
+    return int(pad_top),int(pad_bottom),int(pad_left),int(pad_right)
 
-
+"""
 # Function to realise a max-pooling of size (poolSize,poolSize)
 # with a stride of poolstride
 
@@ -71,24 +71,24 @@ def maxPooling_mod(matrix,poolSize=2,poolStride=2):
                             poolMatrixOut[int(row/poolStride)][int(column/poolStride)][channel] = matrix[row+pColumn][column+pRow][channel]
 
     return poolMatrixOut
-
+"""
 
 # Function to realise a generic max-pooling of size (poolSizeHeight,poolSizeWidth)
 # with a stride of poolstride
-"""
-def maxPoolingGeneric(matrix,poolHeight=2,poolWidth=2,poolStride=2,pool_OpType, poolBeforeRELU='true'):
+
+def maxPoolingGeneric(matrix,poolHeight=2,poolWidth=2,poolStride=2,pool_OpType='SAME', poolBeforeRELU='true'):
     matrixWidth = matrix.shape[1]
     matrixHeight = matrix.shape[0]
     channelNum = matrix.shape[2]
     #channelNum = 1
-    if pool_OpType == 'valid':
-        poolMatrixOutHeight= math.ceil(float(matrixHeight-poolHeight+1)/float(poolStride))
-        poolMatrixOutWidth= math.ceil(float(matrixWidth-poolWidth+1)/float(poolStride))
-    elif pool_OpType == 'same':
-        poolMatrixOutHeight= math.ceil(float(matrixHeight+1)/float(poolStride))
-        poolMatrixOutWidth= math.ceil(float(matrixWidth-poolWidth+1)/float(poolStride))
-        pad_along_height= (poolMatrixOutHeight-1)*poolStride + poolHeight - matrixHeight
-        pad_along_width= (poolMatrixOutWidth-1)*poolStride + poolWidth - matrixWidth
+    if pool_OpType == 'valid' or pool_OpType == 'VALID':
+        poolMatrixOutHeight= int(math.ceil(float(matrixHeight-poolHeight+1)/float(poolStride)))
+        poolMatrixOutWidth= int(math.ceil(float(matrixWidth-poolWidth+1)/float(poolStride)))
+    elif pool_OpType == 'same' or pool_OpType == 'SAME':
+        poolMatrixOutHeight= int(math.ceil(float(matrixHeight)/float(poolStride)))
+        poolMatrixOutWidth= int(math.ceil(float(matrixWidth)/float(poolStride)))
+        pad_along_height= int((poolMatrixOutHeight-1)*poolStride + poolHeight - matrixHeight)
+        pad_along_width= int((poolMatrixOutWidth-1)*poolStride + poolWidth - matrixWidth)
 
         pad_top,pad_bottom,pad_left,pad_right=getPaddings(pad_along_height,pad_along_width)
     
@@ -102,7 +102,7 @@ def maxPoolingGeneric(matrix,poolHeight=2,poolWidth=2,poolStride=2,pool_OpType, 
         matrixPadded= np.array([matrixHeight+(pad_top+pad_bottom),matrixWidth+(pad_left+pad_right),channelNum])
         matrixPadded.fill(-inf)
         
-    matrixPadded[pad_top:pad_top+matrixHeight,pad_left:pad_left+matrixWidth]=matrix
+    matrixPadded[pad_top:pad_top+matrixHeight,pad_left:pad_left+matrixWidth,:]=matrix
         
     poolMatrixOut = np.zeros((int(poolMatrixOutHeight),
                               int(poolMatrixOutWidth),channelNum))
@@ -111,18 +111,16 @@ def maxPoolingGeneric(matrix,poolHeight=2,poolWidth=2,poolStride=2,pool_OpType, 
     matrixPaddedHeight = matrixPadded.shape[0]
 
     for channel in range (0,channelNum):    
-        for column in range (0,matrixPaddedWidth-(poolSize-1),poolStride):
-            for row in range (0,matrixPaddedHeight-(poolSize-1),poolStride):
-                for pRow in range (0,poolSize):
-                    for pColumn in range (0,poolSize):
+        for column in range (0,matrixPaddedHeight-(poolHeight-1),poolStride):
+            for row in range (0,matrixPaddedWidth-(poolWidth-1),poolStride):
+                for pRow in range (0,poolHeight):
+                    for pColumn in range (0,poolWidth):
                         if poolMatrixOut[int(row/poolStride)][int(column/poolStride)][channel] < matrixPadded[row+pColumn][column+pRow][channel]:
                             poolMatrixOut[int(row/poolStride)][int(column/poolStride)][channel] = matrixPadded[row+pColumn][column+pRow][channel]
 
     return poolMatrixOut
-"""
-    
-    
 
+    
 
 # Function to realise an average-pooling of size (poolSize,poolSize)
 # with a stride of poolstride
@@ -145,11 +143,11 @@ def avgPooling(matrix,poolSize=2,poolStride=2):
     return poolMatrixOut/(poolStride*poolSize)
     
 # Function performing the good pooling type depending on poolType string value 
-def pooling(matrix,poolSize,poolStride,poolType='max'):
-    if poolType == 'max':
-        return maxPooling_mod(matrix,poolSize,poolStride)
-    elif poolType == 'avg':
-        return avgPooling(matrix,poolSize,poolStride)
+def pooling(matrix,poolHeight=2,poolWidth=2,poolStride=2,poolMode='same',poolOp='max',beforeRELU='true'):
+    if poolOp == 'max':
+        return maxPoolingGeneric(matrix,poolHeight,poolWidth,poolStride,poolMode,beforeRELU)
+    #elif poolOp == 'avg':
+        #return avgPooling(matrix,poolSize,poolStride)
     else:
         print("/!\/!\/!\ WRONG POOLING TYPE /!\ /!\ /!\ ")
       

@@ -16,7 +16,7 @@ import reshape as rshape
 import matrix_multiply as matmult
 import softmax as smax
 import cnn_weight_loadFromFile as wload
-import cifar10Database_op as cifarDb
+import cifarDatabase_op as cifarDb
 
 #********************* ALGORITHM PARAMETERS*************************#
 
@@ -33,16 +33,17 @@ kernelImageChannelConvLayer2=64
 kernelImageChannelConvLayer3=32
 
 #!!!!!!!!!!! POOLING PARAMETERS !!!!!!!!!!!!!#
-poolingSize=3
+poolingHeight=3
+poolingWidth=3
 poolingStride=2
 poolingType='max'
 poolingMode='SAME'
+poolingPos='false' #before RELU (true) or not
 
 # Loading image database 
 db=cifarDb.readDatabase(cifar10_DatabasePath+cifar10_DatabaseFileName)
-imgIn=readImgFromDatabase(db,0)
+imgIn=cifarDb.readImgFromDatabase(db,0)
 cnnInputLayerMatrix = imgIn[0]
-
 
 #***********************************************************************************#
 #                                ALGORITHM START                                    #
@@ -54,7 +55,7 @@ cnnInputLayerMatrix = imgIn[0]
 
 # Kernel parameters init process
 kernel=np.zeros((kernelImageChannelConvLayer1,convLayer1_channelNum,kernelConvSize,kernelConvSize))
-wload.initKernel(kernel,convLayer1_channelNum,1,kernelImageChannelConvLayer1)
+#wload.initKernel(kernel,convLayer1_channelNum,1,kernelImageChannelConvLayer1)
 
 # First convolution layer processing (conv + pooling + relu)
 
@@ -63,30 +64,33 @@ wload.initKernel(kernel,convLayer1_channelNum,1,kernelImageChannelConvLayer1)
 
 cnnConv1LayerMatrix=re.RELU_3D(conv.convolution_RGB(cnnInputLayerMatrix,kernel))
 #print('cnnConv1LayerMatrix = ',cnnConv1LayerMatrix)
-cnnConv1LayerMatrix=pool.pooling(cnnConv1LayerMatrix,poolingSize,poolingStride,poolType)#to complete
+cnnConv1LayerMatrix=pool.pooling(cnnConv1LayerMatrix,poolingHeight,poolingWidth,
+                                 poolingStride,poolingMode,poolingType,poolingPos)
 
 #print('ConvLayer1 (reshape) = ',cnnConv1LayerMatrix)
 
 # conv layer 2 kernel init
 
 kernelConvLayer2=np.zeros((kernelImageChannelConvLayer2,convLayer2_channelNum,kernelConvSize,kernelConvSize))
-initKernel(kernelConvLayer2,convLayer2_channelNum,2,kernelImageChannelConvLayer2)
+#initKernel(kernelConvLayer2,convLayer2_channelNum,2,kernelImageChannelConvLayer2)
 
 # Second convolution layer processing (conv + pooling + relu)
 
 cnnConv2LayerMatrix=re.RELU_3D(conv.convolution_RGB(cnnConv1LayerMatrix,kernelConvLayer2))
-cnnConv2LayerMatrix=pool.pooling(cnnConv2LayerMatrix,poolingSize,poolingStride,poolType)#to complete
+cnnConv2LayerMatrix=pool.pooling(cnnConv2LayerMatrix,poolingHeight,poolingWidth,
+                                 poolingStride,poolingMode,poolingType,poolingPos)
 
 
 # conv layer 3 kernel init
 
 kernelConvLayer3=np.zeros((kernelImageChannelConvLayer3,convLayer3_channelNum,kernelConvSize,kernelConvSize))
-initKernel(kernelConvLayer3,convLayer3_channelNum,3,kernelImageChannelConvLayer3)
+#initKernel(kernelConvLayer3,convLayer3_channelNum,3,kernelImageChannelConvLayer3)
 
 # Third convolution layer processing (conv + pooling + relu)
 
 cnnConv3LayerMatrix=re.RELU_3D(conv.convolution_RGB(cnnConv2LayerMatrix,kernelConvLayer3))
-cnnConv3LayerMatrix=pool.pooling(cnnConv3LayerMatrix,poolingSize,poolingStride,poolType)#to complete
+cnnConv3LayerMatrix=pool.pooling(cnnConv3LayerMatrix,poolingHeight,poolingWidth,
+                                 poolingStride,poolingMode,poolingType,poolingPos)
 
 
 # Fully connected Layer processing
@@ -95,7 +99,7 @@ cnnConv3LayerMatrix=pool.pooling(cnnConv3LayerMatrix,poolingSize,poolingStride,p
 
 fcVectorLayer=np.zeros((180,10))
 
-initVector(fcVectorLayer,1)
+#initVector(fcVectorLayer,1)
 
 cnnConv3LayerReshape=rshape.reshape(cnnConv3LayerMatrix)
 #print('FullyConnectedLayer0 (reshape) = ',cnnConv2LayerReshape)
