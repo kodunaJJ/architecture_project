@@ -16,15 +16,12 @@ import reshape as rshape
 import matrix_multiply as matmult
 import softmax as smax
 import cnn_weight_loadFromFile as wload
-
+import cifar10Database_op as cifarDb
 
 #********************* ALGORITHM PARAMETERS*************************#
 
-cifar10_DatabasePath = "../../../../../../image_database/cifar10/cifar10_ppm_image/"
-img_in_name = "1a.ppm"
-#img_out_folder = "../../image/test/"
-#img_out_name = "img_test_2_out.ppm"
-
+cifar10_DatabasePath = "../../../../../../image_database/cifar10/cifar-10-batches-py/"
+cifar10_DatabaseFileName="data_batch_1"
 
 #!!!!!!!!!!!! KERNEL PARAMETERS !!!!!!!!!!!!!#
 convLayer1_channelNum=64
@@ -42,9 +39,9 @@ poolingType='max'
 poolingMode='SAME'
 
 # Loading image database 
-imgIn = imgOp.imgOpen(img_in_folder,img_in_name)
-imgIn_info = imgOp.getImgInfo(imgIn)
-cnnInputLayerMatrix = imgOp.img2nparray(imgIn)
+db=cifarDb.readDatabase(cifar10_DatabasePath+cifar10_DatabaseFileName)
+imgIn=readImgFromDatabase(db,0)
+cnnInputLayerMatrix = imgIn[0]
 
 
 #***********************************************************************************#
