@@ -24,7 +24,7 @@ def initVector(FileName,vector,fcLayerID):
 
 
 
-def readBiasesFromFile(fp,posInFile,matrix,channelNum):
+def readBiasesFromFile(fp,posInFile,matrix,channelNum,matrixDimension=3):
     
     coeffReadCount=0
     lineRead=fp.readline() 
@@ -40,7 +40,13 @@ def readBiasesFromFile(fp,posInFile,matrix,channelNum):
             lineValueNum-=1
               
         for i in range(0,lineValueNum):
-            matrix[0,0,coeffReadCount+i]=float(lineSplit[i])
+            if matrixDimension == 3:
+                matrix[0,0,coeffReadCount+i]=float(lineSplit[i])
+            elif matrixDimension == 2:
+                matrix[0,coeffReadCount+i]=float(lineSplit[i])
+                
+            else:
+                print('/!\/!\/!\/!\ INVALID MATRIX DIMENSION /!\/!\/!\/!\ ')
         coeffReadCount+=6
     
 def readKernelChannelValueFromFile(fp,posInFile,kernel,channelNum,ImageChannelPos,
@@ -48,50 +54,112 @@ def readKernelChannelValueFromFile(fp,posInFile,kernel,channelNum,ImageChannelPo
     coeffReadCount=0
     #lineRead=fp.readline()
     #print(lineRead)
-    print('toto=',fp.read(5))
+    #print('toto=',fp.read(5))
+    fp.read(5)
     posInFile= fp.tell()
     while coeffReadCount < channelNum:
         
         lineRead=fp.readline()
-        print(lineRead)
+        #print(lineRead)
         posInFile=fp.tell()
         lineSplit=lineRead.strip().split()
         lineValueNum=len(lineSplit)
         if lineValueNum > 4:
-            lineValueNum-=4
+            lineValueNum=4
               
         for i in range(0,lineValueNum):
-            kernel[ImageChannelPos-1,coeffReadCount+i,kernelHeightPos-1,kernelWitdhPos-1]=float(lineSplit[i])
+            kernel[ImageChannelPos,coeffReadCount+i,kernelHeightPos,kernelWitdhPos]=float(lineSplit[i])
+            #kernel[kernelHeightPos,kernelWitdhPos,ImageChannelPos,coeffReadCount+i]=float(lineSplit[i])
+        coeffReadCount+=4
+
+def readFClayerChannelValueFromFile(fp,posInFile,fcMatrix,matrixHeightPos,fcMatrixWidth):
+    coeffReadCount=0
+    #lineRead=fp.readline()
+    #print(lineRead)
+    #print('toto=',fp.read(5))
+    fp.read(3)
+    posInFile= fp.tell()
+    while coeffReadCount < fcMatrixWidth:
+        
+        lineRead=fp.readline()
+        #print(lineRead)
+        posInFile=fp.tell()
+        lineSplit=lineRead.strip().split()
+        lineValueNum=len(lineSplit)
+        if (lineValueNum > 2) and (coeffReadCount >=8):
+            lineValueNum=2
+              
+        for i in range(0,lineValueNum):
+            fcMatrix[matrixHeightPos,coeffReadCount+i]=float(lineSplit[i])
         coeffReadCount+=4
     
+        
 def initkernelFromFile(fp,posInFile,kernel):
-    ImageChannelNum=kernel.shape[0]+1
+
+    ImageChannelNum=kernel.shape[0]
     channelNum=kernel.shape[1]
-    kernelSize=kernel.shape[2]+1
-    lineRead=fp.readline()
-    print(lineRead)
+    kernelSize=kernel.shape[2]
     
-    for kerHeightPos in range(1,kernelSize):
-        if kerHeightPos !=1:
-            print('titi',fp.readline())
-        for kerWidthPos in range(1,kernelSize):
-            if kerWidthPos !=1 :
-                print('tata',fp.readline())
-            for imgChannelPos in range(1,ImageChannelNum):
+    """
+    ImageChannelNum=kernel.shape[2]
+    channelNum=kernel.shape[3]
+    kernelSize=kernel.shape[0]
+    """
+    lineRead=fp.readline()
+    #print(lineRead)
+    
+    for kerHeightPos in range(0,kernelSize):
+        if kerHeightPos !=0:
+            #print(fp.readline())
+            fp.readline()
+        for kerWidthPos in range(0,kernelSize):
+            if kerWidthPos !=0 :
+                #print('tata',fp.readline())
+                fp.readline()
+            for imgChannelPos in range(0,ImageChannelNum):
                 readKernelChannelValueFromFile(fp,posInFile,kernel,channelNum,
                                                imgChannelPos,kerHeightPos,kerWidthPos)
-                print('finished reading channel weight')
+                #print('finished reading channel weight')
+                
+def initFClayerFromFile(fp,posInFile,fcMatrix):
     
+    fcMatrixWidth=fcMatrix.shape[1]
+    matrixHeight=fcMatrix.shape[0]
+    
+    lineRead=fp.readline()
+    #print(lineRead)
+    
+    for matrixHeightPos in range(0,matrixHeight):
+        readFClayerChannelValueFromFile(fp,posInFile,fcMatrix,matrixHeightPos,fcMatrixWidth)
+                #print('finished reading channel weight')
 
+def loadWeightFromFile(fileName,kernelConvLayer1,kernelConvLayer2,kernelConvLayer3,biasConvLayer1,
+                       biasConvLayer2,biasConvLayer3,fcLayerMatrix,biasfcLayer):
+    fp=open(fileName,'r')
+    posInFile=0
+    convLayer1_ChannelNum=kernelConvLayer1.shape[1]
+    convLayer2_ChannelNum=kernelConvLayer2.shape[1]
+    convLayer3_ChannelNum=kernelConvLayer3.shape[1]
+    fcLayerChannelNum=biasfcLayer.shape[1]
+    
+    # ConvLayer 1 weight loading
+    print('LOADING CONVOLUTION LAYER 1 WEIGHT')
+    readBiasesFromFile(fp,posInFile,biasConvLayer1,convLayer1_ChannelNum)
+    initkernelFromFile(fp,posInFile,kernelConvLayer1)
 
-fp=open('CNN_coeff_5x5_mod.txt','r')
-matrix=np.zeros((1,1,64))
-kernel=np.zeros((3,64,5,5))
-posInFile=0
+    # ConvLayer 2 weight loading 
+    print('LOADING CONVOLUTION LAYER 2 WEIGHT')
+    readBiasesFromFile(fp,posInFile,biasConvLayer2,convLayer2_ChannelNum)
+    initkernelFromFile(fp,posInFile,kernelConvLayer2)
 
-readBiasesFromFile(fp,posInFile,matrix,64)
-print(matrix)
+    # ConvLayer 3 weight loading
+    print('LOADING CONVOLUTION LAYER 3 WEIGHT')
+    readBiasesFromFile(fp,posInFile,biasConvLayer3,convLayer3_ChannelNum)
+    initkernelFromFile(fp,posInFile,kernelConvLayer3)
 
-#readKernelChannelValueFromFile(fp,posInFile,kernel,64,1,1,1)
-initkernelFromFile(fp,posInFile,kernel)
-print('kernel read', kernel)
+    # FullyConnectedLayer
+    print('LOADING FULLY CONNECTED LAYER WEIGHT')
+    readBiasesFromFile(fp,posInFile,biasfcLayer,fcLayerChannelNum,2)
+    initFClayerFromFile(fp,posInFile,fcLayerMatrix)
+
+    print('FINISHED LOADING WEIGHT')
