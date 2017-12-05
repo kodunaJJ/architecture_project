@@ -3,6 +3,7 @@
 import numpy as np
 
 
+
 # Function to unpack a cifar database file
 # Takes the file path+name as input and return
 # a dictitionary data structure

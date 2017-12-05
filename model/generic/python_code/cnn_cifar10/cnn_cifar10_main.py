@@ -17,6 +17,8 @@ import matrix_multiply as matmult
 import softmax as smax
 import cnn_weight_loadFromFile as wload
 import cifarDatabase_op as cifarDb
+import add_bias as bias
+import adaptation_image as normal
 
 
 def accuracy(imgClassPredicted,imgReadClass,missPredictionNum,totalImageRead):
@@ -89,64 +91,73 @@ wload.loadWeightFromFile(weightFilename,kernelConvLayer1,kernelConvLayer2,kernel
 
 # for each image in the database ???????
 
+for num in range (0,1):
+
+	# reading image from database
+	imgIn=cifarDb.readImgFromDatabase(db,num)
+	cnnInputLayerMatrix = imgIn[0]
+	imgReadClass=imgIn[1]
+
+	#******************Image Normalisation*********************#
+	cnnInputLayerMatrix1=normal.adapatation_imag(cnnInputLayerMatrix)
+
+	print(cnnInputLayerMatrix1.max())
+
+	print(kernelConvLayer1.max())
+	print(kernelConvLayer2.max())
+	print(kernelConvLayer3.max())
+
+	#************************ CONV LAYER 1 *************************#
+
+	# First convolution layer processing (conv + pooling + relu)
 
 
-# reading image from database
-imgIn=cifarDb.readImgFromDatabase(db,0)
-cnnInputLayerMatrix = imgIn[0]
-imgReadClass=imgIn[1]
+	#print(kernel)
+
+	cnnConv1LayerMatrix=re.RELU_3D(bias.add_bias(conv.convolution_RGB(cnnInputLayerMatrix1,kernelConvLayer1),biasConvLayer1[0,0,:]))
+	#print("cnnConv1LayerMatrix = ")
+	#print(cnnConv1LayerMatrix)
+	cnnConv1LayerMatrix=pool.pooling(cnnConv1LayerMatrix,poolingHeight,poolingWidth,
+		                         poolingStride,poolingMode,poolingType,poolingPos)
+	#print(cnnConv1LayerMatrix.shape)
 
 
-#************************ CONV LAYER 1 *************************#
+	# Second convolution layer processing (conv + pooling + relu)
 
-# First convolution layer processing (conv + pooling + relu)
+	cnnConv2LayerMatrix=re.RELU_3D(bias.add_bias(conv.convolution_RGB(cnnConv1LayerMatrix,kernelConvLayer2),biasConvLayer2[0,0,:]))
+	cnnConv2LayerMatrix=pool.pooling(cnnConv2LayerMatrix,poolingHeight,poolingWidth,
+		                         poolingStride,poolingMode,poolingType,poolingPos)
+	#print(cnnConv2LayerMatrix.shape)
 
+	# Third convolution layer processing (conv + pooling + relu)
 
-#print(kernel)
+	cnnConv3LayerMatrix=re.RELU_3D(bias.add_bias(conv.convolution_RGB(cnnConv2LayerMatrix,kernelConvLayer3),biasConvLayer3[0,0,:]))
+	cnnConv3LayerMatrix=pool.pooling(cnnConv3LayerMatrix,poolingHeight,poolingWidth,
+		                         poolingStride,poolingMode,poolingType,poolingPos)
+	print(cnnConv3LayerMatrix.max())
 
-cnnConv1LayerMatrix=re.RELU_3D(conv.convolution_RGB(cnnInputLayerMatrix,kernelConvLayer1))
-#print('cnnConv1LayerMatrix = ',cnnConv1LayerMatrix)
-cnnConv1LayerMatrix=pool.pooling(cnnConv1LayerMatrix,poolingHeight,poolingWidth,
-                                 poolingStride,poolingMode,poolingType,poolingPos)
-print(cnnConv1LayerMatrix.shape)
+	# Fully connected Layer processing
 
-
-# Second convolution layer processing (conv + pooling + relu)
-
-cnnConv2LayerMatrix=re.RELU_3D(conv.convolution_RGB(cnnConv1LayerMatrix,kernelConvLayer2))
-cnnConv2LayerMatrix=pool.pooling(cnnConv2LayerMatrix,poolingHeight,poolingWidth,
-                                 poolingStride,poolingMode,poolingType,poolingPos)
-print(cnnConv2LayerMatrix.shape)
-
-# Third convolution layer processing (conv + pooling + relu)
-
-cnnConv3LayerMatrix=re.RELU_3D(conv.convolution_RGB(cnnConv2LayerMatrix,kernelConvLayer3))
-cnnConv3LayerMatrix=pool.pooling(cnnConv3LayerMatrix,poolingHeight,poolingWidth,
-                                 poolingStride,poolingMode,poolingType,poolingPos)
-print(cnnConv3LayerMatrix.shape)
-
-# Fully connected Layer processing
-
-# layer vector(3*3*20,10)
+	# layer vector(3*3*20,10)
 
 
-cnnConv3LayerReshape=rshape.reshape(cnnConv3LayerMatrix)
-#print('FullyConnectedLayer0 (reshape) = ',cnnConv2LayerReshape)
-cnnFullyConnectedLayer=matmult.matrixMult_CHn(cnnConv3LayerReshape,fcVectorLayer)
-
-cnnFullyConnectedLayer+=biasFClayer
-
-outputVector=smax.softmax(cnnFullyConnectedLayer)
-
-print(outputVector)
+	cnnConv3LayerReshape=rshape.reshape(cnnConv3LayerMatrix)
+	#print('FullyConnectedLayer0 (reshape) = ',cnnConv2LayerReshape)
+	cnnFullyConnectedLayer=matmult.matrixMult_CHn(cnnConv3LayerReshape,fcVectorLayer)
 
 
-"""
-print('Algorithm results :')
+	outputVector=smax.softmax(cnnFullyConnectedLayer)
 
-print('--> accuracy = %f',accuracy(imgClassPredicted,imgReadClass,missPredictionNum,totalImgRead))
-print('--> progression = %d/%d',totalImgRead,totalImg)
-"""
+	print(outputVector)
+
+	print(imgReadClass)
+
+	"""
+	print('Algorithm results :')
+
+	print('--> accuracy = %f',accuracy(imgClassPredicted,imgReadClass,missPredictionNum,totalImgRead))
+	print('--> progression = %d/%d',totalImgRead,totalImg)
+	"""
 
 #***********************************************************************************#
 #                                ALGORITHM END                                      #
