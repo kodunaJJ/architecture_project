@@ -63,7 +63,7 @@ def convolution_RGB(image,kernel):
 	image_x_max=image.shape[1]
 	image_y_max=image.shape[0]
 	nb_matrice=image.shape[2]
-	nb_kernel=kernel.shape[2]
+	nb_kernel=kernel.shape[3]
 	
 	#image_r=np.zeros((image_y_max,image_x_max,1))
 	image_calcul=np.zeros((image_y_max,image_x_max,nb_matrice))
@@ -74,7 +74,7 @@ def convolution_RGB(image,kernel):
 
 	for num in range (0, nb_kernel):
 		for num2 in range(0,nb_matrice):
-			image_calcul[:,:,num2]=convolution_2D(image[:,:,num2],kernel[:,:,num,num2])
+			image_calcul[:,:,num2]=convolution_2D(image[:,:,num2],kernel[:,:,num2,num])
 		new_image[:,:,num]=image_calcul.sum()
 
 	return new_image
