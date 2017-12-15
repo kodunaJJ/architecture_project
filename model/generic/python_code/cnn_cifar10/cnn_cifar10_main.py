@@ -9,7 +9,7 @@ sys.path.insert(0,'../') # to specify python code exist in another folder
 import img_op as imgOp
 import convolution as conv
 import numpy as np
-np.set_printoptions(threshold=np.inf) # to forced full print of numpy array
+np.set_printoptions(threshold=np.inf) # to force full print of numpy array
 import RELU as re
 import pooling_op as pool
 import reshape as rshape
@@ -64,12 +64,18 @@ biasConvLayer1=np.zeros((1,1,convLayer1_channelNum))
 biasConvLayer2=np.zeros((1,1,convLayer2_channelNum))
 biasConvLayer3=np.zeros((1,1,convLayer3_channelNum))
 
+"""
 kernelConvLayer1=np.zeros((kernelImageChannelConvLayer1,convLayer1_channelNum,
                            kernelConvSize,kernelConvSize))
 kernelConvLayer2=np.zeros((kernelImageChannelConvLayer2,convLayer2_channelNum,
                            kernelConvSize,kernelConvSize))
 kernelConvLayer3=np.zeros((kernelImageChannelConvLayer3,convLayer3_channelNum,
                            kernelConvSize,kernelConvSize))
+"""
+
+kernelConvLayer1=np.zeros((kernelConvSize,kernelConvSize,kernelImageChannelConvLayer1,convLayer1_channelNum))
+kernelConvLayer2=np.zeros((kernelConvSize,kernelConvSize,kernelImageChannelConvLayer2,convLayer2_channelNum))
+kernelConvLayer3=np.zeros((kernelConvSize,kernelConvSize,kernelImageChannelConvLayer3,convLayer3_channelNum))
 
 biasFClayer=np.zeros((1,10))
 
@@ -80,18 +86,18 @@ fcVectorLayer=np.zeros((180,10))
 
 weightFilename='CNN_coeff_'+str(kernelConvSize)+'x'+str(kernelConvSize)+'_mod.txt'
 
-wload.loadWeightFromFile(weightFilename,kernelConvLayer1,kernelConvLayer2,kernelConvLayer3,
-                         biasConvLayer1,biasConvLayer2,biasConvLayer3,fcVectorLayer,biasFClayer)
+wload.loadWeightFromFile(weightFilename,kernelConvLayer1,kernelConvLayer2,
+                         kernelConvLayer3,biasConvLayer1,biasConvLayer2,
+                         biasConvLayer3,fcVectorLayer,biasFClayer)
+print(kernelConvLayer1.shape)
+#****************************************************************************#
+#                                ALGORITHM START                             #
+#****************************************************************************#
 
 
-#***********************************************************************************#
-#                                ALGORITHM START                                    #
-#***********************************************************************************#
+# for each image in the database
 
-
-# for each image in the database ???????
-
-for num in range (0,1):
+for num in range (0,10):
 
 	# reading image from database
 	imgIn=cifarDb.readImgFromDatabase(db,num)
@@ -100,13 +106,16 @@ for num in range (0,1):
 
 	#******************Image Normalisation*********************#
 	cnnInputLayerMatrix1=normal.adapatation_imag(cnnInputLayerMatrix)
-
+        #cnnInputLayerMatrix1=np.random.rand(24,24,3)
+        #cnnInputLayerMatrix1*=2
+        #cnnInputLayerMatrix1+=-1
+        #cnnInputLayerMatrix1.fill(16)
 	print(cnnInputLayerMatrix1.max())
 
 	print(kernelConvLayer1.max())
 	print(kernelConvLayer2.max())
 	print(kernelConvLayer3.max())
-
+        
 	#************************ CONV LAYER 1 *************************#
 
 	# First convolution layer processing (conv + pooling + relu)
@@ -117,40 +126,48 @@ for num in range (0,1):
 	cnnConv1LayerMatrix=re.RELU_3D(bias.add_bias(conv.convolution_RGB(cnnInputLayerMatrix1,kernelConvLayer1),biasConvLayer1[0,0,:]))
 	#print("cnnConv1LayerMatrix = ")
 	#print(cnnConv1LayerMatrix)
-	cnnConv1LayerMatrix=pool.pooling(cnnConv1LayerMatrix,poolingHeight,poolingWidth,
-		                         poolingStride,poolingMode,poolingType,poolingPos)
+        print('convLayer1 output',cnnConv1LayerMatrix.shape)
+	cnnConv1LayerMatrix=pool.pooling(cnnConv1LayerMatrix,poolingHeight,
+                                         poolingWidth,poolingStride,
+                                         poolingMode,poolingType,poolingPos)
 	#print(cnnConv1LayerMatrix.shape)
-
-
+        #cnnConv1LayerMatrix/=10
+        print(cnnConv1LayerMatrix.max())
 	# Second convolution layer processing (conv + pooling + relu)
-
+        print('convLayer1 output',cnnConv1LayerMatrix.shape)
 	cnnConv2LayerMatrix=re.RELU_3D(bias.add_bias(conv.convolution_RGB(cnnConv1LayerMatrix,kernelConvLayer2),biasConvLayer2[0,0,:]))
-	cnnConv2LayerMatrix=pool.pooling(cnnConv2LayerMatrix,poolingHeight,poolingWidth,
-		                         poolingStride,poolingMode,poolingType,poolingPos)
+	cnnConv2LayerMatrix=pool.pooling(cnnConv2LayerMatrix,poolingHeight,
+                                         poolingWidth,poolingStride,
+                                         poolingMode,poolingType,poolingPos)
 	#print(cnnConv2LayerMatrix.shape)
+        #cnnConv2LayerMatrix/=4000
+        print(cnnConv2LayerMatrix.max())
 
 	# Third convolution layer processing (conv + pooling + relu)
 
 	cnnConv3LayerMatrix=re.RELU_3D(bias.add_bias(conv.convolution_RGB(cnnConv2LayerMatrix,kernelConvLayer3),biasConvLayer3[0,0,:]))
-	cnnConv3LayerMatrix=pool.pooling(cnnConv3LayerMatrix,poolingHeight,poolingWidth,
-		                         poolingStride,poolingMode,poolingType,poolingPos)
+	cnnConv3LayerMatrix=pool.pooling(cnnConv3LayerMatrix,poolingHeight,
+                                         poolingWidth,poolingStride,
+                                         poolingMode,poolingType,poolingPos)
+        #cnnConv3LayerMatrix/=10
 	print(cnnConv3LayerMatrix.max())
 
 	# Fully connected Layer processing
 
 	# layer vector(3*3*20,10)
-
+        
 
 	cnnConv3LayerReshape=rshape.reshape(cnnConv3LayerMatrix)
 	#print('FullyConnectedLayer0 (reshape) = ',cnnConv2LayerReshape)
 	cnnFullyConnectedLayer=matmult.matrixMult_CHn(cnnConv3LayerReshape,fcVectorLayer)
 
+        print(cnnFullyConnectedLayer.max())
+        print('output vector \n',cnnFullyConnectedLayer)
+	#outputVector=smax.softmax(cnnFullyConnectedLayer)
 
-	outputVector=smax.softmax(cnnFullyConnectedLayer)
+	#print(outputVector)
 
-	print(outputVector)
-
-	print(imgReadClass)
+	print('Image label = ',imgReadClass)
 
 	"""
 	print('Algorithm results :')
@@ -159,6 +176,6 @@ for num in range (0,1):
 	print('--> progression = %d/%d',totalImgRead,totalImg)
 	"""
 
-#***********************************************************************************#
-#                                ALGORITHM END                                      #
-#***********************************************************************************#
+#****************************************************************************#
+#                                ALGORITHM END                               #
+#****************************************************************************#
