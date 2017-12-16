@@ -21,23 +21,25 @@ import add_bias as bias
 import adaptation_image as normal
 
 
-def accuracy(imgClassPredicted,imgReadClass,missPredictionNum,totalImageRead):
-    if imgClassPredicted != imgReadClass:
-        missPredictionNum+=1
-
-    accuracy=(totalImageRead-missPredictionNum)/totalImageRead
-    return accuracy
+def accuracy(imgClassPredicted,imgReadClass,goodPredictionNum,totalImageRead):
+    if imgClassPredicted == imgReadClass:
+        goodPredictionNum+=1
+    
+    accuracy=float((goodPredictionNum))/float (totalImageRead)
+    return accuracy,goodPredictionNum
     
 
 #********************* ALGORITHM PARAMETERS*************************#
 
 cifar10_DatabasePath = "../../../../../../image_database/cifar10/cifar-10-batches-py/"
-cifar10_DatabaseFileName="data_batch_1"
+cifar10_DatabaseFileName="test_batch"
 
 imgClassPredicted=0
 imgReadClass=0
-missPredictionNum=0
+goodPredictionNum=0
 totalImgRead=0
+totalImg=1000
+accuracyCalc=(0,0)
 
 #!!!!!!!!!!!! KERNEL PARAMETERS !!!!!!!!!!!!!#
 convLayer1_channelNum=64
@@ -97,25 +99,26 @@ print(kernelConvLayer1.shape)
 
 # for each image in the database
 
-for num in range (0,10):
+for num in range (0,totalImg):
 
 	# reading image from database
-	imgIn=cifarDb.readImgFromDatabase(db,num)
-	cnnInputLayerMatrix = imgIn[0]
-	imgReadClass=imgIn[1]
+    imgIn=cifarDb.readImgFromDatabase(db,num)
+    cnnInputLayerMatrix = imgIn[0]
+    imgReadClass=imgIn[1]
 
 	#******************Image Normalisation*********************#
-	cnnInputLayerMatrix1=normal.adapatation_imag(cnnInputLayerMatrix)
+    cnnInputLayerMatrix1=normal.adapatation_imag(cnnInputLayerMatrix)
         #cnnInputLayerMatrix1=np.random.rand(24,24,3)
         #cnnInputLayerMatrix1*=2
         #cnnInputLayerMatrix1+=-1
         #cnnInputLayerMatrix1.fill(16)
+        """
 	print(cnnInputLayerMatrix1.max())
 
 	print(kernelConvLayer1.max())
 	print(kernelConvLayer2.max())
 	print(kernelConvLayer3.max())
-        
+        """
 	#************************ CONV LAYER 1 *************************#
 
 	# First convolution layer processing (conv + pooling + relu)
@@ -123,59 +126,63 @@ for num in range (0,10):
 
 	#print(kernel)
 
-	cnnConv1LayerMatrix=re.RELU_3D(bias.add_bias(conv.convolution_RGB(cnnInputLayerMatrix1,kernelConvLayer1),biasConvLayer1[0,0,:]))
+    cnnConv1LayerMatrix=re.RELU_3D(bias.add_bias(conv.convolution_RGB(cnnInputLayerMatrix1,kernelConvLayer1),biasConvLayer1[0,0,:]))
 	#print("cnnConv1LayerMatrix = ")
 	#print(cnnConv1LayerMatrix)
-        print('convLayer1 output',cnnConv1LayerMatrix.shape)
-	cnnConv1LayerMatrix=pool.pooling(cnnConv1LayerMatrix,poolingHeight,
-                                         poolingWidth,poolingStride,
-                                         poolingMode,poolingType,poolingPos)
+        #print('convLayer1 output',cnnConv1LayerMatrix.shape)
+    cnnConv1LayerMatrix=pool.pooling(cnnConv1LayerMatrix,poolingHeight,
+                                     poolingWidth,poolingStride,
+                                     poolingMode,poolingType,poolingPos)
 	#print(cnnConv1LayerMatrix.shape)
         #cnnConv1LayerMatrix/=10
-        print(cnnConv1LayerMatrix.max())
+        #print(cnnConv1LayerMatrix.max())
 	# Second convolution layer processing (conv + pooling + relu)
-        print('convLayer1 output',cnnConv1LayerMatrix.shape)
-	cnnConv2LayerMatrix=re.RELU_3D(bias.add_bias(conv.convolution_RGB(cnnConv1LayerMatrix,kernelConvLayer2),biasConvLayer2[0,0,:]))
-	cnnConv2LayerMatrix=pool.pooling(cnnConv2LayerMatrix,poolingHeight,
-                                         poolingWidth,poolingStride,
-                                         poolingMode,poolingType,poolingPos)
+        #print('convLayer1 output',cnnConv1LayerMatrix.shape)
+    cnnConv2LayerMatrix=re.RELU_3D(bias.add_bias(conv.convolution_RGB(cnnConv1LayerMatrix,kernelConvLayer2),biasConvLayer2[0,0,:]))
+    cnnConv2LayerMatrix=pool.pooling(cnnConv2LayerMatrix,poolingHeight,
+                                     poolingWidth,poolingStride,
+                                     poolingMode,poolingType,poolingPos)
 	#print(cnnConv2LayerMatrix.shape)
         #cnnConv2LayerMatrix/=4000
-        print(cnnConv2LayerMatrix.max())
+        #print(cnnConv2LayerMatrix.max())
 
 	# Third convolution layer processing (conv + pooling + relu)
 
-	cnnConv3LayerMatrix=re.RELU_3D(bias.add_bias(conv.convolution_RGB(cnnConv2LayerMatrix,kernelConvLayer3),biasConvLayer3[0,0,:]))
-	cnnConv3LayerMatrix=pool.pooling(cnnConv3LayerMatrix,poolingHeight,
-                                         poolingWidth,poolingStride,
-                                         poolingMode,poolingType,poolingPos)
+    cnnConv3LayerMatrix=re.RELU_3D(bias.add_bias(conv.convolution_RGB(cnnConv2LayerMatrix,kernelConvLayer3),biasConvLayer3[0,0,:]))
+    cnnConv3LayerMatrix=pool.pooling(cnnConv3LayerMatrix,poolingHeight,
+                                     poolingWidth,poolingStride,
+                                     poolingMode,poolingType,poolingPos)
         #cnnConv3LayerMatrix/=10
-	print(cnnConv3LayerMatrix.max())
+	#print(cnnConv3LayerMatrix.max())
 
 	# Fully connected Layer processing
 
 	# layer vector(3*3*20,10)
         
 
-	cnnConv3LayerReshape=rshape.reshape(cnnConv3LayerMatrix)
+    cnnConv3LayerReshape=rshape.reshape(cnnConv3LayerMatrix)
 	#print('FullyConnectedLayer0 (reshape) = ',cnnConv2LayerReshape)
-	cnnFullyConnectedLayer=matmult.matrixMult_CHn(cnnConv3LayerReshape,fcVectorLayer)
+    cnnFullyConnectedLayer=matmult.matrixMult_CHn(cnnConv3LayerReshape,fcVectorLayer)
 
-        print(cnnFullyConnectedLayer.max())
-        print('output vector \n',cnnFullyConnectedLayer)
+        #print(cnnFullyConnectedLayer.max())
+        #print('output vector \n',cnnFullyConnectedLayer)
 	#outputVector=smax.softmax(cnnFullyConnectedLayer)
 
 	#print(outputVector)
 
-	print('Image label = ',imgReadClass)
-
-	"""
-	print('Algorithm results :')
-
-	print('--> accuracy = %f',accuracy(imgClassPredicted,imgReadClass,missPredictionNum,totalImgRead))
-	print('--> progression = %d/%d',totalImgRead,totalImg)
-	"""
-
+	#print('Image label = ',imgReadClass)
+        #print('Predicted class =', cnnFullyConnectedLayer.argmax())
+        
+    totalImgRead+=1
+    imgClassPredicted=cnnFullyConnectedLayer.argmax()
+        #print('ImgClass = ',imgReadClass)
+        #print('ImgClassPredicted ',imgClassPredicted)
+        #print('Correct prediction Number = ',accuracyCalc[1])
+    print('Algorithm results :')
+    accuracyCalc = accuracy(imgClassPredicted,imgReadClass,accuracyCalc[1],totalImgRead)
+    print('--> accuracy = ',accuracyCalc[0])
+    print('--> progression = ',totalImgRead,totalImg)
+    
 #****************************************************************************#
 #                                ALGORITHM END                               #
 #****************************************************************************#

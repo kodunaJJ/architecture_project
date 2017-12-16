@@ -1,7 +1,12 @@
 #!/usr/python
 
 import numpy as np
+import cv2
 
+import sys
+sys.path.insert(0,'../') # to specify python code exist in another folder
+import convolution as conv
+np.set_printoptions(threshold=np.inf)
 
 
 # Function to unpack a cifar database file
@@ -21,11 +26,19 @@ def readDatabase(file):
 def readImgFromDatabase(db,imgNum):
     img=np.zeros((32,32,3),dtype=int)
 
+    
     temp = db['data'][imgNum].reshape((3,32,32))
-    img[:,:,0] = temp[0]
+    
+    img[:,:,0] = temp[0] #red
+    img[:,:,1] = temp[1] #blue
+    img[:,:,2] = temp[2] #green
+    
+    """
+    # correct output with opencv
+    img[:,:,0] = temp[2]
     img[:,:,1] = temp[1]
-    img[:,:,2] = temp[2]
-   
+    img[:,:,2] = temp[0]
+    """
     return img,db['labels'][imgNum]
 
 

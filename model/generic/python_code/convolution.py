@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 import numpy as np
 import img_op as imgOp
 
@@ -13,12 +13,13 @@ def convolution_2D(image,kernel):
 
     kernel_x=kernel.shape[1]
     kernel_y=kernel.shape[0]
-    image_add_zero=np.zeros(( image_y_max+kernel_y-1, image_x_max+kernel_x-1))
-	
-    #print(image_add_zero.shape)
-    image_add_zero[0:image_y_max,0:image_x_max]=image
 
+    xPadPos=int((kernel_y-1)/2)
+    yPadPos=xPadPos
+
+    image_add_zero=np.zeros(( image_y_max+kernel_y-1, image_x_max+kernel_x-1))
     
+    image_add_zero[yPadPos:image_y_max+yPadPos,xPadPos:image_x_max+xPadPos]=image
     calcul=np.zeros((kernel_y,kernel_x))
     new_image=np.zeros((image_y_max,image_x_max))
 
@@ -58,26 +59,28 @@ def convolution_2D(image,kernel):
 
 
 def convolution_RGB(image,kernel):
-		#print(image)
+    #print(image)
 	#print(kernel)
-	image_x_max=image.shape[1]
-	image_y_max=image.shape[0]
-	nb_matrice=image.shape[2]
-	nb_kernel=kernel.shape[3]
-	
+    image_x_max=image.shape[1]
+    image_y_max=image.shape[0]
+    nb_matrice=image.shape[2]
+    nb_kernel=kernel.shape[3]
+    
 	#image_r=np.zeros((image_y_max,image_x_max,1))
-	image_calcul=np.zeros((image_y_max,image_x_max,nb_matrice))
+    image_calcul=np.zeros((image_y_max,image_x_max,nb_matrice))
 	
 
-	new_image=np.zeros((image_y_max,image_x_max,nb_kernel))
+    new_image=np.zeros((image_y_max,image_x_max,nb_kernel))
 
 
-	for num in range (0, nb_kernel):
-		for num2 in range(0,nb_matrice):
-			image_calcul[:,:,num2]=convolution_2D(image[:,:,num2],kernel[:,:,num2,num])
-		new_image[:,:,num]=image_calcul.sum()
+    for num in range (0, nb_kernel):
+	for num2 in range(0,nb_matrice):
+	    image_calcul[:,:,num2]=convolution_2D(image[:,:,num2],kernel[:,:,num2,num])
+            #print(image_calcul.dtype)
+            #print(image_calcul.sum(2))
+	    new_image[:,:,num]=image_calcul.sum(2)
 
-	return new_image
+    return new_image
 
 
 
