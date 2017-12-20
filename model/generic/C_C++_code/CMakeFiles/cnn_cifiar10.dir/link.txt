@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/cnn_cifiar10.dir/main.cpp.o  -o cnn_cifiar10 -rdynamic 

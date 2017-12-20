@@ -1,0 +1,3 @@
+/home/jordan/Documents/Phelma_annee_3/algo2archi/projet/cnn_algorithm/architecture_project2/architecture_project/model/generic/C_C++_code/CMakeFiles/edit_cache.dir
+/home/jordan/Documents/Phelma_annee_3/algo2archi/projet/cnn_algorithm/architecture_project2/architecture_project/model/generic/C_C++_code/CMakeFiles/rebuild_cache.dir
+/home/jordan/Documents/Phelma_annee_3/algo2archi/projet/cnn_algorithm/architecture_project2/architecture_project/model/generic/C_C++_code/CMakeFiles/cnn_cifar10.dir
