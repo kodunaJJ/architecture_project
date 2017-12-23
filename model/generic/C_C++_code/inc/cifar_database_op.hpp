@@ -6,21 +6,24 @@
 #include <fstream>
 #include "constant.hpp"
 
+using namespace std;
 
 
+/* class for reading a cifar database and storing data of a 
+   cifar image */
 
 template <typename pixelDataType>
 class cifarImage {
 public:
-  pixelDataType imgData[CIFAR_IMAGE_BYTES_SIZE];
-  unsigned int cifarImageLabel;
+  pixelDataType imgData[CIFAR_IMAGE_BYTES_SIZE]; /* image pixel data */
+  unsigned int cifarImageLabel; /* cifar class of image */
   cifarImage();
-  void loadImage(std::ifstream &fs);
+  void loadImage(std::ifstream &fs); /* read image data */
   ~cifarImage();
 };
 
-/* supprimer la classe database on charge image par image */
 
+/*
 template <typename databaseDataType>
 class cifarDatabase: public cifarImage<databaseDataType> {
 
@@ -35,8 +38,8 @@ public:
   void loadDatabase();
   ~cifarDatabase();
 };
+*/
 
-using namespace std;
 
 template <typename pixelDataType>
 cifarImage<pixelDataType>::cifarImage(){}
@@ -58,6 +61,7 @@ void cifarImage<pixelDataType>::loadImage(std::ifstream &fs){
   }
 }
 
+/*
 template <typename databaseDataType>
 cifarDatabase<databaseDataType>::cifarDatabase(){}
 
@@ -81,8 +85,8 @@ void cifarDatabase<databaseDataType>::loadDatabase(){
     for(imgReadCount=0;imgReadCount<CIFAR_DB_IMAGE_NUMBER;imgReadCount++){
       imgRead.loadImage(cifarFile);
       imgDatabaseData[imgReadCount]=imgRead;
-      cifarFile.read(cifarImageLabel+imgReadCount,1); /* read image label */
-      cifarFile.read(&trash,1); /* skiping newline character */
+      cifarFile.read(cifarImageLabel+imgReadCount,1); // read image label 
+      cifarFile.read(&trash,1); // skiping newline character 
     }
     std::cout << "FINISHED LOADING DATABASE" << std::endl;
   }
@@ -91,6 +95,6 @@ void cifarDatabase<databaseDataType>::loadDatabase(){
   }
 
 }
-
+*/
 
 #endif
