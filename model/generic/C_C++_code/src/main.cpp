@@ -1,13 +1,18 @@
 #include "../inc/cifar_database_op.hpp"
 #include "../inc/cnn_weight_file_op.hpp"
 #include "../inc/constant.hpp"
+#include "../inc/perceptron.hpp"
 #include <string>
 #include <iostream>
 #include <fstream>
 
 #include "/home/jordan/Documents/Phelma_annee_3/algo2archi/projet/ac_types-stable/include/ac_fixed.h"
 
-
+typedef float inputVector_dataType;
+typedef float fcLayerVector_dataType;
+typedef float outPutValue_dataType;
+typedef float internalProduct_dataType;
+typedef float internalSum_dataType;
 
 int main4test(){
   std::cout << "stating main prog" << std::endl;
@@ -50,17 +55,18 @@ int main4test(){
   float fcLayer[FCLAYER_SIZE];
 
     /* CNN WEIGHT TABLES (fixed) */
-  float kernel_ConvLayer1_fix[KERNELCONVLAYER1_SIZE];
+  /*float kernel_ConvLayer1_fix[KERNELCONVLAYER1_SIZE];
   float kernel_ConvLayer2_fix[KERNELCONVLAYER2_SIZE];
   float kernel_ConvLayer3_fix[KERNELCONVLAYER3_SIZE];
   float bias_ConvLayer1_fix[BIASCONVLAYER1_SIZE];
   float bias_ConvLayer2_fix[BIASCONVLAYER2_SIZE];
   float bias_ConvLayer3_fix[BIASCONVLAYER3_SIZE];
   float bias_fcLayer_fix[BIASFCLAYER_SIZE];
-  ac_fixed<20, 2, true> fcLayer_fix[FCLAYER_SIZE];
+  ac_fixed<20, 2, true> fcLayer_fix[FCLAYER_SIZE];*/
   
   /* INTERMEDIARY STAGE TABLES */
   float reshape[RESHAPE_SIZE];
+  float result[FCLAYER_CHANNELNUM];
 
   std::cout.precision(10);
   cifarFile.open(file.c_str(),ifstream::in | ifstream::binary);
@@ -85,18 +91,40 @@ int main4test(){
     return 1;
   }
   loadWeightFromFile(wfile, kernel_ConvLayer1, kernel_ConvLayer2,
-			kernel_ConvLayer3, fcLayer_fix, bias_ConvLayer1,
+			kernel_ConvLayer3, fcLayer, bias_ConvLayer1,
 		     bias_ConvLayer2, bias_ConvLayer3, bias_fcLayer);
 
   /*for (int i=0; i < BIASFCLAYER_SIZE;i++){
 	std::cout << "bias fc layer weight " << bias_fcLayer[i] << std::endl;  
 	}*/
-	 for (int i=0;i<FCLAYER_SIZE;i++){
-	std::cout << "kernel fc layer  weight " << fcLayer_fix[i] << std::endl;
+  /*for (int i=0;i<FCLAYER_SIZE;i++){
+	std::cout << "kernel fc layer  weight " << fcLayer[i] << std::endl;
 	if(i%10==0 && i!=0){
 	  std::cout <<std::endl;
 	}
-	       }
+	       }*/
+
+  for(int i=0;i<RESHAPE_SIZE;i++){
+    reshape[i]=1;
+  }
+      for(int i=0;i<FCLAYER_CHANNELNUM;i++){
+       result[i]=0;
+  }
+          for(int i=0;i<FCLAYER_CHANNELNUM;i++){
+      std::cout << result[i]*fcLayer[0] << std::endl;
+  }
+
+  //perceptron(reshape,fcLayer,result);
+  perceptron<inputVector_dataType, fcLayerVector_dataType,
+	     outPutValue_dataType, internalProduct_dataType,
+	     internalSum_dataType>
+    (reshape,fcLayer,result);
+
+    for(int i=0;i<FCLAYER_CHANNELNUM;i++){
+      std::cout << result[i] << std::endl;
+  }
+
+  
     
   /*weightFile.open(wfile.c_str(),ifstream::in);
     if(weightFile.good()){*/
@@ -136,7 +164,73 @@ int main4test(){
   return 0;
 }
 
+int cnn_main(){
+  std::cout << "stating main prog" << std::endl;
+  /* image database path */
+    std::string cifarFolderPath="../../../../../image_database/cifar10/cifar-10-batches-bin/";
+    /* image database name */
+  std::string cifarFileName="data_batch_1.bin";
+  /* string concatenation to use ifstream open() */
+  std::string file = cifarFolderPath+cifarFileName;
+  /* "file pointer" to image database file */
+  std::ifstream cifarFile;
 
+  /* same thing as image database but for algorithm weight */ 
+  std::string weightFilePath="./";
+  std::string weightFileName="CNN_coeff_5x5_mod.txt";
+  std::string wfile=weightFilePath+weightFileName;
+  std::ifstream weightFile;
+
+    /* CIFAR DATABASE IMAGE */ 
+  cifarImage<unsigned int> imgIn;
+
+  /* CNN WEIGHT TABLES (float) */
+  float kernel_ConvLayer1[KERNELCONVLAYER1_SIZE];
+  float kernel_ConvLayer2[KERNELCONVLAYER2_SIZE];
+  float kernel_ConvLayer3[KERNELCONVLAYER3_SIZE];
+  float bias_ConvLayer1[BIASCONVLAYER1_SIZE];
+  float bias_ConvLayer2[BIASCONVLAYER2_SIZE];
+  float bias_ConvLayer3[BIASCONVLAYER3_SIZE];
+  float bias_fcLayer[BIASFCLAYER_SIZE];
+  float fcLayer[FCLAYER_SIZE];
+
+
+    /* INTERMEDIARY STAGE TABLES */
+  float reshape[RESHAPE_SIZE];
+  
+  std::cout.precision(10); /* set float display */
+
+  /* loading weight */
+    loadWeightFromFile(wfile, kernel_ConvLayer1, kernel_ConvLayer2,
+			kernel_ConvLayer3, fcLayer, bias_ConvLayer1,
+		     bias_ConvLayer2, bias_ConvLayer3, bias_fcLayer);
+
+  /* open database file */
+  cifarFile.open(file.c_str(),ifstream::in | ifstream::binary);
+  
+
+  if(cifarFile.good()){
+
+    /* if opening successful load one image */
+    std::cout << "LOADING IMAGE FROM DATABASE" << std::endl;
+
+    imgIn.loadImage(cifarFile);
+    
+  }
+  else{
+    std::cerr << "Error while opening cifar database file \n";
+    return 1;
+  }
+
+  /* insert algorithm function */
+
+  
+  cifarFile.close();
+  return 0;
+  
+
+  
+}
 
 int main(){
 
