@@ -147,6 +147,9 @@ void init_fcLayer(std::ifstream &weight_fs, fcLayer_weightDataType *fcLayer){
       weightRead=strtod(value.c_str(),NULL);
       fcLayer[index]=static_cast<fcLayer_weightDataType>(weightRead);
       index++;
+      if(index % 10 == 0){
+	break;
+      }
     }
     
   }

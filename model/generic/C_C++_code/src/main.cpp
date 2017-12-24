@@ -5,8 +5,11 @@
 #include <iostream>
 #include <fstream>
 
-int main(){
+#include "/home/jordan/Documents/Phelma_annee_3/algo2archi/projet/ac_types-stable/include/ac_fixed.h"
 
+
+
+int main4test(){
   std::cout << "stating main prog" << std::endl;
   /*cifarDatabase<unsigned int> db;
     db.cifarFolderPath="../../../../../image_database/cifar10/cifar-10-batches-bin/";
@@ -36,7 +39,7 @@ int main(){
   /* CIFAR DATABASE IMAGE */ 
   cifarImage<unsigned int> imgIn;
 
-  /* CNN WEIGHT TABLES */
+  /* CNN WEIGHT TABLES (float) */
   float kernel_ConvLayer1[KERNELCONVLAYER1_SIZE];
   float kernel_ConvLayer2[KERNELCONVLAYER2_SIZE];
   float kernel_ConvLayer3[KERNELCONVLAYER3_SIZE];
@@ -45,6 +48,16 @@ int main(){
   float bias_ConvLayer3[BIASCONVLAYER3_SIZE];
   float bias_fcLayer[BIASFCLAYER_SIZE];
   float fcLayer[FCLAYER_SIZE];
+
+    /* CNN WEIGHT TABLES (fixed) */
+  float kernel_ConvLayer1_fix[KERNELCONVLAYER1_SIZE];
+  float kernel_ConvLayer2_fix[KERNELCONVLAYER2_SIZE];
+  float kernel_ConvLayer3_fix[KERNELCONVLAYER3_SIZE];
+  float bias_ConvLayer1_fix[BIASCONVLAYER1_SIZE];
+  float bias_ConvLayer2_fix[BIASCONVLAYER2_SIZE];
+  float bias_ConvLayer3_fix[BIASCONVLAYER3_SIZE];
+  float bias_fcLayer_fix[BIASFCLAYER_SIZE];
+  ac_fixed<20, 2, true> fcLayer_fix[FCLAYER_SIZE];
   
   /* INTERMEDIARY STAGE TABLES */
   float reshape[RESHAPE_SIZE];
@@ -72,8 +85,18 @@ int main(){
     return 1;
   }
   loadWeightFromFile(wfile, kernel_ConvLayer1, kernel_ConvLayer2,
-			kernel_ConvLayer3, fcLayer, bias_ConvLayer1,
+			kernel_ConvLayer3, fcLayer_fix, bias_ConvLayer1,
 		     bias_ConvLayer2, bias_ConvLayer3, bias_fcLayer);
+
+  /*for (int i=0; i < BIASFCLAYER_SIZE;i++){
+	std::cout << "bias fc layer weight " << bias_fcLayer[i] << std::endl;  
+	}*/
+	 for (int i=0;i<FCLAYER_SIZE;i++){
+	std::cout << "kernel fc layer  weight " << fcLayer_fix[i] << std::endl;
+	if(i%10==0 && i!=0){
+	  std::cout <<std::endl;
+	}
+	       }
     
   /*weightFile.open(wfile.c_str(),ifstream::in);
     if(weightFile.good()){*/
@@ -110,6 +133,19 @@ int main(){
       std::cerr << "Error while opening weight file" << std::endl;
       }*/
   cifarFile.close();
+  return 0;
+}
+
+
+
+int main(){
+
+  int testStatus=0;
+  testStatus=main4test();
+  if (testStatus){
+    std::cout << "test error" << std::endl;
+    return 1;
+  }
   
   return 0;
 }
