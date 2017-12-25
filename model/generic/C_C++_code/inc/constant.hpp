@@ -46,7 +46,9 @@ const unsigned char MAXPOOL_LAYER1_OUT_SIZE=12;
 const unsigned char MAXPOOL_LAYER2_OUT_SIZE=6;
 const unsigned char MAXPOOL_LAYER3_OUT_SIZE=3;
 const unsigned char MAXPOOL_SIZE=3;
-const unsigned char MAXPOOL_LAYER1_STRIDE=2;
+const unsigned char MAXPOOL_BLOCK_SIZE=(MAXPOOL_SIZE*MAXPOOL_SIZE);
+const unsigned char MAXPOOL_STRIDE=2;
+const unsigned char MAXPOOL_PADDING_VALUE=1;
 
 const unsigned char RESHAPE_SIZE=(CONVLAYER3_CHANNELNUM*
 				  MAXPOOL_LAYER3_OUT_SIZE*

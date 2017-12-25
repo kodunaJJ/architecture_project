@@ -2,6 +2,7 @@
 #include "../inc/cnn_weight_file_op.hpp"
 #include "../inc/constant.hpp"
 #include "../inc/perceptron.hpp"
+#include "../inc/pooling.hpp"
 #include <string>
 #include <iostream>
 #include <fstream>
@@ -68,6 +69,7 @@ int main4test(){
   float reshape[RESHAPE_SIZE];
   float result[FCLAYER_CHANNELNUM];
 
+
   std::cout.precision(10);
   cifarFile.open(file.c_str(),ifstream::in | ifstream::binary);
   
@@ -103,7 +105,33 @@ int main4test(){
 	  std::cout <<std::endl;
 	}
 	       }*/
+  /*float padVal=0;
+  float poolingTestInput[MAXPOOL_LAYER2_OUT_SIZE*MAXPOOL_LAYER2_OUT_SIZE*
+			 KERNELCONVLAYER1_CHANNEL_IN_NUM];
+    float layer1Out[3*3*3];*/
+    
+    // fixed datatype test 
+      ac_fixed<9, 7, false> padVal=0;
+  ac_fixed<9, 7, false> poolingTestInput[MAXPOOL_LAYER2_OUT_SIZE*
+					 MAXPOOL_LAYER2_OUT_SIZE*
+					 KERNELCONVLAYER1_CHANNEL_IN_NUM];
+    ac_fixed<9, 7, false> layer1Out[3*3*3];
+  for(int i=0;i<MAXPOOL_LAYER2_OUT_SIZE*MAXPOOL_LAYER2_OUT_SIZE*
+	KERNELCONVLAYER1_CHANNEL_IN_NUM;i++){
+    poolingTestInput[i]= (float)i/3.0;
+  }
 
+  for(int i=0;i<6*6*3;i++){
+      std::cout << "poolingInput "<<poolingTestInput[i] << std::endl;
+  }
+  maxPooling(poolingTestInput, MAXPOOL_LAYER2_OUT_SIZE,
+	     KERNELCONVLAYER1_CHANNEL_IN_NUM, layer1Out,padVal);
+
+  for(int i=0;i<3*3*3;i++){
+    std::cout << layer1Out[i] << std::endl;
+  }
+  
+  /* // TEST PERCEPTRON LAYER START
   for(int i=0;i<RESHAPE_SIZE;i++){
     reshape[i]=1;
   }
@@ -122,7 +150,8 @@ int main4test(){
 
     for(int i=0;i<FCLAYER_CHANNELNUM;i++){
       std::cout << result[i] << std::endl;
-  }
+  } // TEST PERCEPTRON LAYER END
+*/
 
   
     
