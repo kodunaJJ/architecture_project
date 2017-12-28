@@ -6,6 +6,7 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+#include <algorithm>
 
 #include "/home/jordan/Documents/Phelma_annee_3/algo2archi/projet/ac_types-stable/include/ac_fixed.h"
 
@@ -14,6 +15,24 @@ typedef float fcLayerVector_dataType;
 typedef float outPutValue_dataType;
 typedef float internalProduct_dataType;
 typedef float internalSum_dataType;
+
+
+
+
+float accuracy(cifarImage<unsigned int> &imgIn,
+	       unsigned int imgClassPredicted,int *goodPredictionNum,
+	       int *totalImgRead){
+  if(imgClassPredicted == imgIn.cifarImageLabel){
+    *goodPredictionNum++;
+  }
+  return (float)(*goodPredictionNum)/(float)(*totalImgRead)*100;
+}
+
+void predictedClassFinder(outPutValue_dataType *perceptronOutVector,
+			  unsigned int *predictedImg){
+*predictedImg=max_element(perceptronOutVector,perceptronOutVector+
+			  FCLAYER_CHANNELNUM+1)-perceptronOutVector;  
+}
 
 int main4test(){
   std::cout << "stating main prog" << std::endl;
@@ -152,8 +171,18 @@ int main4test(){
       std::cout << result[i] << std::endl;
   } // TEST PERCEPTRON LAYER END
 */
+  /* // TEST OF PREDICTED IMAGE CLASS FINDER
+      for(int i=0;i<FCLAYER_CHANNELNUM;i++){
+       result[i]=10-i;
+       std::cout << "result init" << result[i]<< std::endl;
+  }
+      result[5]=20;
+      unsigned int predictedImgClass=0;
 
-  
+      predictedClassFinder(result,&predictedImgClass);
+ 
+ std::cout << "predicted class = " << predictedImgClass << std::endl;
+      */
     
   /*weightFile.open(wfile.c_str(),ifstream::in);
     if(weightFile.good()){*/
@@ -192,6 +221,8 @@ int main4test(){
   cifarFile.close();
   return 0;
 }
+
+
 
 int cnn_main(){
   std::cout << "stating main prog" << std::endl;

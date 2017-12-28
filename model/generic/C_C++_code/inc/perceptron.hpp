@@ -20,7 +20,7 @@ void vectorMult(inputVector_dataType *vectorIn,
      std::cout << "vectorIn value = " << vectorIn[i] <<
       "fcVector value = "<< fcVector[i*FCLAYER_CHANNELNUM+channelNum]<< std::endl;
     std::cout << "procduct value = " << productValue << std::endl;*/
-    std::cout << "fcVector index  = " << i*FCLAYER_CHANNELNUM+channelNum << std::endl;
+    /*std::cout << "fcVector index  = " << i*FCLAYER_CHANNELNUM+channelNum << std::endl;*/
     sumValue+=productValue; /* to be careful when using fixed type */
     
   }
