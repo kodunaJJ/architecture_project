@@ -4,12 +4,15 @@
 #include "constant.hpp"
 #include <iostream>
 
+
+/* FUNCTION TO MULTIPLY A VECTOR AND 1 COLUMN OF A MATRIX */
 template <typename inputVector_dataType, typename fcLayerVector_dataType,
 	  typename outPutValue_dataType,typename internalProduct_dataType,
-	  typename internalSum_dataType>
+	  typename internalSum_dataType, typename bias_dataType>
 void vectorMult(inputVector_dataType *vectorIn,
 		fcLayerVector_dataType *fcVector,
-		outPutValue_dataType *valueOut,unsigned char channelNum){
+		outPutValue_dataType *valueOut,unsigned char channelNum,
+		bias_dataType*bias){
   internalSum_dataType sumValue=0;
   internalProduct_dataType productValue=0;
   for(int i=0;i<RESHAPE_SIZE;i++){
@@ -24,16 +27,17 @@ void vectorMult(inputVector_dataType *vectorIn,
     sumValue+=productValue; /* to be careful when using fixed type */
     
   }
-  *valueOut=static_cast<outPutValue_dataType>(sumValue);
+  *valueOut=static_cast<outPutValue_dataType>(sumValue+bias[channelNum]);
 }
 
 
+/* FUNCTION TO REALISE LAYER CALCULATION */
 template <typename inputVector_dataType, typename fcLayerVector_dataType,
 	  typename outPutValue_dataType,typename internalProduct_dataType,
-	  typename internalSum_dataType>
+	  typename internalSum_dataType,typename bias_dataType>
 void perceptron(inputVector_dataType *vectorIn,
 		fcLayerVector_dataType *fcVector,
-		outPutValue_dataType *perceptronOutVector){
+		outPutValue_dataType *perceptronOutVector,bias_dataType *bias){
   for(int i=0; i < FCLAYER_CHANNELNUM;i++){
 
     //vectorMult(vectorIn, fcVector, perceptronOutVector+i,i);

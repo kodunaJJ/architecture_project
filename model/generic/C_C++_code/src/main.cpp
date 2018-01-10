@@ -3,6 +3,10 @@
 #include "../inc/constant.hpp"
 #include "../inc/perceptron.hpp"
 #include "../inc/pooling.hpp"
+#include "../inc/cnn_weight_dataType.hpp"
+#include "../inc/image_normalize.hpp"
+#include "../inc/weight.hpp"
+#include "../inc/convoulution.h"
 #include <string>
 #include <iostream>
 #include <fstream>
@@ -27,7 +31,7 @@ float accuracy(cifarImage<unsigned int> &imgIn,
   }
   return (float)(*goodPredictionNum)/(float)(*totalImgRead)*100;
 }
-
+template <typename outPutValue_dataType>
 void predictedClassFinder(outPutValue_dataType *perceptronOutVector,
 			  unsigned int *predictedImg){
 *predictedImg=max_element(perceptronOutVector,perceptronOutVector+
@@ -224,12 +228,12 @@ int main4test(){
 
 
 
-int cnn_main(){
+int cnn_main_double(){
   std::cout << "stating main prog" << std::endl;
   /* image database path */
     std::string cifarFolderPath="../../../../../image_database/cifar10/cifar-10-batches-bin/";
     /* image database name */
-  std::string cifarFileName="data_batch_1.bin";
+  std::string cifarFileName="test_batch.bin";
   /* string concatenation to use ifstream open() */
   std::string file = cifarFolderPath+cifarFileName;
   /* "file pointer" to image database file */
@@ -237,7 +241,7 @@ int cnn_main(){
 
   /* same thing as image database but for algorithm weight */ 
   std::string weightFilePath="./";
-  std::string weightFileName="CNN_coeff_5x5_mod.txt";
+  std::string weightFileName="CNN_coeff_3x3_mod.txt";
   std::string wfile=weightFilePath+weightFileName;
   std::ifstream weightFile;
 
@@ -245,30 +249,51 @@ int cnn_main(){
   cifarImage<unsigned int> imgIn;
 
   /* CNN WEIGHT TABLES (float) */
-  float kernel_ConvLayer1[KERNELCONVLAYER1_SIZE];
-  float kernel_ConvLayer2[KERNELCONVLAYER2_SIZE];
-  float kernel_ConvLayer3[KERNELCONVLAYER3_SIZE];
-  float bias_ConvLayer1[BIASCONVLAYER1_SIZE];
-  float bias_ConvLayer2[BIASCONVLAYER2_SIZE];
-  float bias_ConvLayer3[BIASCONVLAYER3_SIZE];
-  float bias_fcLayer[BIASFCLAYER_SIZE];
-  float fcLayer[FCLAYER_SIZE];
+  /*double kernel_ConvLayer1[KERNELCONVLAYER1_SIZE];
+  double kernel_ConvLayer2[KERNELCONVLAYER2_SIZE];
+  double kernel_ConvLayer3[KERNELCONVLAYER3_SIZE];
+  double bias_ConvLayer1[BIASCONVLAYER1_SIZE];
+  double bias_ConvLayer2[BIASCONVLAYER2_SIZE];
+  double bias_ConvLayer3[BIASCONVLAYER3_SIZE];
+  double bias_fcLayer[BIASFCLAYER_SIZE];
+  double fcLayer[FCLAYER_SIZE]; */
 
 
     /* INTERMEDIARY STAGE TABLES */
-  float reshape[RESHAPE_SIZE];
-  
+  //double reshape[RESHAPE_SIZE];
+  double imgNorm[NORMALIZED_IMAGE_SIZE*NORMALIZED_IMAGE_SIZE*CIFAR_DB_IMAGE_COLOR];
+  double convLayer1_out[NORMALIZED_IMAGE_SIZE*NORMALIZED_IMAGE_SIZE*CONVLAYER1_CHANNELNUM];
+  double maxPoolLayer1_out[NORMALIZED_IMAGE_SIZE*NORMALIZED_IMAGE_SIZE*CONVLAYER1_CHANNELNUM/4];
+  double convLayer2_out[NORMALIZED_IMAGE_SIZE*NORMALIZED_IMAGE_SIZE*CONVLAYER2_CHANNELNUM/4];
+  double maxPoolLayer2_out[NORMALIZED_IMAGE_SIZE*NORMALIZED_IMAGE_SIZE*CONVLAYER2_CHANNELNUM/16];
+  double convLayer3_out[NORMALIZED_IMAGE_SIZE*NORMALIZED_IMAGE_SIZE*CONVLAYER3_CHANNELNUM/16];
+  double maxPoolLayer3_out[NORMALIZED_IMAGE_SIZE*NORMALIZED_IMAGE_SIZE*CONVLAYER3_CHANNELNUM/64];
+  double perceptron_out[FCLAYER_CHANNELNUM];
+
+  unsigned int prediction=0;
+  int goodPredictionNum=0;
+  float accurate=0;
+  int imgTotal=10000;
   std::cout.precision(10); /* set float display */
 
   /* loading weight */
-    loadWeightFromFile(wfile, kernel_ConvLayer1, kernel_ConvLayer2,
+  /*loadWeightFromFile(wfile, kernel_ConvLayer1, kernel_ConvLayer2,
 			kernel_ConvLayer3, fcLayer, bias_ConvLayer1,
-		     bias_ConvLayer2, bias_ConvLayer3, bias_fcLayer);
+			bias_ConvLayer2, bias_ConvLayer3, bias_fcLayer);*/
 
+  std::cout << "returned to main after loading weight" << std::endl;
+
+  for(int idx=0;idx<BIASCONVLAYER1_SIZE;idx++){
+    std::cout<<"bias weight =" << 2*bias_ConvLayer1[idx] << " " << idx << std::endl;
+  }
+  std::cout << "done printing weight" << std::endl;
   /* open database file */
-  cifarFile.open(file.c_str(),ifstream::in | ifstream::binary);
   
-
+  cifarFile.open(file.c_str(),ifstream::in | ifstream::binary);
+std::cout << "opened cifarFile" << std::endl;
+  for(int imgReadNum=0;imgReadNum<imgTotal;imgReadNum++){
+    
+  
   if(cifarFile.good()){
 
     /* if opening successful load one image */
@@ -282,7 +307,36 @@ int cnn_main(){
     return 1;
   }
 
-  /* insert algorithm function */
+  imageNorm(imgIn.imgData, imgNorm, 32,32, 3, 24, 24, 3, 3);
+
+  /************ FIRST LAYER **************/
+  convolution_3D((double*)kernel_ConvLayer1, imgNorm, convLayer1_out);
+  maxPooling<double>(convLayer1_out, NORMALIZED_IMAGE_SIZE, CONVLAYER1_CHANNELNUM, maxPoolLayer1_out,0);
+
+    /************ SECOND LAYER **************/
+  convolution_3D((double*)kernel_ConvLayer2, maxPoolLayer1_out, convLayer2_out);
+  maxPooling<double>(convLayer2_out, NORMALIZED_IMAGE_SIZE/2, CONVLAYER2_CHANNELNUM, maxPoolLayer2_out,0);
+
+    /************ THIRD LAYER **************/
+  convolution_3D((double*)kernel_ConvLayer3, maxPoolLayer2_out, convLayer3_out);
+  maxPooling<double>(convLayer3_out, NORMALIZED_IMAGE_SIZE/4, CONVLAYER3_CHANNELNUM, maxPoolLayer3_out,0);
+
+  /************** PERCEPTRON **************/
+  perceptron<double,const double,double,double,double,double>(maxPoolLayer3_out, fcLayer, perceptron_out,
+							      (double*)bias_fcLayer);
+
+  /*************** PREDICTION *************/
+
+  predictedClassFinder<double>(perceptron_out,&prediction);
+
+  /************** ACCURACY CALCULATION + DISPLAY **********/
+  accurate=accuracy(imgIn,prediction,&goodPredictionNum,&imgReadNum);
+    
+    std::cout<<"ACCURACY = " << accurate << std::endl;
+    std::cout<<"Progression = " << imgReadNum << "/" << imgTotal << std::endl;
+  }
+   
+  
 
   
   cifarFile.close();
@@ -295,7 +349,8 @@ int cnn_main(){
 int main(){
 
   int testStatus=0;
-  testStatus=main4test();
+  //testStatus=main4test();
+  testStatus=cnn_main_double();
   if (testStatus){
     std::cout << "test error" << std::endl;
     return 1;

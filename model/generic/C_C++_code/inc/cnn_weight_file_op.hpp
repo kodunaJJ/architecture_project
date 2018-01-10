@@ -21,7 +21,7 @@
   };
 */
 
-
+/* FUNCTION TO READ KERNEL CHANNEL VALUE */
 template <typename kernel_weightDataType>
 void init_kernel_channelValue(std::ifstream &weight_fs, kernel_weightDataType *kernel,
                               unsigned char kernel_heightPos,
@@ -65,6 +65,7 @@ void init_kernel_channelValue(std::ifstream &weight_fs, kernel_weightDataType *k
 
 }
 
+/* FUNCTION TO READ AND LOAD KERNEL WEIGHT */
 template <typename kernel_weightDataType>
 void init_kernel(std::ifstream &weight_fs, kernel_weightDataType *kernel,
                  const unsigned char kernel_size,
@@ -99,7 +100,7 @@ void init_kernel(std::ifstream &weight_fs, kernel_weightDataType *kernel,
   }
 }
 
-
+/* FUNCTION TO READ BIAS LAYER WEIGHT */
 template <typename bias_weightDataType>
 void init_bias(std::ifstream &weight_fs, bias_weightDataType *bias,
                const unsigned char bias_size){
@@ -125,7 +126,7 @@ void init_bias(std::ifstream &weight_fs, bias_weightDataType *bias,
   }
 }
 
-
+/* FUNCTION TO READ PERCEPTRON LAYER WEIGHT */
 template <typename fcLayer_weightDataType>
 void init_fcLayer(std::ifstream &weight_fs, fcLayer_weightDataType *fcLayer){
   char trash[4];
@@ -157,7 +158,8 @@ void init_fcLayer(std::ifstream &weight_fs, fcLayer_weightDataType *fcLayer){
 
 
 
-
+/* FUNCTION TO LOAD WEIGHT FROM FILE */
+/* ALL LAYER WEIGHTS ARE TEMPLATED ON A DIFFERENT DATATYPE */
 template <typename kernelLayer1_weightDataType,
 	  typename kernelLayer2_weightDataType,
 	  typename kernelLayer3_weightDataType,
@@ -184,8 +186,8 @@ void loadWeightFromFile(std::string filePathName,
 
       std::cout << "LOADING CONVOLUTION LAYER 1 WEIGHT" << std::endl;
       init_bias(weightFile,biasConvLayer1,BIASCONVLAYER1_SIZE);
-      init_kernel(weightFile, kernelConvLayer1, KERNELCONV_SIZE,
-		  KERNELCONVLAYER1_CHANNEL_IN_NUM,CONVLAYER1_CHANNELNUM);
+      /*init_kernel(weightFile, kernelConvLayer1, KERNELCONV_SIZE,
+	KERNELCONVLAYER1_CHANNEL_IN_NUM,CONVLAYER1_CHANNELNUM);
       
       std::cout << "LOADING CONVOLUTION LAYER 2 WEIGHT" << std::endl;
       init_bias(weightFile,biasConvLayer2,BIASCONVLAYER2_SIZE);
@@ -200,7 +202,7 @@ void loadWeightFromFile(std::string filePathName,
       
       std::cout << "LOADING FULLY CONNECTED LAYER WEIGHT" << std::endl;
       init_bias(weightFile,biasfcLayer,BIASFCLAYER_SIZE);
-      init_fcLayer(weightFile,fcLayer);
+      init_fcLayer(weightFile,fcLayer);*/
 
       std::cout << "FINISHED LOADING WEIGHT" << std::endl;
       weightFile.close();

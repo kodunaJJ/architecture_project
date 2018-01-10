@@ -80,7 +80,7 @@ void fillPoolBlock(pooling_DataType *dataIn,pooling_DataType *block,
 
 }
 
-
+/* REALISE MAX POOLING ON INPUT IMAGE */
 template <typename pooling_DataType>
 void maxPooling(pooling_DataType *dataIn, const char dataInSize,
                 const char dataInChannelNum,pooling_DataType *dataOut,

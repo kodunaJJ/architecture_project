@@ -21,7 +21,7 @@ const unsigned char CONVLAYER2_CHANNELNUM=32;
 const unsigned char CONVLAYER3_CHANNELNUM=20;
 const unsigned char FCLAYER_CHANNELNUM=10;
 
-const unsigned char KERNELCONV_SIZE=5;
+const unsigned char KERNELCONV_SIZE=3;
 const unsigned char KERNELCONVLAYER1_CHANNEL_IN_NUM=3;
 const unsigned char KERNELCONVLAYER2_CHANNEL_IN_NUM=64;
 const unsigned char KERNELCONVLAYER3_CHANNEL_IN_NUM=32;

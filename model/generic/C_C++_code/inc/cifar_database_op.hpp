@@ -53,12 +53,13 @@ void cifarImage<pixelDataType>::loadImage(std::ifstream &fs){
   char valueRead=0;
 
   fs.read(&valueRead,1);
-  cifarImageLabel=static_cast<unsigned int>(valueRead);
   
+  cifarImageLabel=static_cast<unsigned int>(valueRead);
+  /*std::cout<<"label = " << cifarImageLabel << std::endl;*/
   for(byteReadCount=0;byteReadCount<CIFAR_IMAGE_BYTES_SIZE;byteReadCount++){
     fs.readsome(&valueRead,1);
     imgData[byteReadCount]=static_cast<pixelDataType>((static_cast<unsigned char>(valueRead)));
-  }
+  } 
 }
 
 /*
