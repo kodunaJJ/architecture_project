@@ -42,8 +42,8 @@ void perceptron(inputVector_dataType *vectorIn,
 
     //vectorMult(vectorIn, fcVector, perceptronOutVector+i,i);
     vectorMult<inputVector_dataType,fcLayerVector_dataType,outPutValue_dataType,
-	       internalProduct_dataType, internalSum_dataType>
-      (vectorIn, fcVector, perceptronOutVector+i,i);
+	       internalProduct_dataType, internalSum_dataType,bias_dataType>
+      (vectorIn, fcVector, perceptronOutVector+i,i,bias);
 
   }
 }

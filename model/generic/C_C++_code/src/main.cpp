@@ -7,6 +7,7 @@
 #include "../inc/image_normalize.hpp"
 #include "../inc/weight.hpp"
 #include "../inc/convoulution.h"
+#include "../inc/reshape.hpp"
 #include <string>
 #include <iostream>
 #include <fstream>
@@ -264,7 +265,7 @@ int cnn_main_double(){
 
 
     /* INTERMEDIARY STAGE TABLES */
-  //double reshape[RESHAPE_SIZE];
+  
   double imgNorm[NORMALIZED_IMAGE_SIZE*NORMALIZED_IMAGE_SIZE*CIFAR_DB_IMAGE_COLOR];
   double convLayer1_out[NORMALIZED_IMAGE_SIZE*NORMALIZED_IMAGE_SIZE*CONVLAYER1_CHANNELNUM];
   double maxPoolLayer1_out[NORMALIZED_IMAGE_SIZE*NORMALIZED_IMAGE_SIZE*CONVLAYER1_CHANNELNUM/4];
@@ -272,13 +273,14 @@ int cnn_main_double(){
   double maxPoolLayer2_out[NORMALIZED_IMAGE_SIZE*NORMALIZED_IMAGE_SIZE*CONVLAYER2_CHANNELNUM/16];
   double convLayer3_out[NORMALIZED_IMAGE_SIZE*NORMALIZED_IMAGE_SIZE*CONVLAYER3_CHANNELNUM/16];
   double maxPoolLayer3_out[NORMALIZED_IMAGE_SIZE*NORMALIZED_IMAGE_SIZE*CONVLAYER3_CHANNELNUM/64];
+  double reshape_out[RESHAPE_SIZE];
   double perceptron_out[FCLAYER_CHANNELNUM];
 
   unsigned int prediction=0;
   int goodPredictionNum=0;
   float accurate=0;
-  int imgTotal=2;
-  std::cout.precision(10); /* set float display */
+  int imgTotal=1000;
+  std::cout.precision(5); /* set float display */
 
   /* loading weight */
   /*loadWeightFromFile(wfile, kernel_ConvLayer1, kernel_ConvLayer2,
@@ -368,36 +370,43 @@ int cnn_main_double(){
   }*/
 
   /*for(int idx=0;idx<180;idx++){
-    maxPoolLayer3_out[idx]=imgReadNum;
+    //maxPoolLayer3_out[idx]=imgReadNum;
+    maxPoolLayer3_out[idx]=1;
+  }*/
+
+  /*maxPoolLayer3_out[0]=1;
+  maxPoolLayer3_out[1]=1;*/
+
+  reshape<double>(maxPoolLayer3_out,reshape_out);
+  /*for(int idx=0;idx<180;idx++){
+    //maxPoolLayer3_out[idx]=imgReadNum;
+   std::cout<<"pixel image conv reshape " << imgReadNum << " pixel n° " << idx << " "<< reshape_out[idx] << std::endl;
   }*/
 
   /************** PERCEPTRON **************/
-  perceptron<double,double,double,double,double,double>(maxPoolLayer3_out, (double*)fcLayer, perceptron_out,
+  perceptron<double,double,double,double,double,double>(reshape_out, (double*)fcLayer, perceptron_out,
 							      (double*)bias_fcLayer);
     /*for(int i=0;i<NORMALIZED_IMAGE_SIZE*NORMALIZED_IMAGE_SIZE*CONVLAYER2_CHANNELNUM/4;i++){
     std::cout<<"pixel image conv 2 " << imgReadNum << " pixel n° " << i << " "<< convLayer2_out[i] << std::endl;
   }*/
 
-  std::cout<<"perceptron value"<<std::endl;
+  /*std::cout<<"perceptron value"<<std::endl;
   for(int i=0;i<FCLAYER_CHANNELNUM;i++){
     std::cout<<perceptron_out[i]<<std::endl;
-  }
+  }*/
 
   /*************** PREDICTION *************/
 
-  //predictedClassFinder<double>(perceptron_out,&prediction);
+  predictedClassFinder<double>(perceptron_out,&prediction);
 
   /************** ACCURACY CALCULATION + DISPLAY **********/
-  /*accurate=accuracy(imgIn,prediction,&goodPredictionNum,&imgReadNum);
+  accurate=accuracy(imgIn,prediction,&goodPredictionNum,&imgReadNum);
     
     std::cout<<"ACCURACY = " << accurate << std::endl;
     std::cout<<"Progression = " << imgReadNum+1 << "/" << imgTotal << std::endl;
-    std::cout<<"image class = " << imgIn.cifarImageLabel << "predicted class = " << prediction << std::endl; */
+    //std::cout<<"image class = " << imgIn.cifarImageLabel << "predicted class = " << prediction << std::endl;
   }
    
-  
-
-  
   cifarFile.close();
   return 0;
   
