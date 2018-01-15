@@ -18,6 +18,10 @@ template <typename pixelDataType, typename imageNorm_dataType>
   //int idxDebug=0;
   double *imgNorm=new double[imgNorm_height*imgNorm_width*imgNorm_channelNum];
 
+  for(int idx=0;idx<imgNorm_height*imgNorm_width*imgNorm_channelNum;idx++){
+    imgNorm[idx]=0;
+  }
+
   /*std::cout <<"imgIn = " << imgIn[0] <<std::endl;
   std::cout <<"rowStartidx = " << row_start_idx <<std::endl;
   std::cout <<"columnStartidx = " << column_start_idx <<std::endl;*/
@@ -41,9 +45,9 @@ template <typename pixelDataType, typename imageNorm_dataType>
     }
   }
   
-
+  // std::cout <<"meanSum = " << mu <<std::endl;
   mu/=imgNorm_height*imgNorm_width*imgNorm_channelNum;
-  /*std::cout <<"mean = " << mu <<std::endl;*/
+  //std::cout <<"mean = " << mu <<std::endl;
   for(int channel=0; channel<imgNorm_channelNum;channel++){
     for(int row=0; row<imgNorm_height;row++){
       for(int column=0; column<imgNorm_width;column++){
@@ -53,9 +57,9 @@ template <typename pixelDataType, typename imageNorm_dataType>
       }
     }
   }
-  /*std::cout <<"sigmaSum = " << sigma <<std::endl;*/
+  //std::cout <<"sigmaSum = " << sigma <<std::endl;
   sigma=sqrt(((double)1/(double)(imgNorm_height*imgNorm_width*imgNorm_channelNum))*sigma);
-  /*std::cout <<"sigma = " << sigma <<std::endl;*/
+  //std::cout <<"sigma = " << sigma <<std::endl;
 
   double r=(double)1/sqrt(imgNorm_height*imgNorm_width*imgNorm_channelNum);
 

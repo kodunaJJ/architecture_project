@@ -13,23 +13,27 @@
 #include <algorithm>
 
 #include "/home/jordan/Documents/Phelma_annee_3/algo2archi/projet/ac_types-stable/include/ac_fixed.h"
-
+/*
 typedef float inputVector_dataType;
 typedef float fcLayerVector_dataType;
 typedef float outPutValue_dataType;
 typedef float internalProduct_dataType;
 typedef float internalSum_dataType;
-
+*/
 
 
 
 float accuracy(cifarImage<unsigned int> &imgIn,
 	       unsigned int imgClassPredicted,int *goodPredictionNum,
 	       int *totalImgRead){
+  int buffer=*goodPredictionNum;
   if(imgClassPredicted == imgIn.cifarImageLabel){
-    *goodPredictionNum++;
+    //*goodPredictionNum++;
+    buffer++;
   }
-  return (float)(*goodPredictionNum)/(float)(*totalImgRead)*100;
+  *goodPredictionNum=buffer;
+  //return (float)(*goodPredictionNum)/(float)(*totalImgRead+1)*100;
+  return (float)(buffer)/(float)(*totalImgRead+1)*100;
 }
 template <typename outPutValue_dataType>
 void predictedClassFinder(outPutValue_dataType *perceptronOutVector,
@@ -273,7 +277,7 @@ int cnn_main_double(){
   unsigned int prediction=0;
   int goodPredictionNum=0;
   float accurate=0;
-  int imgTotal=10000;
+  int imgTotal=2;
   std::cout.precision(10); /* set float display */
 
   /* loading weight */
@@ -281,25 +285,25 @@ int cnn_main_double(){
 			kernel_ConvLayer3, fcLayer, bias_ConvLayer1,
 			bias_ConvLayer2, bias_ConvLayer3, bias_fcLayer);*/
 
-  std::cout << "returned to main after loading weight" << std::endl;
+  /*std::cout << "returned to main after loading weight" << std::endl;
 
   for(int idx=0;idx<BIASCONVLAYER1_SIZE;idx++){
     std::cout<<"bias weight =" << 2*bias_ConvLayer1[idx] << " " << idx << std::endl;
   }
-  std::cout << "done printing weight" << std::endl;
+  std::cout << "done printing weight" << std::endl;*/
   /* open database file */
   
   cifarFile.open(file.c_str(),ifstream::in | ifstream::binary);
-std::cout << "opened cifarFile" << std::endl;
+  /*std::cout << "opened cifarFile" << std::endl;*/
   for(int imgReadNum=0;imgReadNum<imgTotal;imgReadNum++){
     
   
   if(cifarFile.good()){
 
     /* if opening successful load one image */
-    std::cout << "LOADING IMAGE FROM DATABASE" << std::endl;
+    //std::cout << "LOADING IMAGE FROM DATABASE" << std::endl;
 
-    imgIn.loadImage(cifarFile);
+    imgIn.loadImage(cifarFile); /* cifar image reading GOOD */
     
   }
   else{
@@ -307,33 +311,88 @@ std::cout << "opened cifarFile" << std::endl;
     return 1;
   }
 
-  imageNorm(imgIn.imgData, imgNorm, 32,32, 3, 24, 24, 3, 3);
+
+  imageNorm<unsigned int,double>(imgIn.imgData, imgNorm, 32,32, 3, 24, 24, 3, 3); /* image norm  GOOD */
+
+
+
+  /*std::cout<<"normalize done" <<std::endl;*/
+
+  /*for(int i=0;i<KERNELCONVLAYER3_SIZE;i++){
+    std::cout<<"weight " << i << " " << kernel_ConvLayer3[i] << std::endl;
+  }*/
 
   /************ FIRST LAYER **************/
-  convolution_3D((double*)kernel_ConvLayer1, imgNorm, convLayer1_out);
-  maxPooling<double>(convLayer1_out, NORMALIZED_IMAGE_SIZE, CONVLAYER1_CHANNELNUM, maxPoolLayer1_out,0);
-
+  convolution_3D<double,double,double,double,double>((double*)kernel_ConvLayer1, imgNorm, convLayer1_out,
+					      (double*)bias_ConvLayer1,KERNELCONVLAYER1_CHANNEL_IN_NUM,
+					      CONVLAYER1_CHANNELNUM,NORMALIZED_IMAGE_SIZE,KERNELCONV_SIZE);
+  //while(1);
+  /*for(int i=0;i<NORMALIZED_IMAGE_SIZE*NORMALIZED_IMAGE_SIZE*CONVLAYER1_CHANNELNUM;i++){
+    std::cout<<"pixel image conv 1 " << imgReadNum << " pixel n° " << i << " "<< convLayer1_out[i] << std::endl;
+  }*/
+  /*std::cout<<"first conv done" << std::endl;*/
+  maxPooling<double>(convLayer1_out, NORMALIZED_IMAGE_SIZE, CONVLAYER1_CHANNELNUM, maxPoolLayer1_out,0); /* maxpooling GOOD */
+  /*for(int i=0;i<NORMALIZED_IMAGE_SIZE*NORMALIZED_IMAGE_SIZE*CONVLAYER1_CHANNELNUM/4;i++){
+    std::cout<<"pixel image maxpool 1 " << imgReadNum << " pixel n° " << i << " "<< maxPoolLayer1_out[i] << std::endl;
+  }*/
     /************ SECOND LAYER **************/
-  convolution_3D((double*)kernel_ConvLayer2, maxPoolLayer1_out, convLayer2_out);
-  maxPooling<double>(convLayer2_out, NORMALIZED_IMAGE_SIZE/2, CONVLAYER2_CHANNELNUM, maxPoolLayer2_out,0);
+  convolution_3D<double,double,double,double,double>((double*)kernel_ConvLayer2, maxPoolLayer1_out,
+						     convLayer2_out,(double*)bias_ConvLayer2,
+						     KERNELCONVLAYER2_CHANNEL_IN_NUM,CONVLAYER2_CHANNELNUM,
+						     NORMALIZED_IMAGE_SIZE/2,KERNELCONV_SIZE); /* GOOD */
+  /*for(int i=0;i<NORMALIZED_IMAGE_SIZE*NORMALIZED_IMAGE_SIZE*CONVLAYER2_CHANNELNUM/4;i++){
+    std::cout<<"pixel image conv 2 " << imgReadNum << " pixel n° " << i << " "<< convLayer2_out[i] << std::endl;
+  }*/
+  maxPooling<double>(convLayer2_out, NORMALIZED_IMAGE_SIZE/2, CONVLAYER2_CHANNELNUM, maxPoolLayer2_out,0); /* GOOD */
+
+  /*for(int i=0;i<NORMALIZED_IMAGE_SIZE*NORMALIZED_IMAGE_SIZE*CONVLAYER2_CHANNELNUM/16;i++){
+    std::cout<<"pixel image maxpool 2 " << imgReadNum << " pixel n° " << i << " "<< maxPoolLayer2_out[i] << std::endl;
+  }*/
 
     /************ THIRD LAYER **************/
-  convolution_3D((double*)kernel_ConvLayer3, maxPoolLayer2_out, convLayer3_out);
-  maxPooling<double>(convLayer3_out, NORMALIZED_IMAGE_SIZE/4, CONVLAYER3_CHANNELNUM, maxPoolLayer3_out,0);
+  convolution_3D<double,double,double,double,double>((double*)kernel_ConvLayer3, maxPoolLayer2_out,
+						     convLayer3_out,(double*)bias_ConvLayer3,
+						     KERNELCONVLAYER3_CHANNEL_IN_NUM,CONVLAYER3_CHANNELNUM,
+						     NORMALIZED_IMAGE_SIZE/4,KERNELCONV_SIZE);
+  /*for(int i=0;i<NORMALIZED_IMAGE_SIZE*NORMALIZED_IMAGE_SIZE*CONVLAYER3_CHANNELNUM/16;i++){
+    std::cout<<"pixel image conv 3 " << imgReadNum << " pixel n° " << i << " "<< convLayer3_out[i] << std::endl;
+  }*/
+
+  /*for(int idx=0;idx<NORMALIZED_IMAGE_SIZE*NORMALIZED_IMAGE_SIZE/16*3;idx++){
+    convLayer3_out[idx]=(double)idx;
+  }*/
+  maxPooling<double>(convLayer3_out, 6, 20, maxPoolLayer3_out,0);
+
+  /*for(int i=0;i<NORMALIZED_IMAGE_SIZE*NORMALIZED_IMAGE_SIZE*CONVLAYER3_CHANNELNUM/64;i++){
+    std::cout<<"pixel image conv maxpool 3 " << imgReadNum << " pixel n° " << i << " "<< maxPoolLayer3_out[i] << std::endl;
+  }*/
+
+  /*for(int idx=0;idx<180;idx++){
+    maxPoolLayer3_out[idx]=imgReadNum;
+  }*/
 
   /************** PERCEPTRON **************/
-  perceptron<double,const double,double,double,double,double>(maxPoolLayer3_out, fcLayer, perceptron_out,
+  perceptron<double,double,double,double,double,double>(maxPoolLayer3_out, (double*)fcLayer, perceptron_out,
 							      (double*)bias_fcLayer);
+    /*for(int i=0;i<NORMALIZED_IMAGE_SIZE*NORMALIZED_IMAGE_SIZE*CONVLAYER2_CHANNELNUM/4;i++){
+    std::cout<<"pixel image conv 2 " << imgReadNum << " pixel n° " << i << " "<< convLayer2_out[i] << std::endl;
+  }*/
+
+  std::cout<<"perceptron value"<<std::endl;
+  for(int i=0;i<FCLAYER_CHANNELNUM;i++){
+    std::cout<<perceptron_out[i]<<std::endl;
+  }
 
   /*************** PREDICTION *************/
 
-  predictedClassFinder<double>(perceptron_out,&prediction);
+  //predictedClassFinder<double>(perceptron_out,&prediction);
 
   /************** ACCURACY CALCULATION + DISPLAY **********/
-  accurate=accuracy(imgIn,prediction,&goodPredictionNum,&imgReadNum);
+  /*accurate=accuracy(imgIn,prediction,&goodPredictionNum,&imgReadNum);
     
     std::cout<<"ACCURACY = " << accurate << std::endl;
-    std::cout<<"Progression = " << imgReadNum << "/" << imgTotal << std::endl;
+    std::cout<<"Progression = " << imgReadNum+1 << "/" << imgTotal << std::endl;
+    std::cout<<"image class = " << imgIn.cifarImageLabel << "predicted class = " << prediction << std::endl; */
   }
    
   
