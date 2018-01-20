@@ -35,10 +35,10 @@
 
   }*/
 
-const perceptronDataIn_type dataHW_in[RESHAPE_SIZE];
-const perceptronDataOut_type dataHW_out[FCLAYER_CHANNELNUM];
+/*const perceptronDataIn_type dataHW_in[RESHAPE_SIZE];
+const perceptronDataOut_type dataHW_out[FCLAYER_CHANNELNUM];*/
 
-void perceptronHW(perceptronDataIn_type *dataIn,perceptronWeight_type *perceptronWeight,
+/*void perceptronHW(perceptronDataIn_type *dataIn,perceptronWeight_type *perceptronWeight,
                   perceptronDataOut_type *dataOut,perceptronBias_type *biasWeight){
 
   static ac_channel<perceptronDataIn_type> dataInBus;
@@ -57,35 +57,37 @@ void perceptronHW(perceptronDataIn_type *dataIn,perceptronWeight_type *perceptro
       
       productValue=dataInBus.read()*weightInBus.read();
       sumValue+=productValue; /* to be careful when using fixed type */
-    }
+/*}
     dataBiasBus.write(biasWeight[channelNum]);
     biasValue=dataBiasBus.read();
     sumValue+=biasValue;
     dataOutBus.write(sumValue);
     dataOut[channelNum]=dataBus.read();
   }
-}
+}*/
 
 
 void perceptron_v2_HW(ac_channel<perceptronDataIn_type> &dataIn,
-                  perceptronWeight_type perceptronWeight[FCLAYER_SIZE],
-		      perceptronDataOut_type dataOutReg[RESULT_SIZE],
+		      perceptronWeight_type perceptronWeight[FCLAYER_SIZE],
 		      perceptronBias_type biasWeight[FCLAYER_CHANNELNUM],
 		      ac_channel<perceptronDataOut_type> &dataOut){
 
   static perceptronInternSum_type accReg[FCLAYER_CHANNELNUM];
+  static perceptronDataOut_type dataOutReg[RESULT_SIZE];
   static perceptronInternCnt_type pixelCnt=0;
+  static perceptronDataIn_type pixelDataIn;
 
-  if(data.available(1)){
+  if(dataIn.available(1)){
+    pixelDataIn=dataIn.read();
   PROD_ACC:for(int i=0;i<FCLAYER_CHANNELNUM;i++){
-      accReg[i]+=perceptronWeight[i+pixelCnt*FCLAYER_CHANNELNUM]*dataIn.read();
+      accReg[i]+=perceptronWeight[i+(int)pixelCnt*FCLAYER_CHANNELNUM]*pixelDataIn;
     }
     pixelCnt++;
   }
 
   if(pixelCnt == 180){
   BIAS_ADD:for(int i=0;i<FCLAYER_CHANNELNUM;i++){
-      dataOut[i]=accReg[i]+biasWeight[i];
+      dataOutReg[i]=accReg[i]+biasWeight[i];
       accReg[i]=0;
     }
   OUT_UPDATE:for(int i=0;i<RESULT_SIZE;i++){

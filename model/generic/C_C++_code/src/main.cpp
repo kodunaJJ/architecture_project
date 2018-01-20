@@ -238,17 +238,24 @@ int cnn_main_double(){
   /* image database path */
     std::string cifarFolderPath="../../../../../image_database/cifar10/cifar-10-batches-bin/";
     /* image database name */
-  std::string cifarFileName="test_batch.bin";
+  std::string cifarFileName="data_batch_4.bin";
   /* string concatenation to use ifstream open() */
   std::string file = cifarFolderPath+cifarFileName;
   /* "file pointer" to image database file */
   std::ifstream cifarFile;
 
   /* same thing as image database but for algorithm weight */ 
-  std::string weightFilePath="./";
+  /*std::string weightFilePath="./";
   std::string weightFileName="CNN_coeff_3x3_mod.txt";
   std::string wfile=weightFilePath+weightFileName;
-  std::ifstream weightFile;
+  std::ifstream weightFile;*/
+
+  /* file where to store accuracy value */
+  std::string resultsFilePath="./results/";
+  std::string resultsFileName="accuracyDATAb4.txt";
+  std::string rfile=resultsFilePath+resultsFileName;
+  std::ofstream resultsFile;
+
 
     /* CIFAR DATABASE IMAGE */ 
   cifarImage<unsigned int> imgIn;
@@ -279,8 +286,8 @@ int cnn_main_double(){
   unsigned int prediction=0;
   int goodPredictionNum=0;
   float accurate=0;
-  int imgTotal=1000;
-  std::cout.precision(5); /* set float display */
+  int imgTotal=10000;
+  std::cout.precision(10); /* set float display */
 
   /* loading weight */
   /*loadWeightFromFile(wfile, kernel_ConvLayer1, kernel_ConvLayer2,
@@ -295,12 +302,13 @@ int cnn_main_double(){
   std::cout << "done printing weight" << std::endl;*/
   /* open database file */
   
-  cifarFile.open(file.c_str(),ifstream::in | ifstream::binary);
+  cifarFile.open(file.c_str(), std::ifstream::in | std::ifstream::binary);
+  resultsFile.open(rfile.c_str(), std::ofstream::out);
   /*std::cout << "opened cifarFile" << std::endl;*/
   for(int imgReadNum=0;imgReadNum<imgTotal;imgReadNum++){
     
   
-  if(cifarFile.good()){
+    if(cifarFile.good() && resultsFile.good()){
 
     /* if opening successful load one image */
     //std::cout << "LOADING IMAGE FROM DATABASE" << std::endl;
@@ -309,14 +317,21 @@ int cnn_main_double(){
     
   }
   else{
-    std::cerr << "Error while opening cifar database file \n";
+    std::cerr << "Error while opening cifar database file or writing results \n";
+    cifarFile.close();
+    resultsFile.close();
     return 1;
   }
 
 
-  imageNorm<unsigned int,double>(imgIn.imgData, imgNorm, 32,32, 3, 24, 24, 3, 3); /* image norm  GOOD */
+  imageNorm<unsigned int,double>(imgIn.imgData, imgNorm, 32,32, 3, 24, 24, 3, 2.25); /* image norm  GOOD */
 
-
+  /*for(int i=0;i<NORMALIZED_IMAGE_SIZE*NORMALIZED_IMAGE_SIZE*CIFAR_DB_IMAGE_COLOR;i++){
+    //std::cout<<"imgNorm px " << i << " " << imgNorm[i] << std::endl;
+    //resultsFile << imgReadNum << ',' << imgIn.imgData[i] << std::endl;
+    resultsFile<<"imgNorm px " << i << " " << imgNorm[i] << std::endl;
+    //buffer1[i]=imgNorm[i].to_double();
+  }*/
 
   /*std::cout<<"normalize done" <<std::endl;*/
 
@@ -327,32 +342,46 @@ int cnn_main_double(){
   /************ FIRST LAYER **************/
   convolution_3D<double,double,double,double,double>((double*)kernel_ConvLayer1, imgNorm, convLayer1_out,
 					      (double*)bias_ConvLayer1,KERNELCONVLAYER1_CHANNEL_IN_NUM,
-					      CONVLAYER1_CHANNELNUM,NORMALIZED_IMAGE_SIZE,KERNELCONV_SIZE);
+						     CONVLAYER1_CHANNELNUM,NORMALIZED_IMAGE_SIZE,KERNELCONV_SIZE);
   //while(1);
   /*for(int i=0;i<NORMALIZED_IMAGE_SIZE*NORMALIZED_IMAGE_SIZE*CONVLAYER1_CHANNELNUM;i++){
-    std::cout<<"pixel image conv 1 " << imgReadNum << " pixel n° " << i << " "<< convLayer1_out[i] << std::endl;
+    //std::cout<<"pixel image conv 1 " << imgReadNum << " pixel n° " << i << " "<< convLayer1_out[i] << std::endl;
+    resultsFile << " pixel n° " << i << ","<< convLayer1_out[i] << std::endl;
   }*/
+
+  /*unsigned int conv1min = std::min_element(convLayer1_out, convLayer1_out+NORMALIZED_IMAGE_SIZE*
+    NORMALIZED_IMAGE_SIZE*CONVLAYER1_CHANNELNUM+1)-convLayer1_out;*/
+  /*unsigned int conv1max =  std::max_element(convLayer1_out, convLayer1_out+NORMALIZED_IMAGE_SIZE*
+					NORMALIZED_IMAGE_SIZE*CONVLAYER1_CHANNELNUM+1)-convLayer1_out;
+  resultsFile << " imgNum " << imgReadNum << "," <<
+	"max " << "," << convLayer1_out[conv1max] << std::endl;*/
   /*std::cout<<"first conv done" << std::endl;*/
-  maxPooling<double>(convLayer1_out, NORMALIZED_IMAGE_SIZE, CONVLAYER1_CHANNELNUM, maxPoolLayer1_out,0); /* maxpooling GOOD */
+  maxPooling<double>(convLayer1_out, NORMALIZED_IMAGE_SIZE, CONVLAYER1_CHANNELNUM, maxPoolLayer1_out,0); 
   /*for(int i=0;i<NORMALIZED_IMAGE_SIZE*NORMALIZED_IMAGE_SIZE*CONVLAYER1_CHANNELNUM/4;i++){
-    std::cout<<"pixel image maxpool 1 " << imgReadNum << " pixel n° " << i << " "<< maxPoolLayer1_out[i] << std::endl;
+    //std::cout<<"pixel image maxpool 1 " << imgReadNum << " pixel n° " << i << " "<< maxPoolLayer1_out[i] << std::endl;
+    resultsFile << " pixel n° " << i << ","<< maxPoolLayer1_out[i] << std::endl;
   }*/
     /************ SECOND LAYER **************/
-  convolution_3D<double,double,double,double,double>((double*)kernel_ConvLayer2, maxPoolLayer1_out,
+    convolution_3D<double,double,double,double,double>((double*)kernel_ConvLayer2, maxPoolLayer1_out,
 						     convLayer2_out,(double*)bias_ConvLayer2,
 						     KERNELCONVLAYER2_CHANNEL_IN_NUM,CONVLAYER2_CHANNELNUM,
-						     NORMALIZED_IMAGE_SIZE/2,KERNELCONV_SIZE); /* GOOD */
+						     NORMALIZED_IMAGE_SIZE/2,KERNELCONV_SIZE);
   /*for(int i=0;i<NORMALIZED_IMAGE_SIZE*NORMALIZED_IMAGE_SIZE*CONVLAYER2_CHANNELNUM/4;i++){
     std::cout<<"pixel image conv 2 " << imgReadNum << " pixel n° " << i << " "<< convLayer2_out[i] << std::endl;
   }*/
-  maxPooling<double>(convLayer2_out, NORMALIZED_IMAGE_SIZE/2, CONVLAYER2_CHANNELNUM, maxPoolLayer2_out,0); /* GOOD */
+
+    /*unsigned int conv1max =  std::max_element(convLayer2_out, convLayer2_out+NORMALIZED_IMAGE_SIZE*NORMALIZED_IMAGE_SIZE*CONVLAYER2_CHANNELNUM/4+1)-convLayer2_out;
+  resultsFile << " imgNum " << imgReadNum << "," <<
+	"max " << "," << convLayer2_out[conv1max] << std::endl;*/
+  maxPooling<double>(convLayer2_out, NORMALIZED_IMAGE_SIZE/2, CONVLAYER2_CHANNELNUM, maxPoolLayer2_out,0);
 
   /*for(int i=0;i<NORMALIZED_IMAGE_SIZE*NORMALIZED_IMAGE_SIZE*CONVLAYER2_CHANNELNUM/16;i++){
-    std::cout<<"pixel image maxpool 2 " << imgReadNum << " pixel n° " << i << " "<< maxPoolLayer2_out[i] << std::endl;
+    //std::cout<<"pixel image maxpool 2 " << imgReadNum << " pixel n° " << i << " "<< maxPoolLayer2_out[i] << std::endl;
+    resultsFile << " pixel n° " << i << ","<< maxPoolLayer2_out[i] << std::endl;
   }*/
 
     /************ THIRD LAYER **************/
-  convolution_3D<double,double,double,double,double>((double*)kernel_ConvLayer3, maxPoolLayer2_out,
+    convolution_3D<double,double,double,double,double>((double*)kernel_ConvLayer3, maxPoolLayer2_out,
 						     convLayer3_out,(double*)bias_ConvLayer3,
 						     KERNELCONVLAYER3_CHANNEL_IN_NUM,CONVLAYER3_CHANNELNUM,
 						     NORMALIZED_IMAGE_SIZE/4,KERNELCONV_SIZE);
@@ -363,10 +392,13 @@ int cnn_main_double(){
   /*for(int idx=0;idx<NORMALIZED_IMAGE_SIZE*NORMALIZED_IMAGE_SIZE/16*3;idx++){
     convLayer3_out[idx]=(double)idx;
   }*/
+
+
   maxPooling<double>(convLayer3_out, 6, 20, maxPoolLayer3_out,0);
 
   /*for(int i=0;i<NORMALIZED_IMAGE_SIZE*NORMALIZED_IMAGE_SIZE*CONVLAYER3_CHANNELNUM/64;i++){
-    std::cout<<"pixel image conv maxpool 3 " << imgReadNum << " pixel n° " << i << " "<< maxPoolLayer3_out[i] << std::endl;
+    //std::cout<<"pixel image conv maxpool 3 " << imgReadNum << " pixel n° " << i << " "<< maxPoolLayer3_out[i] << std::endl;
+    resultsFile << " pixel n° " << i << ","<< maxPoolLayer3_out[i] << std::endl;
   }*/
 
   /*for(int idx=0;idx<180;idx++){
@@ -380,19 +412,26 @@ int cnn_main_double(){
   reshape<double>(maxPoolLayer3_out,reshape_out);
   /*for(int idx=0;idx<180;idx++){
     //maxPoolLayer3_out[idx]=imgReadNum;
-   std::cout<<"pixel image conv reshape " << imgReadNum << " pixel n° " << idx << " "<< reshape_out[idx] << std::endl;
+    //std::cout<<"pixel image conv reshape " << imgReadNum << " pixel n° " << idx << " "<< reshape_out[idx] << std::endl;
+   resultsFile<<"pixel image conv reshape " << imgReadNum << " pixel n° " << idx << " "<< reshape_out[idx] << std::endl;
+   
   }*/
+
+  /*unsigned int conv1max =  std::max_element(reshape_out, reshape_out+RESHAPE_SIZE+1)-reshape_out;
+  resultsFile << " imgNum " << imgReadNum << "," <<
+	"max " << "," << reshape_out[conv1max] << std::endl;*/
 
   /************** PERCEPTRON **************/
   perceptron<double,double,double,double,double,double>(reshape_out, (double*)fcLayer, perceptron_out,
-							      (double*)bias_fcLayer);
+    (double*)bias_fcLayer);
     /*for(int i=0;i<NORMALIZED_IMAGE_SIZE*NORMALIZED_IMAGE_SIZE*CONVLAYER2_CHANNELNUM/4;i++){
     std::cout<<"pixel image conv 2 " << imgReadNum << " pixel n° " << i << " "<< convLayer2_out[i] << std::endl;
-  }*/
+    }*/
 
-  /*std::cout<<"perceptron value"<<std::endl;
+   /*std::cout<<"perceptron value"<<std::endl;
   for(int i=0;i<FCLAYER_CHANNELNUM;i++){
-    std::cout<<perceptron_out[i]<<std::endl;
+    //std::cout<<perceptron_out[i]<<std::endl;
+    resultsFile << " pixel n° " << i << ","<< perceptron_out[i] << std::endl;
   }*/
 
   /*************** PREDICTION *************/
@@ -402,12 +441,15 @@ int cnn_main_double(){
   /************** ACCURACY CALCULATION + DISPLAY **********/
   accurate=accuracy(imgIn,prediction,&goodPredictionNum,&imgReadNum);
     
-    std::cout<<"ACCURACY = " << accurate << std::endl;
+  std::cout<<"ACCURACY = " << accurate << std::endl;
     std::cout<<"Progression = " << imgReadNum+1 << "/" << imgTotal << std::endl;
+    resultsFile << imgReadNum << ',' << accurate << std::endl;
     //std::cout<<"image class = " << imgIn.cifarImageLabel << "predicted class = " << prediction << std::endl;
-  }
+    //resultsFile<<"image num " <<  imgReadNum+1 << ','<< "perceptron_out = " << perceptron_out[prediction] << std::endl;
+    }
    
   cifarFile.close();
+  resultsFile.close();
   return 0;
   
 

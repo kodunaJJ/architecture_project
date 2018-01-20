@@ -1,1 +1,1 @@
-/usr/bin/c++      CMakeFiles/cnn_cifar10.dir/main.cpp.o  -o cnn_cifar10 -rdynamic 
+/usr/bin/c++   -O3 -DNDEBUG   CMakeFiles/cnn_cifar10.dir/main.cpp.o  -o cnn_cifar10 -rdynamic 

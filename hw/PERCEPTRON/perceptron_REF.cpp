@@ -32,7 +32,7 @@
 
 /* test for HLS Syntesis */
 
-void perceptronREF(double *dataIn, double *perceptronWeight, double *dataOut,
+/*void perceptronREF(double *dataIn, double *perceptronWeight, double *dataOut,
 		   double *biasWeight){
 
  PERCEP_CALC:for(int channelNum=0; channelNum < FCLAYER_CHANNELNUM;channelNum++){
@@ -41,18 +41,18 @@ void perceptronREF(double *dataIn, double *perceptronWeight, double *dataOut,
   MULT_OP:for(int i=0;i<RESHAPE_SIZE;i++){
       productValue=dataIn[i]*perceptronWeight[i*FCLAYER_CHANNELNUM+channelNum];
       sumValue+=productValue; /* to be careful when using fixed type */
-    }
+/*}
     dataOut[channelNum]=sumValue+biasWeight[channelNum];
   }
-}
+}*/
 
 void perceptron_v2_REF(double &dataIn,
-                   double perceptronWeight[FCLAYER_SIZE],
-                   double dataOutReg[RESULT_SIZE],
+		       double perceptronWeight[FCLAYER_SIZE],
 		       double biasWeight[FCLAYER_CHANNELNUM],
 		       double *dataOut){
 
     static double accReg[FCLAYER_CHANNELNUM];
+    static double dataOutReg[RESULT_SIZE];
   static int pixelCnt=0;
   static int transfertNum=0;
 
@@ -64,11 +64,11 @@ void perceptron_v2_REF(double &dataIn,
 
   if(pixelCnt == 180){
   BIAS_ADD:for(int i=0;i<FCLAYER_CHANNELNUM;i++){
-      dataOut[i]=accReg[i]+biasWeight[i];
+      dataOutReg[i]=accReg[i]+biasWeight[i];
       accReg[i]=0;
     }
   
-    *dataOut=dataOut[transfertNum];
+    *dataOut=dataOutReg[transfertNum];
     pixelCnt=0;
     transfertNum++;
   }

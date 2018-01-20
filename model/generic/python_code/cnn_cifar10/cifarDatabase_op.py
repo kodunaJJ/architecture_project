@@ -1,13 +1,6 @@
 #!/usr/python
 
 import numpy as np
-import cv2
-
-import sys
-sys.path.insert(0,'../') # to specify python code exist in another folder
-import convolution as conv
-np.set_printoptions(threshold=np.inf)
-
 
 # Function to unpack a cifar database file
 # Takes the file path+name as input and return

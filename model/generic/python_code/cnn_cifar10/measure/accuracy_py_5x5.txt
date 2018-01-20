@@ -1,0 +1,3007 @@
+LOADING CONVOLUTION LAYER 1 WEIGHT
+LOADING CONVOLUTION LAYER 2 WEIGHT
+LOADING CONVOLUTION LAYER 3 WEIGHT
+LOADING FULLY CONNECTED LAYER WEIGHT
+FINISHED LOADING WEIGHT
+(5, 5, 3, 64)
+Algorithm results :
+('--> accuracy = ', 1.0)
+('--> progression = ', 1, 1000)
+Algorithm results :
+('--> accuracy = ', 1.0)
+('--> progression = ', 2, 1000)
+Algorithm results :
+('--> accuracy = ', 1.0)
+('--> progression = ', 3, 1000)
+Algorithm results :
+('--> accuracy = ', 1.0)
+('--> progression = ', 4, 1000)
+Algorithm results :
+('--> accuracy = ', 1.0)
+('--> progression = ', 5, 1000)
+Algorithm results :
+('--> accuracy = ', 1.0)
+('--> progression = ', 6, 1000)
+Algorithm results :
+('--> accuracy = ', 1.0)
+('--> progression = ', 7, 1000)
+Algorithm results :
+('--> accuracy = ', 1.0)
+('--> progression = ', 8, 1000)
+Algorithm results :
+('--> accuracy = ', 1.0)
+('--> progression = ', 9, 1000)
+Algorithm results :
+('--> accuracy = ', 0.9)
+('--> progression = ', 10, 1000)
+Algorithm results :
+('--> accuracy = ', 0.9090909090909091)
+('--> progression = ', 11, 1000)
+Algorithm results :
+('--> accuracy = ', 0.9166666666666666)
+('--> progression = ', 12, 1000)
+Algorithm results :
+('--> accuracy = ', 0.8461538461538461)
+('--> progression = ', 13, 1000)
+Algorithm results :
+('--> accuracy = ', 0.8571428571428571)
+('--> progression = ', 14, 1000)
+Algorithm results :
+('--> accuracy = ', 0.8)
+('--> progression = ', 15, 1000)
+Algorithm results :
+('--> accuracy = ', 0.8125)
+('--> progression = ', 16, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7647058823529411)
+('--> progression = ', 17, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7777777777777778)
+('--> progression = ', 18, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7894736842105263)
+('--> progression = ', 19, 1000)
+Algorithm results :
+('--> accuracy = ', 0.8)
+('--> progression = ', 20, 1000)
+Algorithm results :
+('--> accuracy = ', 0.8095238095238095)
+('--> progression = ', 21, 1000)
+Algorithm results :
+('--> accuracy = ', 0.8181818181818182)
+('--> progression = ', 22, 1000)
+Algorithm results :
+('--> accuracy = ', 0.8260869565217391)
+('--> progression = ', 23, 1000)
+Algorithm results :
+('--> accuracy = ', 0.8333333333333334)
+('--> progression = ', 24, 1000)
+Algorithm results :
+('--> accuracy = ', 0.8)
+('--> progression = ', 25, 1000)
+Algorithm results :
+('--> accuracy = ', 0.8076923076923077)
+('--> progression = ', 26, 1000)
+Algorithm results :
+('--> accuracy = ', 0.8148148148148148)
+('--> progression = ', 27, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7857142857142857)
+('--> progression = ', 28, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7931034482758621)
+('--> progression = ', 29, 1000)
+Algorithm results :
+('--> accuracy = ', 0.8)
+('--> progression = ', 30, 1000)
+Algorithm results :
+('--> accuracy = ', 0.8064516129032258)
+('--> progression = ', 31, 1000)
+Algorithm results :
+('--> accuracy = ', 0.8125)
+('--> progression = ', 32, 1000)
+Algorithm results :
+('--> accuracy = ', 0.8181818181818182)
+('--> progression = ', 33, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7941176470588235)
+('--> progression = ', 34, 1000)
+Algorithm results :
+('--> accuracy = ', 0.8)
+('--> progression = ', 35, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7777777777777778)
+('--> progression = ', 36, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7837837837837838)
+('--> progression = ', 37, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7894736842105263)
+('--> progression = ', 38, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7948717948717948)
+('--> progression = ', 39, 1000)
+Algorithm results :
+('--> accuracy = ', 0.8)
+('--> progression = ', 40, 1000)
+Algorithm results :
+('--> accuracy = ', 0.8048780487804879)
+('--> progression = ', 41, 1000)
+Algorithm results :
+('--> accuracy = ', 0.8095238095238095)
+('--> progression = ', 42, 1000)
+Algorithm results :
+('--> accuracy = ', 0.813953488372093)
+('--> progression = ', 43, 1000)
+Algorithm results :
+('--> accuracy = ', 0.8181818181818182)
+('--> progression = ', 44, 1000)
+Algorithm results :
+('--> accuracy = ', 0.8222222222222222)
+('--> progression = ', 45, 1000)
+Algorithm results :
+('--> accuracy = ', 0.8260869565217391)
+('--> progression = ', 46, 1000)
+Algorithm results :
+('--> accuracy = ', 0.8297872340425532)
+('--> progression = ', 47, 1000)
+Algorithm results :
+('--> accuracy = ', 0.8125)
+('--> progression = ', 48, 1000)
+Algorithm results :
+('--> accuracy = ', 0.8163265306122449)
+('--> progression = ', 49, 1000)
+Algorithm results :
+('--> accuracy = ', 0.82)
+('--> progression = ', 50, 1000)
+Algorithm results :
+('--> accuracy = ', 0.8235294117647058)
+('--> progression = ', 51, 1000)
+Algorithm results :
+('--> accuracy = ', 0.8269230769230769)
+('--> progression = ', 52, 1000)
+Algorithm results :
+('--> accuracy = ', 0.8113207547169812)
+('--> progression = ', 53, 1000)
+Algorithm results :
+('--> accuracy = ', 0.8148148148148148)
+('--> progression = ', 54, 1000)
+Algorithm results :
+('--> accuracy = ', 0.8181818181818182)
+('--> progression = ', 55, 1000)
+Algorithm results :
+('--> accuracy = ', 0.8214285714285714)
+('--> progression = ', 56, 1000)
+Algorithm results :
+('--> accuracy = ', 0.8070175438596491)
+('--> progression = ', 57, 1000)
+Algorithm results :
+('--> accuracy = ', 0.8103448275862069)
+('--> progression = ', 58, 1000)
+Algorithm results :
+('--> accuracy = ', 0.8135593220338984)
+('--> progression = ', 59, 1000)
+Algorithm results :
+('--> accuracy = ', 0.8166666666666667)
+('--> progression = ', 60, 1000)
+Algorithm results :
+('--> accuracy = ', 0.819672131147541)
+('--> progression = ', 61, 1000)
+Algorithm results :
+('--> accuracy = ', 0.8064516129032258)
+('--> progression = ', 62, 1000)
+Algorithm results :
+('--> accuracy = ', 0.8095238095238095)
+('--> progression = ', 63, 1000)
+Algorithm results :
+('--> accuracy = ', 0.796875)
+('--> progression = ', 64, 1000)
+Algorithm results :
+('--> accuracy = ', 0.8)
+('--> progression = ', 65, 1000)
+Algorithm results :
+('--> accuracy = ', 0.803030303030303)
+('--> progression = ', 66, 1000)
+Algorithm results :
+('--> accuracy = ', 0.8059701492537313)
+('--> progression = ', 67, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7941176470588235)
+('--> progression = ', 68, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7971014492753623)
+('--> progression = ', 69, 1000)
+Algorithm results :
+('--> accuracy = ', 0.8)
+('--> progression = ', 70, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7887323943661971)
+('--> progression = ', 71, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7777777777777778)
+('--> progression = ', 72, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7808219178082192)
+('--> progression = ', 73, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7837837837837838)
+('--> progression = ', 74, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7866666666666666)
+('--> progression = ', 75, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7894736842105263)
+('--> progression = ', 76, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7922077922077922)
+('--> progression = ', 77, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7948717948717948)
+('--> progression = ', 78, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7848101265822784)
+('--> progression = ', 79, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7875)
+('--> progression = ', 80, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7901234567901234)
+('--> progression = ', 81, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7804878048780488)
+('--> progression = ', 82, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7831325301204819)
+('--> progression = ', 83, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7857142857142857)
+('--> progression = ', 84, 1000)
+Algorithm results :
+('--> accuracy = ', 0.788235294117647)
+('--> progression = ', 85, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7790697674418605)
+('--> progression = ', 86, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7701149425287356)
+('--> progression = ', 87, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7613636363636364)
+('--> progression = ', 88, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7640449438202247)
+('--> progression = ', 89, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7666666666666667)
+('--> progression = ', 90, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7692307692307693)
+('--> progression = ', 91, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7608695652173914)
+('--> progression = ', 92, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7634408602150538)
+('--> progression = ', 93, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7659574468085106)
+('--> progression = ', 94, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7578947368421053)
+('--> progression = ', 95, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7604166666666666)
+('--> progression = ', 96, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7628865979381443)
+('--> progression = ', 97, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7653061224489796)
+('--> progression = ', 98, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7676767676767676)
+('--> progression = ', 99, 1000)
+Algorithm results :
+('--> accuracy = ', 0.77)
+('--> progression = ', 100, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7722772277227723)
+('--> progression = ', 101, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7647058823529411)
+('--> progression = ', 102, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7669902912621359)
+('--> progression = ', 103, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7692307692307693)
+('--> progression = ', 104, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7714285714285715)
+('--> progression = ', 105, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7735849056603774)
+('--> progression = ', 106, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7757009345794392)
+('--> progression = ', 107, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7777777777777778)
+('--> progression = ', 108, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7706422018348624)
+('--> progression = ', 109, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7727272727272727)
+('--> progression = ', 110, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7747747747747747)
+('--> progression = ', 111, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7767857142857143)
+('--> progression = ', 112, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7787610619469026)
+('--> progression = ', 113, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7807017543859649)
+('--> progression = ', 114, 1000)
+Algorithm results :
+('--> accuracy = ', 0.782608695652174)
+('--> progression = ', 115, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7844827586206896)
+('--> progression = ', 116, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7863247863247863)
+('--> progression = ', 117, 1000)
+Algorithm results :
+('--> accuracy = ', 0.788135593220339)
+('--> progression = ', 118, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7815126050420168)
+('--> progression = ', 119, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7833333333333333)
+('--> progression = ', 120, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7851239669421488)
+('--> progression = ', 121, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7868852459016393)
+('--> progression = ', 122, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7886178861788617)
+('--> progression = ', 123, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7903225806451613)
+('--> progression = ', 124, 1000)
+Algorithm results :
+('--> accuracy = ', 0.792)
+('--> progression = ', 125, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7936507936507936)
+('--> progression = ', 126, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7952755905511811)
+('--> progression = ', 127, 1000)
+Algorithm results :
+('--> accuracy = ', 0.796875)
+('--> progression = ', 128, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7906976744186046)
+('--> progression = ', 129, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7923076923076923)
+('--> progression = ', 130, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7938931297709924)
+('--> progression = ', 131, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7954545454545454)
+('--> progression = ', 132, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7969924812030075)
+('--> progression = ', 133, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7985074626865671)
+('--> progression = ', 134, 1000)
+Algorithm results :
+('--> accuracy = ', 0.8)
+('--> progression = ', 135, 1000)
+Algorithm results :
+('--> accuracy = ', 0.8014705882352942)
+('--> progression = ', 136, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7956204379562044)
+('--> progression = ', 137, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7971014492753623)
+('--> progression = ', 138, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7985611510791367)
+('--> progression = ', 139, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7928571428571428)
+('--> progression = ', 140, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7872340425531915)
+('--> progression = ', 141, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7887323943661971)
+('--> progression = ', 142, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7902097902097902)
+('--> progression = ', 143, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7847222222222222)
+('--> progression = ', 144, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7862068965517242)
+('--> progression = ', 145, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7876712328767124)
+('--> progression = ', 146, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7891156462585034)
+('--> progression = ', 147, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7837837837837838)
+('--> progression = ', 148, 1000)
+Algorithm results :
+('--> accuracy = ', 0.785234899328859)
+('--> progression = ', 149, 1000)
+Algorithm results :
+('--> accuracy = ', 0.78)
+('--> progression = ', 150, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7814569536423841)
+('--> progression = ', 151, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7828947368421053)
+('--> progression = ', 152, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7843137254901961)
+('--> progression = ', 153, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7857142857142857)
+('--> progression = ', 154, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7870967741935484)
+('--> progression = ', 155, 1000)
+Algorithm results :
+('--> accuracy = ', 0.782051282051282)
+('--> progression = ', 156, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7834394904458599)
+('--> progression = ', 157, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7848101265822784)
+('--> progression = ', 158, 1000)
+Algorithm results :
+('--> accuracy = ', 0.779874213836478)
+('--> progression = ', 159, 1000)
+Algorithm results :
+('--> accuracy = ', 0.78125)
+('--> progression = ', 160, 1000)
+Algorithm results :
+('--> accuracy = ', 0.782608695652174)
+('--> progression = ', 161, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7839506172839507)
+('--> progression = ', 162, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7852760736196319)
+('--> progression = ', 163, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7865853658536586)
+('--> progression = ', 164, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7878787878787878)
+('--> progression = ', 165, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7831325301204819)
+('--> progression = ', 166, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7844311377245509)
+('--> progression = ', 167, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7857142857142857)
+('--> progression = ', 168, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7810650887573964)
+('--> progression = ', 169, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7764705882352941)
+('--> progression = ', 170, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7777777777777778)
+('--> progression = ', 171, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7790697674418605)
+('--> progression = ', 172, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7803468208092486)
+('--> progression = ', 173, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7816091954022989)
+('--> progression = ', 174, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7828571428571428)
+('--> progression = ', 175, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7840909090909091)
+('--> progression = ', 176, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7796610169491526)
+('--> progression = ', 177, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7808988764044944)
+('--> progression = ', 178, 1000)
+Algorithm results :
+('--> accuracy = ', 0.776536312849162)
+('--> progression = ', 179, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7777777777777778)
+('--> progression = ', 180, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7790055248618785)
+('--> progression = ', 181, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7802197802197802)
+('--> progression = ', 182, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7814207650273224)
+('--> progression = ', 183, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7771739130434783)
+('--> progression = ', 184, 1000)
+Algorithm results :
+('--> accuracy = ', 0.772972972972973)
+('--> progression = ', 185, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7741935483870968)
+('--> progression = ', 186, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7754010695187166)
+('--> progression = ', 187, 1000)
+Algorithm results :
+('--> accuracy = ', 0.776595744680851)
+('--> progression = ', 188, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7724867724867724)
+('--> progression = ', 189, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7736842105263158)
+('--> progression = ', 190, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7696335078534031)
+('--> progression = ', 191, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7708333333333334)
+('--> progression = ', 192, 1000)
+Algorithm results :
+('--> accuracy = ', 0.772020725388601)
+('--> progression = ', 193, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7731958762886598)
+('--> progression = ', 194, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7743589743589744)
+('--> progression = ', 195, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7704081632653061)
+('--> progression = ', 196, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7715736040609137)
+('--> progression = ', 197, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7727272727272727)
+('--> progression = ', 198, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7738693467336684)
+('--> progression = ', 199, 1000)
+Algorithm results :
+('--> accuracy = ', 0.775)
+('--> progression = ', 200, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7761194029850746)
+('--> progression = ', 201, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7772277227722773)
+('--> progression = ', 202, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7783251231527094)
+('--> progression = ', 203, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7794117647058824)
+('--> progression = ', 204, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7804878048780488)
+('--> progression = ', 205, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7815533980582524)
+('--> progression = ', 206, 1000)
+Algorithm results :
+('--> accuracy = ', 0.782608695652174)
+('--> progression = ', 207, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7836538461538461)
+('--> progression = ', 208, 1000)
+Algorithm results :
+('--> accuracy = ', 0.784688995215311)
+('--> progression = ', 209, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7857142857142857)
+('--> progression = ', 210, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7867298578199052)
+('--> progression = ', 211, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7877358490566038)
+('--> progression = ', 212, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7887323943661971)
+('--> progression = ', 213, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7850467289719626)
+('--> progression = ', 214, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7813953488372093)
+('--> progression = ', 215, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7777777777777778)
+('--> progression = ', 216, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7788018433179723)
+('--> progression = ', 217, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7798165137614679)
+('--> progression = ', 218, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7808219178082192)
+('--> progression = ', 219, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7818181818181819)
+('--> progression = ', 220, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7828054298642534)
+('--> progression = ', 221, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7792792792792793)
+('--> progression = ', 222, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7802690582959642)
+('--> progression = ', 223, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7767857142857143)
+('--> progression = ', 224, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7733333333333333)
+('--> progression = ', 225, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7699115044247787)
+('--> progression = ', 226, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7709251101321586)
+('--> progression = ', 227, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7719298245614035)
+('--> progression = ', 228, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7685589519650655)
+('--> progression = ', 229, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7695652173913043)
+('--> progression = ', 230, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7705627705627706)
+('--> progression = ', 231, 1000)
+Algorithm results :
+('--> accuracy = ', 0.771551724137931)
+('--> progression = ', 232, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7682403433476395)
+('--> progression = ', 233, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7692307692307693)
+('--> progression = ', 234, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7702127659574468)
+('--> progression = ', 235, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7711864406779662)
+('--> progression = ', 236, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7721518987341772)
+('--> progression = ', 237, 1000)
+Algorithm results :
+('--> accuracy = ', 0.773109243697479)
+('--> progression = ', 238, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7740585774058577)
+('--> progression = ', 239, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7708333333333334)
+('--> progression = ', 240, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7717842323651453)
+('--> progression = ', 241, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7727272727272727)
+('--> progression = ', 242, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7736625514403292)
+('--> progression = ', 243, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7745901639344263)
+('--> progression = ', 244, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7755102040816326)
+('--> progression = ', 245, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7723577235772358)
+('--> progression = ', 246, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7732793522267206)
+('--> progression = ', 247, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7701612903225806)
+('--> progression = ', 248, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7710843373493976)
+('--> progression = ', 249, 1000)
+Algorithm results :
+('--> accuracy = ', 0.772)
+('--> progression = ', 250, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7729083665338645)
+('--> progression = ', 251, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7698412698412699)
+('--> progression = ', 252, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7707509881422925)
+('--> progression = ', 253, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7716535433070866)
+('--> progression = ', 254, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7725490196078432)
+('--> progression = ', 255, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7734375)
+('--> progression = ', 256, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7704280155642024)
+('--> progression = ', 257, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7713178294573644)
+('--> progression = ', 258, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7683397683397684)
+('--> progression = ', 259, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7692307692307693)
+('--> progression = ', 260, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7701149425287356)
+('--> progression = ', 261, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7709923664122137)
+('--> progression = ', 262, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7680608365019012)
+('--> progression = ', 263, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7651515151515151)
+('--> progression = ', 264, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7660377358490567)
+('--> progression = ', 265, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7669172932330827)
+('--> progression = ', 266, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7677902621722846)
+('--> progression = ', 267, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7686567164179104)
+('--> progression = ', 268, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7695167286245354)
+('--> progression = ', 269, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7666666666666667)
+('--> progression = ', 270, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7675276752767528)
+('--> progression = ', 271, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7647058823529411)
+('--> progression = ', 272, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7655677655677655)
+('--> progression = ', 273, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7664233576642335)
+('--> progression = ', 274, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7672727272727272)
+('--> progression = ', 275, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7644927536231884)
+('--> progression = ', 276, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7617328519855595)
+('--> progression = ', 277, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7589928057553957)
+('--> progression = ', 278, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7598566308243727)
+('--> progression = ', 279, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7571428571428571)
+('--> progression = ', 280, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7544483985765125)
+('--> progression = ', 281, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7553191489361702)
+('--> progression = ', 282, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7561837455830389)
+('--> progression = ', 283, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7570422535211268)
+('--> progression = ', 284, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7543859649122807)
+('--> progression = ', 285, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7552447552447552)
+('--> progression = ', 286, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7526132404181185)
+('--> progression = ', 287, 1000)
+Algorithm results :
+('--> accuracy = ', 0.75)
+('--> progression = ', 288, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7508650519031141)
+('--> progression = ', 289, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7517241379310344)
+('--> progression = ', 290, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7525773195876289)
+('--> progression = ', 291, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7534246575342466)
+('--> progression = ', 292, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7542662116040956)
+('--> progression = ', 293, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7551020408163265)
+('--> progression = ', 294, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7559322033898305)
+('--> progression = ', 295, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7567567567567568)
+('--> progression = ', 296, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7575757575757576)
+('--> progression = ', 297, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7583892617449665)
+('--> progression = ', 298, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7591973244147158)
+('--> progression = ', 299, 1000)
+Algorithm results :
+('--> accuracy = ', 0.76)
+('--> progression = ', 300, 1000)
+Algorithm results :
+('--> accuracy = ', 0.760797342192691)
+('--> progression = ', 301, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7615894039735099)
+('--> progression = ', 302, 1000)
+Algorithm results :
+('--> accuracy = ', 0.759075907590759)
+('--> progression = ', 303, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7598684210526315)
+('--> progression = ', 304, 1000)
+Algorithm results :
+('--> accuracy = ', 0.760655737704918)
+('--> progression = ', 305, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7581699346405228)
+('--> progression = ', 306, 1000)
+Algorithm results :
+('--> accuracy = ', 0.758957654723127)
+('--> progression = ', 307, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7597402597402597)
+('--> progression = ', 308, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7572815533980582)
+('--> progression = ', 309, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7548387096774194)
+('--> progression = ', 310, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7556270096463023)
+('--> progression = ', 311, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7564102564102564)
+('--> progression = ', 312, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7539936102236422)
+('--> progression = ', 313, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7515923566878981)
+('--> progression = ', 314, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7523809523809524)
+('--> progression = ', 315, 1000)
+Algorithm results :
+('--> accuracy = ', 0.75)
+('--> progression = ', 316, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7476340694006309)
+('--> progression = ', 317, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7484276729559748)
+('--> progression = ', 318, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7492163009404389)
+('--> progression = ', 319, 1000)
+Algorithm results :
+('--> accuracy = ', 0.75)
+('--> progression = ', 320, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7507788161993769)
+('--> progression = ', 321, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7515527950310559)
+('--> progression = ', 322, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7523219814241486)
+('--> progression = ', 323, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7530864197530864)
+('--> progression = ', 324, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7538461538461538)
+('--> progression = ', 325, 1000)
+Algorithm results :
+('--> accuracy = ', 0.754601226993865)
+('--> progression = ', 326, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7553516819571865)
+('--> progression = ', 327, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7560975609756098)
+('--> progression = ', 328, 1000)
+Algorithm results :
+('--> accuracy = ', 0.756838905775076)
+('--> progression = ', 329, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7575757575757576)
+('--> progression = ', 330, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7583081570996979)
+('--> progression = ', 331, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7590361445783133)
+('--> progression = ', 332, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7597597597597597)
+('--> progression = ', 333, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7604790419161677)
+('--> progression = ', 334, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7611940298507462)
+('--> progression = ', 335, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7619047619047619)
+('--> progression = ', 336, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7626112759643917)
+('--> progression = ', 337, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7633136094674556)
+('--> progression = ', 338, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7640117994100295)
+('--> progression = ', 339, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7647058823529411)
+('--> progression = ', 340, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7624633431085044)
+('--> progression = ', 341, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7631578947368421)
+('--> progression = ', 342, 1000)
+Algorithm results :
+('--> accuracy = ', 0.760932944606414)
+('--> progression = ', 343, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7616279069767442)
+('--> progression = ', 344, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7623188405797101)
+('--> progression = ', 345, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7630057803468208)
+('--> progression = ', 346, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7636887608069164)
+('--> progression = ', 347, 1000)
+Algorithm results :
+('--> accuracy = ', 0.764367816091954)
+('--> progression = ', 348, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7621776504297995)
+('--> progression = ', 349, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7628571428571429)
+('--> progression = ', 350, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7635327635327636)
+('--> progression = ', 351, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7642045454545454)
+('--> progression = ', 352, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7620396600566572)
+('--> progression = ', 353, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7627118644067796)
+('--> progression = ', 354, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7605633802816901)
+('--> progression = ', 355, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7584269662921348)
+('--> progression = ', 356, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7563025210084033)
+('--> progression = ', 357, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7569832402234636)
+('--> progression = ', 358, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7576601671309192)
+('--> progression = ', 359, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7583333333333333)
+('--> progression = ', 360, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7590027700831025)
+('--> progression = ', 361, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7596685082872928)
+('--> progression = ', 362, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7603305785123967)
+('--> progression = ', 363, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7582417582417582)
+('--> progression = ', 364, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7589041095890411)
+('--> progression = ', 365, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7595628415300546)
+('--> progression = ', 366, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7602179836512262)
+('--> progression = ', 367, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7581521739130435)
+('--> progression = ', 368, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7588075880758808)
+('--> progression = ', 369, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7594594594594595)
+('--> progression = ', 370, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7601078167115903)
+('--> progression = ', 371, 1000)
+Algorithm results :
+('--> accuracy = ', 0.760752688172043)
+('--> progression = ', 372, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7613941018766756)
+('--> progression = ', 373, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7620320855614974)
+('--> progression = ', 374, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7626666666666667)
+('--> progression = ', 375, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7632978723404256)
+('--> progression = ', 376, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7612732095490716)
+('--> progression = ', 377, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7619047619047619)
+('--> progression = ', 378, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7598944591029023)
+('--> progression = ', 379, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7605263157894737)
+('--> progression = ', 380, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7611548556430446)
+('--> progression = ', 381, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7591623036649214)
+('--> progression = ', 382, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7597911227154047)
+('--> progression = ', 383, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7604166666666666)
+('--> progression = ', 384, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7584415584415585)
+('--> progression = ', 385, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7590673575129534)
+('--> progression = ', 386, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7596899224806202)
+('--> progression = ', 387, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7603092783505154)
+('--> progression = ', 388, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7583547557840618)
+('--> progression = ', 389, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7589743589743589)
+('--> progression = ', 390, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7595907928388747)
+('--> progression = ', 391, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7602040816326531)
+('--> progression = ', 392, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7608142493638677)
+('--> progression = ', 393, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7588832487309645)
+('--> progression = ', 394, 1000)
+Algorithm results :
+('--> accuracy = ', 0.759493670886076)
+('--> progression = ', 395, 1000)
+Algorithm results :
+('--> accuracy = ', 0.76010101010101)
+('--> progression = ', 396, 1000)
+Algorithm results :
+('--> accuracy = ', 0.760705289672544)
+('--> progression = ', 397, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7613065326633166)
+('--> progression = ', 398, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7593984962406015)
+('--> progression = ', 399, 1000)
+Algorithm results :
+('--> accuracy = ', 0.76)
+('--> progression = ', 400, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7605985037406484)
+('--> progression = ', 401, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7611940298507462)
+('--> progression = ', 402, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7617866004962779)
+('--> progression = ', 403, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7623762376237624)
+('--> progression = ', 404, 1000)
+Algorithm results :
+('--> accuracy = ', 0.762962962962963)
+('--> progression = ', 405, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7635467980295566)
+('--> progression = ', 406, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7641277641277642)
+('--> progression = ', 407, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7647058823529411)
+('--> progression = ', 408, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7652811735941321)
+('--> progression = ', 409, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7658536585365854)
+('--> progression = ', 410, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7664233576642335)
+('--> progression = ', 411, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7645631067961165)
+('--> progression = ', 412, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7651331719128329)
+('--> progression = ', 413, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7657004830917874)
+('--> progression = ', 414, 1000)
+Algorithm results :
+('--> accuracy = ', 0.763855421686747)
+('--> progression = ', 415, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7644230769230769)
+('--> progression = ', 416, 1000)
+Algorithm results :
+('--> accuracy = ', 0.762589928057554)
+('--> progression = ', 417, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7631578947368421)
+('--> progression = ', 418, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7613365155131265)
+('--> progression = ', 419, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7619047619047619)
+('--> progression = ', 420, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7624703087885986)
+('--> progression = ', 421, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7630331753554502)
+('--> progression = ', 422, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7612293144208038)
+('--> progression = ', 423, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7617924528301887)
+('--> progression = ', 424, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7623529411764706)
+('--> progression = ', 425, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7629107981220657)
+('--> progression = ', 426, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7634660421545667)
+('--> progression = ', 427, 1000)
+Algorithm results :
+('--> accuracy = ', 0.764018691588785)
+('--> progression = ', 428, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7622377622377622)
+('--> progression = ', 429, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7627906976744186)
+('--> progression = ', 430, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7610208816705336)
+('--> progression = ', 431, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7615740740740741)
+('--> progression = ', 432, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7621247113163973)
+('--> progression = ', 433, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7626728110599078)
+('--> progression = ', 434, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7632183908045977)
+('--> progression = ', 435, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7637614678899083)
+('--> progression = ', 436, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7643020594965675)
+('--> progression = ', 437, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7648401826484018)
+('--> progression = ', 438, 1000)
+Algorithm results :
+('--> accuracy = ', 0.765375854214123)
+('--> progression = ', 439, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7636363636363637)
+('--> progression = ', 440, 1000)
+Algorithm results :
+('--> accuracy = ', 0.764172335600907)
+('--> progression = ', 441, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7647058823529411)
+('--> progression = ', 442, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7652370203160271)
+('--> progression = ', 443, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7635135135135135)
+('--> progression = ', 444, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7640449438202247)
+('--> progression = ', 445, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7645739910313901)
+('--> progression = ', 446, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7651006711409396)
+('--> progression = ', 447, 1000)
+Algorithm results :
+('--> accuracy = ', 0.765625)
+('--> progression = ', 448, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7661469933184856)
+('--> progression = ', 449, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7644444444444445)
+('--> progression = ', 450, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7649667405764967)
+('--> progression = ', 451, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7654867256637168)
+('--> progression = ', 452, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7660044150110376)
+('--> progression = ', 453, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7665198237885462)
+('--> progression = ', 454, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7670329670329671)
+('--> progression = ', 455, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7675438596491229)
+('--> progression = ', 456, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7658643326039387)
+('--> progression = ', 457, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7641921397379913)
+('--> progression = ', 458, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7647058823529411)
+('--> progression = ', 459, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7652173913043478)
+('--> progression = ', 460, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7657266811279827)
+('--> progression = ', 461, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7662337662337663)
+('--> progression = ', 462, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7667386609071274)
+('--> progression = ', 463, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7672413793103449)
+('--> progression = ', 464, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7677419354838709)
+('--> progression = ', 465, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7682403433476395)
+('--> progression = ', 466, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7687366167023555)
+('--> progression = ', 467, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7692307692307693)
+('--> progression = ', 468, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7697228144989339)
+('--> progression = ', 469, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7702127659574468)
+('--> progression = ', 470, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7685774946921444)
+('--> progression = ', 471, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7690677966101694)
+('--> progression = ', 472, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7695560253699789)
+('--> progression = ', 473, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7679324894514767)
+('--> progression = ', 474, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7663157894736842)
+('--> progression = ', 475, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7668067226890757)
+('--> progression = ', 476, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7672955974842768)
+('--> progression = ', 477, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7656903765690377)
+('--> progression = ', 478, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7661795407098121)
+('--> progression = ', 479, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7666666666666667)
+('--> progression = ', 480, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7650727650727651)
+('--> progression = ', 481, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7655601659751037)
+('--> progression = ', 482, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7660455486542443)
+('--> progression = ', 483, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7665289256198347)
+('--> progression = ', 484, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7670103092783506)
+('--> progression = ', 485, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7674897119341564)
+('--> progression = ', 486, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7679671457905544)
+('--> progression = ', 487, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7684426229508197)
+('--> progression = ', 488, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7668711656441718)
+('--> progression = ', 489, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7673469387755102)
+('--> progression = ', 490, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7678207739307535)
+('--> progression = ', 491, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7682926829268293)
+('--> progression = ', 492, 1000)
+Algorithm results :
+('--> accuracy = ', 0.768762677484787)
+('--> progression = ', 493, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7692307692307693)
+('--> progression = ', 494, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7696969696969697)
+('--> progression = ', 495, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7701612903225806)
+('--> progression = ', 496, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7706237424547284)
+('--> progression = ', 497, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7690763052208835)
+('--> progression = ', 498, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7695390781563126)
+('--> progression = ', 499, 1000)
+Algorithm results :
+('--> accuracy = ', 0.77)
+('--> progression = ', 500, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7704590818363274)
+('--> progression = ', 501, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7709163346613546)
+('--> progression = ', 502, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7713717693836978)
+('--> progression = ', 503, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7718253968253969)
+('--> progression = ', 504, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7722772277227723)
+('--> progression = ', 505, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7727272727272727)
+('--> progression = ', 506, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7731755424063116)
+('--> progression = ', 507, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7736220472440944)
+('--> progression = ', 508, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7740667976424361)
+('--> progression = ', 509, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7745098039215687)
+('--> progression = ', 510, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7749510763209393)
+('--> progression = ', 511, 1000)
+Algorithm results :
+('--> accuracy = ', 0.775390625)
+('--> progression = ', 512, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7758284600389863)
+('--> progression = ', 513, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7762645914396887)
+('--> progression = ', 514, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7766990291262136)
+('--> progression = ', 515, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7771317829457365)
+('--> progression = ', 516, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7775628626692457)
+('--> progression = ', 517, 1000)
+Algorithm results :
+('--> accuracy = ', 0.777992277992278)
+('--> progression = ', 518, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7764932562620424)
+('--> progression = ', 519, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7769230769230769)
+('--> progression = ', 520, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7773512476007678)
+('--> progression = ', 521, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7777777777777778)
+('--> progression = ', 522, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7782026768642447)
+('--> progression = ', 523, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7786259541984732)
+('--> progression = ', 524, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7790476190476191)
+('--> progression = ', 525, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7775665399239544)
+('--> progression = ', 526, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7760910815939279)
+('--> progression = ', 527, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7746212121212122)
+('--> progression = ', 528, 1000)
+Algorithm results :
+('--> accuracy = ', 0.775047258979206)
+('--> progression = ', 529, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7754716981132076)
+('--> progression = ', 530, 1000)
+Algorithm results :
+('--> accuracy = ', 0.775894538606403)
+('--> progression = ', 531, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7744360902255639)
+('--> progression = ', 532, 1000)
+Algorithm results :
+('--> accuracy = ', 0.774859287054409)
+('--> progression = ', 533, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7752808988764045)
+('--> progression = ', 534, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7757009345794392)
+('--> progression = ', 535, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7761194029850746)
+('--> progression = ', 536, 1000)
+Algorithm results :
+('--> accuracy = ', 0.776536312849162)
+('--> progression = ', 537, 1000)
+Algorithm results :
+('--> accuracy = ', 0.775092936802974)
+('--> progression = ', 538, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7736549165120594)
+('--> progression = ', 539, 1000)
+Algorithm results :
+('--> accuracy = ', 0.774074074074074)
+('--> progression = ', 540, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7744916820702403)
+('--> progression = ', 541, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7749077490774908)
+('--> progression = ', 542, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7753222836095764)
+('--> progression = ', 543, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7757352941176471)
+('--> progression = ', 544, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7761467889908257)
+('--> progression = ', 545, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7765567765567766)
+('--> progression = ', 546, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7769652650822669)
+('--> progression = ', 547, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7773722627737226)
+('--> progression = ', 548, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7777777777777778)
+('--> progression = ', 549, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7763636363636364)
+('--> progression = ', 550, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7749546279491834)
+('--> progression = ', 551, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7735507246376812)
+('--> progression = ', 552, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7739602169981917)
+('--> progression = ', 553, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7725631768953068)
+('--> progression = ', 554, 1000)
+Algorithm results :
+('--> accuracy = ', 0.772972972972973)
+('--> progression = ', 555, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7733812949640287)
+('--> progression = ', 556, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7737881508078994)
+('--> progression = ', 557, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7741935483870968)
+('--> progression = ', 558, 1000)
+Algorithm results :
+('--> accuracy = ', 0.774597495527728)
+('--> progression = ', 559, 1000)
+Algorithm results :
+('--> accuracy = ', 0.775)
+('--> progression = ', 560, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7754010695187166)
+('--> progression = ', 561, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7758007117437722)
+('--> progression = ', 562, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7761989342806395)
+('--> progression = ', 563, 1000)
+Algorithm results :
+('--> accuracy = ', 0.776595744680851)
+('--> progression = ', 564, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7769911504424779)
+('--> progression = ', 565, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7756183745583038)
+('--> progression = ', 566, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7742504409171076)
+('--> progression = ', 567, 1000)
+Algorithm results :
+('--> accuracy = ', 0.772887323943662)
+('--> progression = ', 568, 1000)
+Algorithm results :
+('--> accuracy = ', 0.773286467486819)
+('--> progression = ', 569, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7736842105263158)
+('--> progression = ', 570, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7740805604203153)
+('--> progression = ', 571, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7744755244755245)
+('--> progression = ', 572, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7731239092495636)
+('--> progression = ', 573, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7735191637630662)
+('--> progression = ', 574, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7739130434782608)
+('--> progression = ', 575, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7743055555555556)
+('--> progression = ', 576, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7746967071057193)
+('--> progression = ', 577, 1000)
+Algorithm results :
+('--> accuracy = ', 0.773356401384083)
+('--> progression = ', 578, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7737478411053541)
+('--> progression = ', 579, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7741379310344828)
+('--> progression = ', 580, 1000)
+Algorithm results :
+('--> accuracy = ', 0.774526678141136)
+('--> progression = ', 581, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7749140893470791)
+('--> progression = ', 582, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7753001715265866)
+('--> progression = ', 583, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7756849315068494)
+('--> progression = ', 584, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7760683760683761)
+('--> progression = ', 585, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7764505119453925)
+('--> progression = ', 586, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7768313458262351)
+('--> progression = ', 587, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7772108843537415)
+('--> progression = ', 588, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7775891341256367)
+('--> progression = ', 589, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7779661016949152)
+('--> progression = ', 590, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7783417935702199)
+('--> progression = ', 591, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7787162162162162)
+('--> progression = ', 592, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7790893760539629)
+('--> progression = ', 593, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7794612794612794)
+('--> progression = ', 594, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7798319327731092)
+('--> progression = ', 595, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7802013422818792)
+('--> progression = ', 596, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7805695142378559)
+('--> progression = ', 597, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7792642140468228)
+('--> progression = ', 598, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7779632721202003)
+('--> progression = ', 599, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7783333333333333)
+('--> progression = ', 600, 1000)
+Algorithm results :
+('--> accuracy = ', 0.778702163061564)
+('--> progression = ', 601, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7790697674418605)
+('--> progression = ', 602, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7794361525704809)
+('--> progression = ', 603, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7798013245033113)
+('--> progression = ', 604, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7801652892561983)
+('--> progression = ', 605, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7805280528052805)
+('--> progression = ', 606, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7808896210873146)
+('--> progression = ', 607, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7796052631578947)
+('--> progression = ', 608, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7799671592775042)
+('--> progression = ', 609, 1000)
+Algorithm results :
+('--> accuracy = ', 0.780327868852459)
+('--> progression = ', 610, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7806873977086743)
+('--> progression = ', 611, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7810457516339869)
+('--> progression = ', 612, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7814029363784666)
+('--> progression = ', 613, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7817589576547231)
+('--> progression = ', 614, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7821138211382114)
+('--> progression = ', 615, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7824675324675324)
+('--> progression = ', 616, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7828200972447326)
+('--> progression = ', 617, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7831715210355987)
+('--> progression = ', 618, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7819063004846527)
+('--> progression = ', 619, 1000)
+Algorithm results :
+('--> accuracy = ', 0.782258064516129)
+('--> progression = ', 620, 1000)
+Algorithm results :
+('--> accuracy = ', 0.782608695652174)
+('--> progression = ', 621, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7813504823151125)
+('--> progression = ', 622, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7817014446227929)
+('--> progression = ', 623, 1000)
+Algorithm results :
+('--> accuracy = ', 0.780448717948718)
+('--> progression = ', 624, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7808)
+('--> progression = ', 625, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7811501597444089)
+('--> progression = ', 626, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7814992025518341)
+('--> progression = ', 627, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7818471337579618)
+('--> progression = ', 628, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7821939586645469)
+('--> progression = ', 629, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7825396825396825)
+('--> progression = ', 630, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7812995245641838)
+('--> progression = ', 631, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7816455696202531)
+('--> progression = ', 632, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7819905213270142)
+('--> progression = ', 633, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7823343848580442)
+('--> progression = ', 634, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7811023622047244)
+('--> progression = ', 635, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7814465408805031)
+('--> progression = ', 636, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7817896389324961)
+('--> progression = ', 637, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7821316614420063)
+('--> progression = ', 638, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7809076682316118)
+('--> progression = ', 639, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7796875)
+('--> progression = ', 640, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7784711388455539)
+('--> progression = ', 641, 1000)
+Algorithm results :
+('--> accuracy = ', 0.778816199376947)
+('--> progression = ', 642, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7791601866251944)
+('--> progression = ', 643, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7795031055900621)
+('--> progression = ', 644, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7798449612403101)
+('--> progression = ', 645, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7786377708978328)
+('--> progression = ', 646, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7774343122102009)
+('--> progression = ', 647, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7777777777777778)
+('--> progression = ', 648, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7781201848998459)
+('--> progression = ', 649, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7769230769230769)
+('--> progression = ', 650, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7772657450076805)
+('--> progression = ', 651, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7760736196319018)
+('--> progression = ', 652, 1000)
+Algorithm results :
+('--> accuracy = ', 0.774885145482389)
+('--> progression = ', 653, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7737003058103975)
+('--> progression = ', 654, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7725190839694657)
+('--> progression = ', 655, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7713414634146342)
+('--> progression = ', 656, 1000)
+Algorithm results :
+('--> accuracy = ', 0.771689497716895)
+('--> progression = ', 657, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7720364741641338)
+('--> progression = ', 658, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7723823975720789)
+('--> progression = ', 659, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7727272727272727)
+('--> progression = ', 660, 1000)
+Algorithm results :
+('--> accuracy = ', 0.773071104387292)
+('--> progression = ', 661, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7734138972809668)
+('--> progression = ', 662, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7737556561085973)
+('--> progression = ', 663, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7740963855421686)
+('--> progression = ', 664, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7744360902255639)
+('--> progression = ', 665, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7732732732732732)
+('--> progression = ', 666, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7736131934032984)
+('--> progression = ', 667, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7739520958083832)
+('--> progression = ', 668, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7742899850523169)
+('--> progression = ', 669, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7746268656716417)
+('--> progression = ', 670, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7749627421758569)
+('--> progression = ', 671, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7738095238095238)
+('--> progression = ', 672, 1000)
+Algorithm results :
+('--> accuracy = ', 0.774145616641902)
+('--> progression = ', 673, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7744807121661721)
+('--> progression = ', 674, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7748148148148148)
+('--> progression = ', 675, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7736686390532544)
+('--> progression = ', 676, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7725258493353028)
+('--> progression = ', 677, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7713864306784661)
+('--> progression = ', 678, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7717231222385862)
+('--> progression = ', 679, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7720588235294118)
+('--> progression = ', 680, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7723935389133627)
+('--> progression = ', 681, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7727272727272727)
+('--> progression = ', 682, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7730600292825769)
+('--> progression = ', 683, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7719298245614035)
+('--> progression = ', 684, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7722627737226277)
+('--> progression = ', 685, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7711370262390671)
+('--> progression = ', 686, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7714701601164483)
+('--> progression = ', 687, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7718023255813954)
+('--> progression = ', 688, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7706821480406386)
+('--> progression = ', 689, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7695652173913043)
+('--> progression = ', 690, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7698986975397974)
+('--> progression = ', 691, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7702312138728323)
+('--> progression = ', 692, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7705627705627706)
+('--> progression = ', 693, 1000)
+Algorithm results :
+('--> accuracy = ', 0.770893371757925)
+('--> progression = ', 694, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7712230215827338)
+('--> progression = ', 695, 1000)
+Algorithm results :
+('--> accuracy = ', 0.771551724137931)
+('--> progression = ', 696, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7718794835007173)
+('--> progression = ', 697, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7722063037249284)
+('--> progression = ', 698, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7725321888412017)
+('--> progression = ', 699, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7728571428571429)
+('--> progression = ', 700, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7731811697574893)
+('--> progression = ', 701, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7735042735042735)
+('--> progression = ', 702, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7738264580369844)
+('--> progression = ', 703, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7741477272727273)
+('--> progression = ', 704, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7730496453900709)
+('--> progression = ', 705, 1000)
+Algorithm results :
+('--> accuracy = ', 0.773371104815864)
+('--> progression = ', 706, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7736916548797736)
+('--> progression = ', 707, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7740112994350282)
+('--> progression = ', 708, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7729196050775741)
+('--> progression = ', 709, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7732394366197183)
+('--> progression = ', 710, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7735583684950773)
+('--> progression = ', 711, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7724719101123596)
+('--> progression = ', 712, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7727910238429172)
+('--> progression = ', 713, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7717086834733894)
+('--> progression = ', 714, 1000)
+Algorithm results :
+('--> accuracy = ', 0.772027972027972)
+('--> progression = ', 715, 1000)
+Algorithm results :
+('--> accuracy = ', 0.770949720670391)
+('--> progression = ', 716, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7712691771269177)
+('--> progression = ', 717, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7715877437325905)
+('--> progression = ', 718, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7719054242002782)
+('--> progression = ', 719, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7722222222222223)
+('--> progression = ', 720, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7725381414701803)
+('--> progression = ', 721, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7728531855955678)
+('--> progression = ', 722, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7731673582295989)
+('--> progression = ', 723, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7734806629834254)
+('--> progression = ', 724, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7737931034482759)
+('--> progression = ', 725, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7727272727272727)
+('--> progression = ', 726, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7730398899587345)
+('--> progression = ', 727, 1000)
+Algorithm results :
+('--> accuracy = ', 0.771978021978022)
+('--> progression = ', 728, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7722908093278463)
+('--> progression = ', 729, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7726027397260274)
+('--> progression = ', 730, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7729138166894665)
+('--> progression = ', 731, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7718579234972678)
+('--> progression = ', 732, 1000)
+Algorithm results :
+('--> accuracy = ', 0.772169167803547)
+('--> progression = ', 733, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7724795640326976)
+('--> progression = ', 734, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7714285714285715)
+('--> progression = ', 735, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7703804347826086)
+('--> progression = ', 736, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7693351424694709)
+('--> progression = ', 737, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7682926829268293)
+('--> progression = ', 738, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7686062246278755)
+('--> progression = ', 739, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7675675675675676)
+('--> progression = ', 740, 1000)
+Algorithm results :
+('--> accuracy = ', 0.766531713900135)
+('--> progression = ', 741, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7668463611859838)
+('--> progression = ', 742, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7671601615074024)
+('--> progression = ', 743, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7674731182795699)
+('--> progression = ', 744, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7664429530201342)
+('--> progression = ', 745, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7667560321715817)
+('--> progression = ', 746, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7657295850066934)
+('--> progression = ', 747, 1000)
+Algorithm results :
+('--> accuracy = ', 0.766042780748663)
+('--> progression = ', 748, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7663551401869159)
+('--> progression = ', 749, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7653333333333333)
+('--> progression = ', 750, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7656458055925432)
+('--> progression = ', 751, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7646276595744681)
+('--> progression = ', 752, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7649402390438247)
+('--> progression = ', 753, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7652519893899205)
+('--> progression = ', 754, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7655629139072848)
+('--> progression = ', 755, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7645502645502645)
+('--> progression = ', 756, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7648612945838837)
+('--> progression = ', 757, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7651715039577837)
+('--> progression = ', 758, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7654808959156785)
+('--> progression = ', 759, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7657894736842106)
+('--> progression = ', 760, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7660972404730617)
+('--> progression = ', 761, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7664041994750657)
+('--> progression = ', 762, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7667103538663171)
+('--> progression = ', 763, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7670157068062827)
+('--> progression = ', 764, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7673202614379085)
+('--> progression = ', 765, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7676240208877284)
+('--> progression = ', 766, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7666232073011734)
+('--> progression = ', 767, 1000)
+Algorithm results :
+('--> accuracy = ', 0.765625)
+('--> progression = ', 768, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7659297789336801)
+('--> progression = ', 769, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7662337662337663)
+('--> progression = ', 770, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7652399481193255)
+('--> progression = ', 771, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7642487046632125)
+('--> progression = ', 772, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7645536869340233)
+('--> progression = ', 773, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7648578811369509)
+('--> progression = ', 774, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7651612903225806)
+('--> progression = ', 775, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7654639175257731)
+('--> progression = ', 776, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7644787644787645)
+('--> progression = ', 777, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7647814910025706)
+('--> progression = ', 778, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7650834403080873)
+('--> progression = ', 779, 1000)
+Algorithm results :
+('--> accuracy = ', 0.764102564102564)
+('--> progression = ', 780, 1000)
+Algorithm results :
+('--> accuracy = ', 0.764404609475032)
+('--> progression = ', 781, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7647058823529411)
+('--> progression = ', 782, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7650063856960408)
+('--> progression = ', 783, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7653061224489796)
+('--> progression = ', 784, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7656050955414013)
+('--> progression = ', 785, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7659033078880407)
+('--> progression = ', 786, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7662007623888183)
+('--> progression = ', 787, 1000)
+Algorithm results :
+('--> accuracy = ', 0.766497461928934)
+('--> progression = ', 788, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7667934093789607)
+('--> progression = ', 789, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7670886075949367)
+('--> progression = ', 790, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7661188369152971)
+('--> progression = ', 791, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7664141414141414)
+('--> progression = ', 792, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7654476670870114)
+('--> progression = ', 793, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7657430730478589)
+('--> progression = ', 794, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7660377358490567)
+('--> progression = ', 795, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7663316582914573)
+('--> progression = ', 796, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7653701380175659)
+('--> progression = ', 797, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7656641604010025)
+('--> progression = ', 798, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7647058823529411)
+('--> progression = ', 799, 1000)
+Algorithm results :
+('--> accuracy = ', 0.76375)
+('--> progression = ', 800, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7640449438202247)
+('--> progression = ', 801, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7643391521197007)
+('--> progression = ', 802, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7646326276463262)
+('--> progression = ', 803, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7649253731343284)
+('--> progression = ', 804, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7652173913043478)
+('--> progression = ', 805, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7655086848635235)
+('--> progression = ', 806, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7657992565055762)
+('--> progression = ', 807, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7648514851485149)
+('--> progression = ', 808, 1000)
+Algorithm results :
+('--> accuracy = ', 0.765142150803461)
+('--> progression = ', 809, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7641975308641975)
+('--> progression = ', 810, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7632552404438965)
+('--> progression = ', 811, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7623152709359606)
+('--> progression = ', 812, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7626076260762608)
+('--> progression = ', 813, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7628992628992629)
+('--> progression = ', 814, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7619631901840491)
+('--> progression = ', 815, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7622549019607843)
+('--> progression = ', 816, 1000)
+Algorithm results :
+('--> accuracy = ', 0.762545899632803)
+('--> progression = ', 817, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7628361858190709)
+('--> progression = ', 818, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7631257631257631)
+('--> progression = ', 819, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7634146341463415)
+('--> progression = ', 820, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7624847746650426)
+('--> progression = ', 821, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7615571776155717)
+('--> progression = ', 822, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7618469015795869)
+('--> progression = ', 823, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7621359223300971)
+('--> progression = ', 824, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7624242424242424)
+('--> progression = ', 825, 1000)
+Algorithm results :
+('--> accuracy = ', 0.761501210653753)
+('--> progression = ', 826, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7617896009673518)
+('--> progression = ', 827, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7620772946859904)
+('--> progression = ', 828, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7611580217129071)
+('--> progression = ', 829, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7614457831325301)
+('--> progression = ', 830, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7617328519855595)
+('--> progression = ', 831, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7608173076923077)
+('--> progression = ', 832, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7611044417767107)
+('--> progression = ', 833, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7601918465227818)
+('--> progression = ', 834, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7592814371257485)
+('--> progression = ', 835, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7595693779904307)
+('--> progression = ', 836, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7598566308243727)
+('--> progression = ', 837, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7601431980906921)
+('--> progression = ', 838, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7604290822407628)
+('--> progression = ', 839, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7607142857142857)
+('--> progression = ', 840, 1000)
+Algorithm results :
+('--> accuracy = ', 0.760998810939358)
+('--> progression = ', 841, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7612826603325415)
+('--> progression = ', 842, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7615658362989324)
+('--> progression = ', 843, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7618483412322274)
+('--> progression = ', 844, 1000)
+Algorithm results :
+('--> accuracy = ', 0.762130177514793)
+('--> progression = ', 845, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7612293144208038)
+('--> progression = ', 846, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7615112160566706)
+('--> progression = ', 847, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7617924528301887)
+('--> progression = ', 848, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7608951707891637)
+('--> progression = ', 849, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7611764705882353)
+('--> progression = ', 850, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7602820211515864)
+('--> progression = ', 851, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7605633802816901)
+('--> progression = ', 852, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7608440797186401)
+('--> progression = ', 853, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7599531615925058)
+('--> progression = ', 854, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7602339181286549)
+('--> progression = ', 855, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7605140186915887)
+('--> progression = ', 856, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7607934655775963)
+('--> progression = ', 857, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7610722610722611)
+('--> progression = ', 858, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7613504074505238)
+('--> progression = ', 859, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7616279069767442)
+('--> progression = ', 860, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7619047619047619)
+('--> progression = ', 861, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7621809744779582)
+('--> progression = ', 862, 1000)
+Algorithm results :
+('--> accuracy = ', 0.761297798377752)
+('--> progression = ', 863, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7604166666666666)
+('--> progression = ', 864, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7606936416184971)
+('--> progression = ', 865, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7609699769053118)
+('--> progression = ', 866, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7612456747404844)
+('--> progression = ', 867, 1000)
+Algorithm results :
+('--> accuracy = ', 0.761520737327189)
+('--> progression = ', 868, 1000)
+Algorithm results :
+('--> accuracy = ', 0.761795166858458)
+('--> progression = ', 869, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7620689655172413)
+('--> progression = ', 870, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7623421354764638)
+('--> progression = ', 871, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7626146788990825)
+('--> progression = ', 872, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7628865979381443)
+('--> progression = ', 873, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7631578947368421)
+('--> progression = ', 874, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7634285714285715)
+('--> progression = ', 875, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7636986301369864)
+('--> progression = ', 876, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7639680729760547)
+('--> progression = ', 877, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7642369020501139)
+('--> progression = ', 878, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7633674630261661)
+('--> progression = ', 879, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7636363636363637)
+('--> progression = ', 880, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7639046538024972)
+('--> progression = ', 881, 1000)
+Algorithm results :
+('--> accuracy = ', 0.764172335600907)
+('--> progression = ', 882, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7633069082672707)
+('--> progression = ', 883, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7624434389140271)
+('--> progression = ', 884, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7615819209039548)
+('--> progression = ', 885, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7607223476297968)
+('--> progression = ', 886, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7598647125140925)
+('--> progression = ', 887, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7601351351351351)
+('--> progression = ', 888, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7592800899887514)
+('--> progression = ', 889, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7595505617977528)
+('--> progression = ', 890, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7598204264870931)
+('--> progression = ', 891, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7600896860986547)
+('--> progression = ', 892, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7603583426651735)
+('--> progression = ', 893, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7595078299776287)
+('--> progression = ', 894, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7597765363128491)
+('--> progression = ', 895, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7600446428571429)
+('--> progression = ', 896, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7603121516164995)
+('--> progression = ', 897, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7605790645879733)
+('--> progression = ', 898, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7597330367074527)
+('--> progression = ', 899, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7588888888888888)
+('--> progression = ', 900, 1000)
+Algorithm results :
+('--> accuracy = ', 0.758046614872364)
+('--> progression = ', 901, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7583148558758315)
+('--> progression = ', 902, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7585825027685493)
+('--> progression = ', 903, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7588495575221239)
+('--> progression = ', 904, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7591160220994475)
+('--> progression = ', 905, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7593818984547461)
+('--> progression = ', 906, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7596471885336273)
+('--> progression = ', 907, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7599118942731278)
+('--> progression = ', 908, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7601760176017601)
+('--> progression = ', 909, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7604395604395604)
+('--> progression = ', 910, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7596048298572997)
+('--> progression = ', 911, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7598684210526315)
+('--> progression = ', 912, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7590361445783133)
+('--> progression = ', 913, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7592997811816192)
+('--> progression = ', 914, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7595628415300546)
+('--> progression = ', 915, 1000)
+Algorithm results :
+('--> accuracy = ', 0.759825327510917)
+('--> progression = ', 916, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7600872410032715)
+('--> progression = ', 917, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7603485838779956)
+('--> progression = ', 918, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7606093579978237)
+('--> progression = ', 919, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7608695652173914)
+('--> progression = ', 920, 1000)
+Algorithm results :
+('--> accuracy = ', 0.761129207383279)
+('--> progression = ', 921, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7613882863340564)
+('--> progression = ', 922, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7605633802816901)
+('--> progression = ', 923, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7608225108225108)
+('--> progression = ', 924, 1000)
+Algorithm results :
+('--> accuracy = ', 0.76)
+('--> progression = ', 925, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7591792656587473)
+('--> progression = ', 926, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7594390507011867)
+('--> progression = ', 927, 1000)
+Algorithm results :
+('--> accuracy = ', 0.759698275862069)
+('--> progression = ', 928, 1000)
+Algorithm results :
+('--> accuracy = ', 0.759956942949408)
+('--> progression = ', 929, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7602150537634409)
+('--> progression = ', 930, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7604726100966702)
+('--> progression = ', 931, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7607296137339056)
+('--> progression = ', 932, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7609860664523044)
+('--> progression = ', 933, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7601713062098501)
+('--> progression = ', 934, 1000)
+Algorithm results :
+('--> accuracy = ', 0.760427807486631)
+('--> progression = ', 935, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7606837606837606)
+('--> progression = ', 936, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7609391675560299)
+('--> progression = ', 937, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7611940298507462)
+('--> progression = ', 938, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7614483493077743)
+('--> progression = ', 939, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7617021276595745)
+('--> progression = ', 940, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7619553666312433)
+('--> progression = ', 941, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7622080679405521)
+('--> progression = ', 942, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7624602332979852)
+('--> progression = ', 943, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7627118644067796)
+('--> progression = ', 944, 1000)
+Algorithm results :
+('--> accuracy = ', 0.762962962962963)
+('--> progression = ', 945, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7632135306553911)
+('--> progression = ', 946, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7634635691657867)
+('--> progression = ', 947, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7637130801687764)
+('--> progression = ', 948, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7629083245521602)
+('--> progression = ', 949, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7631578947368421)
+('--> progression = ', 950, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7634069400630915)
+('--> progression = ', 951, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7636554621848739)
+('--> progression = ', 952, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7639034627492131)
+('--> progression = ', 953, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7641509433962265)
+('--> progression = ', 954, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7643979057591623)
+('--> progression = ', 955, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7646443514644351)
+('--> progression = ', 956, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7638453500522466)
+('--> progression = ', 957, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7630480167014614)
+('--> progression = ', 958, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7632950990615224)
+('--> progression = ', 959, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7635416666666667)
+('--> progression = ', 960, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7627471383975026)
+('--> progression = ', 961, 1000)
+Algorithm results :
+('--> accuracy = ', 0.762993762993763)
+('--> progression = ', 962, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7632398753894081)
+('--> progression = ', 963, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7634854771784232)
+('--> progression = ', 964, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7637305699481866)
+('--> progression = ', 965, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7639751552795031)
+('--> progression = ', 966, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7642192347466391)
+('--> progression = ', 967, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7644628099173554)
+('--> progression = ', 968, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7647058823529411)
+('--> progression = ', 969, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7649484536082474)
+('--> progression = ', 970, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7651905252317199)
+('--> progression = ', 971, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7654320987654321)
+('--> progression = ', 972, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7646454265159301)
+('--> progression = ', 973, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7648870636550308)
+('--> progression = ', 974, 1000)
+Algorithm results :
+('--> accuracy = ', 0.764102564102564)
+('--> progression = ', 975, 1000)
+Algorithm results :
+('--> accuracy = ', 0.764344262295082)
+('--> progression = ', 976, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7645854657113613)
+('--> progression = ', 977, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7648261758691206)
+('--> progression = ', 978, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7640449438202247)
+('--> progression = ', 979, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7642857142857142)
+('--> progression = ', 980, 1000)
+Algorithm results :
+('--> accuracy = ', 0.764525993883792)
+('--> progression = ', 981, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7647657841140529)
+('--> progression = ', 982, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7639877924720244)
+('--> progression = ', 983, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7642276422764228)
+('--> progression = ', 984, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7644670050761422)
+('--> progression = ', 985, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7647058823529411)
+('--> progression = ', 986, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7649442755825735)
+('--> progression = ', 987, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7651821862348178)
+('--> progression = ', 988, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7654196157735086)
+('--> progression = ', 989, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7656565656565657)
+('--> progression = ', 990, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7658930373360242)
+('--> progression = ', 991, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7651209677419355)
+('--> progression = ', 992, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7653575025176234)
+('--> progression = ', 993, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7645875251509054)
+('--> progression = ', 994, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7638190954773869)
+('--> progression = ', 995, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7640562248995983)
+('--> progression = ', 996, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7642928786359077)
+('--> progression = ', 997, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7645290581162325)
+('--> progression = ', 998, 1000)
+Algorithm results :
+('--> accuracy = ', 0.7647647647647647)
+('--> progression = ', 999, 1000)
+Algorithm results :
+('--> accuracy = ', 0.765)
+('--> progression = ', 1000, 1000)
+

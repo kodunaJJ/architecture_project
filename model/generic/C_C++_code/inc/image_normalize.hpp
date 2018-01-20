@@ -8,7 +8,7 @@ template <typename pixelDataType, typename imageNorm_dataType>
   void imageNorm(pixelDataType *imgIn, imageNorm_dataType *imgNormalized,
                  int imgIn_width, int imgIn_height, int imgIn_channelNum,
                  int imgNorm_width, int imgNorm_height,
-                 int imgNorm_channelNum, int clipValue){
+                 int imgNorm_channelNum, double clipValue){
   //std::cout <<"new table created" <<std::endl;
   int row_start_idx=(imgIn_height-imgNorm_height)/2;
   int column_start_idx=(imgIn_width-imgNorm_width)/2;
@@ -44,8 +44,9 @@ template <typename pixelDataType, typename imageNorm_dataType>
       }
     }
   }
-  
-  // std::cout <<"meanSum = " << mu <<std::endl;
+
+  //std::cout <<"imgCut = " << imgNorm[0] <<std::endl;
+  //std::cout <<"meanSum = " << mu <<std::endl;
   mu/=imgNorm_height*imgNorm_width*imgNorm_channelNum;
   //std::cout <<"mean = " << mu <<std::endl;
   for(int channel=0; channel<imgNorm_channelNum;channel++){
@@ -74,7 +75,7 @@ template <typename pixelDataType, typename imageNorm_dataType>
         /* imageNorm calc + crop */
         r=(imgNorm[(row*imgNorm_height+column)+channel*imgNorm_width*imgNorm_height]-mu)/sigma;
         if(r<(-clipValue)){
-          imgNormalized[(row*imgNorm_height+column)+channel*imgNorm_width*imgNorm_height]=(-clipValue);
+	   imgNormalized[(row*imgNorm_height+column)+channel*imgNorm_width*imgNorm_height]=(-clipValue);
         }
         else if(r>clipValue){
           imgNormalized[(row*imgNorm_height+column)+channel*imgNorm_width*imgNorm_height]=clipValue;

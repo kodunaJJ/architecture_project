@@ -1,0 +1,6 @@
+Algorithm accuracy:
+
+**PYTHON**
+Test on 1000 images from "data_batch_1" file
+--> 3x3 kernel => about 66% 
+--> 5x5 kernel => about 76% 

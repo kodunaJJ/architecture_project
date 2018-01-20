@@ -39,7 +39,7 @@ typedef ac_fixed<DATA_OUT_WIDTH,DATA_OUT_INT_WIDTH,true,AC_RND_INF,AC_SAT> perce
 typedef ac_fixed<INTERNAL_PROD_WIDTH,INTERNAL_PROD_INT_WIDTH,true,AC_RND_INF,AC_SAT> perceptronInternProd_type;
 typedef ac_fixed<INTERNAL_SUM_WIDTH,INTERNAL_SUM_INT_WIDTH,true,AC_RND_INF,AC_SAT> perceptronInternSum_type;
 typedef ac_fixed<PERCEPTRON_BIAS_WIDTH,PERCEPTRON_BIAS_INT_WIDTH,true,AC_RND_INF,AC_SAT> perceptronBias_type;
-typedef ac_fixed<8,8,false> perceptronInternCnt_type;
+typedef ac_int<8,false> perceptronInternCnt_type;
 
 /* FUNCTION PROTOTYPE */
 
@@ -47,25 +47,23 @@ typedef ac_fixed<8,8,false> perceptronInternCnt_type;
   perceptronWeight_type perceptronWeight[FCLAYER_SIZE],
   ac_channel<perceptronDataOut_type> &dataOut);*/
 
-void perceptronHW(perceptronDataIn_type *dataIn,
+/*void perceptronHW(perceptronDataIn_type *dataIn,
                   perceptronWeight_type *perceptronWeight,
                   perceptronDataOut_type *dataOut,
-		  perceptronBias_type *biasWeight);
+		  perceptronBias_type *biasWeight);*/
 
 void perceptron_v2_HW(ac_channel<perceptronDataIn_type> &dataIn,
-                  perceptronWeight_type perceptronWeight[FCLAYER_SIZE],
-		      ac_channel<perceptronDataOut_type> dataOutReg[RESULT_SIZE],
+		      perceptronWeight_type perceptronWeight[FCLAYER_SIZE],
 		      perceptronBias_type biasWeight[FCLAYER_CHANNELNUM],
 		      ac_channel<perceptronDataOut_type> &dataOut);
 
-void perceptronREF(double *dataIn,
+/*void perceptronREF(double *dataIn,
                    double *perceptronWeight,
                    double *dataOut,
-		   double *biasWeight);
+		   double *biasWeight);*/
 
 void perceptron_v2_REF(double &dataIn,
                    double perceptronWeight[FCLAYER_SIZE],
-                   double dataOutReg[RESULT_SIZE],
 		       double biasWeight[FCLAYER_CHANNELNUM],
 		       double *dataOut);
 

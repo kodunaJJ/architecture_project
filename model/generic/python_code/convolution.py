@@ -20,6 +20,7 @@ def convolution_2D(image,kernel):
     image_add_zero=np.zeros(( image_y_max+kernel_y-1, image_x_max+kernel_x-1))
     
     image_add_zero[yPadPos:image_y_max+yPadPos,xPadPos:image_x_max+xPadPos]=image
+    
     calcul=np.zeros((kernel_y,kernel_x))
     new_image=np.zeros((image_y_max,image_x_max))
 

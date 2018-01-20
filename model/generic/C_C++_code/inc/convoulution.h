@@ -2,15 +2,16 @@
 #define CONVOULUTION_H
 
 #include <iostream>
+#include <fstream>
 //#include "/home/yawen/Bureau/3A/projet_arch/shared/include/ac_fixed.h"
 #include"add_bias.h"
 #include"relu.h"
 
 using namespace std;
 
-template <typename kernel_weightDataType, typename image_DataType,typename image_DataType_out,typename image_DataType_Inter>
+template <typename kernel_weightDataType, typename image_DataType,typename image_DataType_out,typename image_DataType_Inter/*,typename fileType*/>
 //image_DataType_out*
-void convolution_2D(kernel_weightDataType *kernel, image_DataType *image, image_DataType_out* image_out,const unsigned char CNNCONVLAYER_CHANNEL_IN_NUM,const unsigned char KERNELCONVLAYER_CHANNEL_IN_NUM,const unsigned char IMG_SIZE,const unsigned char KERNEL_SIZE)
+  void convolution_2D(kernel_weightDataType *kernel, image_DataType *image, image_DataType_out* image_out,const unsigned char CNNCONVLAYER_CHANNEL_IN_NUM,const unsigned char KERNELCONVLAYER_CHANNEL_IN_NUM,const unsigned char IMG_SIZE,const unsigned char KERNEL_SIZE/*,std::ofstream &file*/)
 {
 
     image_DataType* image_Add_zero = new image_DataType[(IMG_SIZE+2)*(IMG_SIZE+2)];
@@ -66,6 +67,9 @@ void convolution_2D(kernel_weightDataType *kernel, image_DataType *image, image_
                    // out1 =  image_Add_zero[(i+j)*(IMG_SIZE+2)+a+b]+out1;
                     //cout<<"here"<<endl;
 
+		    //file << "conv2D Prod value :" << ',' << kernel[j*KERNEL_SIZE+b]*image_Add_zero[(i+j)*(IMG_SIZE+2)+a+b] << endl;
+		    //file << "conv2D Sum value :" << ',' << out1 << endl;
+
                 }
 
 
@@ -99,9 +103,9 @@ void convolution_2D(kernel_weightDataType *kernel, image_DataType *image, image_
 
 
 
-template <typename kernel_weightDataType, typename image_DataType,typename image_DataType_out,typename image_DataType_Inter,typename bias_type>
+template <typename kernel_weightDataType, typename image_DataType,typename image_DataType_out,typename image_DataType_Inter,typename bias_type/*, typename fileType*/>
 //image_DataType_out*
-void convolution_3D(kernel_weightDataType *kernel, image_DataType *image,image_DataType_out* image_out, bias_type* bias , const unsigned char CNNCONVLAYER_CHANNEL_IN_NUM,const unsigned char KERNELCONVLAYER_CHANNEL_IN_NUM,const unsigned char IMG_SIZE,const unsigned char KERNEL_SIZE){
+  void convolution_3D(kernel_weightDataType *kernel, image_DataType *image,image_DataType_out* image_out, bias_type* bias , const unsigned char CNNCONVLAYER_CHANNEL_IN_NUM,const unsigned char KERNELCONVLAYER_CHANNEL_IN_NUM,const unsigned char IMG_SIZE,const unsigned char KERNEL_SIZE/*,std::ofstream &file*/){
 
     kernel_weightDataType** kernel1;//=new kernel_weightDataType[KERNELCONVLAYER_CHANNEL_IN_NUM*CNNCONVLAYER_CHANNEL_IN_NUM][KERNEL_SIZE*KERNEL_SIZE] ; //[KERNELCONVLAYER_CHANNEL_IN_NUM*CNNCONVLAYER_CHANNEL_IN_NUM][KERNEL_SIZE*KERNEL_SIZE];
     kernel1 = new kernel_weightDataType*[CNNCONVLAYER_CHANNEL_IN_NUM];
@@ -143,6 +147,7 @@ void convolution_3D(kernel_weightDataType *kernel, image_DataType *image,image_D
 
                kernel1[j][a]=kernel[i* CNNCONVLAYER_CHANNEL_IN_NUM*KERNEL_SIZE*KERNEL_SIZE+j* KERNEL_SIZE*KERNEL_SIZE+a];
                 //kernel1[j][a]=kernel[a];
+	       
 
                //cout<<"a=" << a << endl;
 	       //cout<<"kernel"<<endl;
@@ -159,7 +164,7 @@ void convolution_3D(kernel_weightDataType *kernel, image_DataType *image,image_D
             }
 
 
-       convolution_2D<kernel_weightDataType,image_DataType,image_DataType_out,image_DataType_Inter>(kernel1[j],image1[j], image1_out[j],CNNCONVLAYER_CHANNEL_IN_NUM,KERNELCONVLAYER_CHANNEL_IN_NUM,IMG_SIZE, KERNEL_SIZE);
+	    convolution_2D<kernel_weightDataType,image_DataType,image_DataType_out,image_DataType_Inter>(kernel1[j],image1[j], image1_out[j],CNNCONVLAYER_CHANNEL_IN_NUM,KERNELCONVLAYER_CHANNEL_IN_NUM,IMG_SIZE, KERNEL_SIZE/*,file*/);
 
 
 
@@ -170,6 +175,7 @@ void convolution_3D(kernel_weightDataType *kernel, image_DataType *image,image_D
                 out[i*IMG_SIZE*IMG_SIZE+c]=image1_out[j][c]+ out[i*IMG_SIZE*IMG_SIZE+c];
                 //cout<<"out_conv2D="<<image1_out[j][c]<<endl;
 		// cout<<"sommme= " << out[i*IMG_SIZE*IMG_SIZE+c]<<endl;
+		
 
                // image_out[i*IMG_SIZE*IMG_SIZE+c]=out[i*IMG_SIZE*IMG_SIZE+c];
                 //image_out[i*IMG_SIZE*IMG_SIZE+c]=relu<image_DataType_out>(add_bias<image_DataType_out>(out[i*IMG_SIZE*IMG_SIZE+c],bias[i]));
@@ -182,6 +188,7 @@ void convolution_3D(kernel_weightDataType *kernel, image_DataType *image,image_D
         {
         //image_out[i*IMG_SIZE*IMG_SIZE+c]=out[i*IMG_SIZE*IMG_SIZE+c],bias[i];
         image_out[i*IMG_SIZE*IMG_SIZE+c]=relu<image_DataType_out>(add_bias<image_DataType_out>(out[i*IMG_SIZE*IMG_SIZE+c],bias[i]));
+	//file << "conv out + bias :" << ',' << add_bias<image_DataType_out>(out[i*IMG_SIZE*IMG_SIZE+c],bias[i]) << endl;
         }
     }
 

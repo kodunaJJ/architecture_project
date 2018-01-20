@@ -1,0 +1,10 @@
+pixel n° 0,-0.572684
+pixel n° 1,-0.896544
+pixel n° 2,4.60547
+pixel n° 3,4.99987
+pixel n° 4,4.91994
+pixel n° 5,3.82805
+pixel n° 6,6.45483
+pixel n° 7,2.13144
+pixel n° 8,-1.42843
+pixel n° 9,-0.525287
