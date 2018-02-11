@@ -51,7 +51,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /home/jordan/Documents/Phelma_annee_3/algo2archi/projet/cnn_algorithm/architecture_project2/architecture_project/model/generic/C_C++_code/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jordan/Documents/Phelma_annee_3/algo2archi/projet/cnn_algorithm/architecture_project2/architecture_project/model/generic/C_C++_code
+CMAKE_BINARY_DIR = /home/jordan/Documents/Phelma_annee_3/algo2archi/projet/cnn_algorithm/architecture_project2/architecture_project/model/generic/C_C++_code/src
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jordan/Documents/Phelma_annee_3/algo2archi/projet/cnn_algorithm/architecture_project2/architecture_project/model/generic/C_C++_code/CMakeFiles /home/jordan/Documents/Phelma_annee_3/algo2archi/projet/cnn_algorithm/architecture_project2/architecture_project/model/generic/C_C++_code/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jordan/Documents/Phelma_annee_3/algo2archi/projet/cnn_algorithm/architecture_project2/architecture_project/model/generic/C_C++_code/src/CMakeFiles /home/jordan/Documents/Phelma_annee_3/algo2archi/projet/cnn_algorithm/architecture_project2/architecture_project/model/generic/C_C++_code/src/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jordan/Documents/Phelma_annee_3/algo2archi/projet/cnn_algorithm/architecture_project2/architecture_project/model/generic/C_C++_code/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jordan/Documents/Phelma_annee_3/algo2archi/projet/cnn_algorithm/architecture_project2/architecture_project/model/generic/C_C++_code/src/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,6 +123,33 @@ cnn_cifar10/fast:
 	$(MAKE) -f CMakeFiles/cnn_cifar10.dir/build.make CMakeFiles/cnn_cifar10.dir/build
 .PHONY : cnn_cifar10/fast
 
+main.o: main.cpp.o
+
+.PHONY : main.o
+
+# target to build an object file
+main.cpp.o:
+	$(MAKE) -f CMakeFiles/cnn_cifar10.dir/build.make CMakeFiles/cnn_cifar10.dir/main.cpp.o
+.PHONY : main.cpp.o
+
+main.i: main.cpp.i
+
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	$(MAKE) -f CMakeFiles/cnn_cifar10.dir/build.make CMakeFiles/cnn_cifar10.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	$(MAKE) -f CMakeFiles/cnn_cifar10.dir/build.make CMakeFiles/cnn_cifar10.dir/main.cpp.s
+.PHONY : main.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -132,6 +159,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... cnn_cifar10"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 
