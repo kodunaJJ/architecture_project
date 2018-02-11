@@ -236,9 +236,9 @@ int main4test(){
 int cnn_main_double(){
   std::cout << "stating main prog" << std::endl;
   /* image database path */
-    std::string cifarFolderPath="../../../../../image_database/cifar10/cifar-10-batches-bin/";
+    std::string cifarFolderPath="../../../../../../image_database/cifar10/cifar-10-batches-bin/";
     /* image database name */
-  std::string cifarFileName="data_batch_4.bin";
+  std::string cifarFileName="data_batch_1.bin";
   /* string concatenation to use ifstream open() */
   std::string file = cifarFolderPath+cifarFileName;
   /* "file pointer" to image database file */
@@ -251,7 +251,7 @@ int cnn_main_double(){
   std::ifstream weightFile;*/
 
   /* file where to store accuracy value */
-  std::string resultsFilePath="./results/";
+  std::string resultsFilePath="../results/";
   std::string resultsFileName="accuracyDATAb4.txt";
   std::string rfile=resultsFilePath+resultsFileName;
   std::ofstream resultsFile;
@@ -286,7 +286,7 @@ int cnn_main_double(){
   unsigned int prediction=0;
   int goodPredictionNum=0;
   float accurate=0;
-  int imgTotal=10000;
+  int imgTotal=1;
   std::cout.precision(10); /* set float display */
 
   /* loading weight */
@@ -324,12 +324,12 @@ int cnn_main_double(){
   }
 
 
-  imageNorm<unsigned int,double>(imgIn.imgData, imgNorm, 32,32, 3, 24, 24, 3, 2.25); /* image norm  GOOD */
+  imageNorm<unsigned int,double>(imgIn.imgData, imgNorm, 32,32, 3, 24, 24, 3, 4000000); /* image norm  GOOD */
 
   /*for(int i=0;i<NORMALIZED_IMAGE_SIZE*NORMALIZED_IMAGE_SIZE*CIFAR_DB_IMAGE_COLOR;i++){
     //std::cout<<"imgNorm px " << i << " " << imgNorm[i] << std::endl;
     //resultsFile << imgReadNum << ',' << imgIn.imgData[i] << std::endl;
-    resultsFile<<"imgNorm px " << i << " " << imgNorm[i] << std::endl;
+    //resultsFile<<"imgNorm px " << i << " " << imgNorm[i] << std::endl;
     //buffer1[i]=imgNorm[i].to_double();
   }*/
 
@@ -342,12 +342,12 @@ int cnn_main_double(){
   /************ FIRST LAYER **************/
   convolution_3D<double,double,double,double,double>((double*)kernel_ConvLayer1, imgNorm, convLayer1_out,
 					      (double*)bias_ConvLayer1,KERNELCONVLAYER1_CHANNEL_IN_NUM,
-						     CONVLAYER1_CHANNELNUM,NORMALIZED_IMAGE_SIZE,KERNELCONV_SIZE);
+						     CONVLAYER1_CHANNELNUM,NORMALIZED_IMAGE_SIZE,KERNELCONV_SIZE,resultsFile);
   //while(1);
-  /*for(int i=0;i<NORMALIZED_IMAGE_SIZE*NORMALIZED_IMAGE_SIZE*CONVLAYER1_CHANNELNUM;i++){
+  for(int i=0;i<NORMALIZED_IMAGE_SIZE*NORMALIZED_IMAGE_SIZE*CONVLAYER1_CHANNELNUM;i++){
     //std::cout<<"pixel image conv 1 " << imgReadNum << " pixel n° " << i << " "<< convLayer1_out[i] << std::endl;
     resultsFile << " pixel n° " << i << ","<< convLayer1_out[i] << std::endl;
-  }*/
+  }
 
   /*unsigned int conv1min = std::min_element(convLayer1_out, convLayer1_out+NORMALIZED_IMAGE_SIZE*
     NORMALIZED_IMAGE_SIZE*CONVLAYER1_CHANNELNUM+1)-convLayer1_out;*/
@@ -365,7 +365,7 @@ int cnn_main_double(){
     convolution_3D<double,double,double,double,double>((double*)kernel_ConvLayer2, maxPoolLayer1_out,
 						     convLayer2_out,(double*)bias_ConvLayer2,
 						     KERNELCONVLAYER2_CHANNEL_IN_NUM,CONVLAYER2_CHANNELNUM,
-						     NORMALIZED_IMAGE_SIZE/2,KERNELCONV_SIZE);
+						       NORMALIZED_IMAGE_SIZE/2,KERNELCONV_SIZE,resultsFile);
   /*for(int i=0;i<NORMALIZED_IMAGE_SIZE*NORMALIZED_IMAGE_SIZE*CONVLAYER2_CHANNELNUM/4;i++){
     std::cout<<"pixel image conv 2 " << imgReadNum << " pixel n° " << i << " "<< convLayer2_out[i] << std::endl;
   }*/
@@ -384,7 +384,7 @@ int cnn_main_double(){
     convolution_3D<double,double,double,double,double>((double*)kernel_ConvLayer3, maxPoolLayer2_out,
 						     convLayer3_out,(double*)bias_ConvLayer3,
 						     KERNELCONVLAYER3_CHANNEL_IN_NUM,CONVLAYER3_CHANNELNUM,
-						     NORMALIZED_IMAGE_SIZE/4,KERNELCONV_SIZE);
+						       NORMALIZED_IMAGE_SIZE/4,KERNELCONV_SIZE,resultsFile);
   /*for(int i=0;i<NORMALIZED_IMAGE_SIZE*NORMALIZED_IMAGE_SIZE*CONVLAYER3_CHANNELNUM/16;i++){
     std::cout<<"pixel image conv 3 " << imgReadNum << " pixel n° " << i << " "<< convLayer3_out[i] << std::endl;
   }*/
@@ -428,10 +428,10 @@ int cnn_main_double(){
     std::cout<<"pixel image conv 2 " << imgReadNum << " pixel n° " << i << " "<< convLayer2_out[i] << std::endl;
     }*/
 
-   /*std::cout<<"perceptron value"<<std::endl;
+  /*std::cout<<"perceptron value"<<std::endl;
   for(int i=0;i<FCLAYER_CHANNELNUM;i++){
-    //std::cout<<perceptron_out[i]<<std::endl;
-    resultsFile << " pixel n° " << i << ","<< perceptron_out[i] << std::endl;
+    std::cout<<perceptron_out[i]<<std::endl;
+    //resultsFile << " pixel n° " << i << ","<< perceptron_out[i] << std::endl;
   }*/
 
   /*************** PREDICTION *************/
@@ -443,7 +443,7 @@ int cnn_main_double(){
     
   std::cout<<"ACCURACY = " << accurate << std::endl;
     std::cout<<"Progression = " << imgReadNum+1 << "/" << imgTotal << std::endl;
-    resultsFile << imgReadNum << ',' << accurate << std::endl;
+    //resultsFile << imgReadNum << ',' << accurate << std::endl;
     //std::cout<<"image class = " << imgIn.cifarImageLabel << "predicted class = " << prediction << std::endl;
     //resultsFile<<"image num " <<  imgReadNum+1 << ','<< "perceptron_out = " << perceptron_out[prediction] << std::endl;
     }

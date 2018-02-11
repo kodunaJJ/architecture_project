@@ -1,0 +1,15 @@
+#### Projet intégration SoC ####
+
+/!\/!\ Requis => cmake /!\/!\
+
+Avant de compiler :
+	--> indiquer le chemin vers la base CIFAR10 + nom du batch dans src/main.cpp (variables cifarFolderPath et cifarFileName)
+	--> décompresser le fichier "ac-types.zip" dans le même dossier
+
+Pour compiler le programme :
+	./compil_cnn
+	
+	
+/!\/!\ /!\/!\ /!\/!\
+dans le dossier "inc" ne pas ouvrir weight.hpp et weight_cata.hpp avec gedit ou autre (emacs et équivalent devraient être OK) sous peine de CRASH !! Contiennent tous les coefficients pour kernel 3x3
+/!\/!\ /!\/!\ /!\/!\

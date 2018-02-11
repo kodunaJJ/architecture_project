@@ -309,7 +309,7 @@ for num in range (0,totalImg):
     imgClassPredicted=np.nanargmax(cnnFullyConnectedLayer)
     print('ImgClass = ',imgReadClass)
     print('ImgClassPredicted ',imgClassPredicted)
-    print(cnnFullyConnectedLayer)
+    #print(cnnFullyConnectedLayer)
     #print('Correct prediction Number = ',accuracyCalc[1])
     print('Algorithm results :')
     accuracyCalc = accuracy(imgClassPredicted,imgReadClass,accuracyCalc[1],totalImgRead)

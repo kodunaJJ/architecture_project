@@ -105,7 +105,7 @@ template <typename kernel_weightDataType, typename image_DataType,typename image
 
 template <typename kernel_weightDataType, typename image_DataType,typename image_DataType_out,typename image_DataType_Inter,typename bias_type/*, typename fileType*/>
 //image_DataType_out*
-  void convolution_3D(kernel_weightDataType *kernel, image_DataType *image,image_DataType_out* image_out, bias_type* bias , const unsigned char CNNCONVLAYER_CHANNEL_IN_NUM,const unsigned char KERNELCONVLAYER_CHANNEL_IN_NUM,const unsigned char IMG_SIZE,const unsigned char KERNEL_SIZE/*,std::ofstream &file*/){
+  void convolution_3D(kernel_weightDataType *kernel, image_DataType *image,image_DataType_out* image_out, bias_type* bias , const unsigned char CNNCONVLAYER_CHANNEL_IN_NUM,const unsigned char KERNELCONVLAYER_CHANNEL_IN_NUM,const unsigned char IMG_SIZE,const unsigned char KERNEL_SIZE,std::ofstream &file){
 
     kernel_weightDataType** kernel1;//=new kernel_weightDataType[KERNELCONVLAYER_CHANNEL_IN_NUM*CNNCONVLAYER_CHANNEL_IN_NUM][KERNEL_SIZE*KERNEL_SIZE] ; //[KERNELCONVLAYER_CHANNEL_IN_NUM*CNNCONVLAYER_CHANNEL_IN_NUM][KERNEL_SIZE*KERNEL_SIZE];
     kernel1 = new kernel_weightDataType*[CNNCONVLAYER_CHANNEL_IN_NUM];
@@ -188,7 +188,7 @@ template <typename kernel_weightDataType, typename image_DataType,typename image
         {
         //image_out[i*IMG_SIZE*IMG_SIZE+c]=out[i*IMG_SIZE*IMG_SIZE+c],bias[i];
         image_out[i*IMG_SIZE*IMG_SIZE+c]=relu<image_DataType_out>(add_bias<image_DataType_out>(out[i*IMG_SIZE*IMG_SIZE+c],bias[i]));
-	//file << "conv out + bias :" << ',' << add_bias<image_DataType_out>(out[i*IMG_SIZE*IMG_SIZE+c],bias[i]) << endl;
+	//file << "conv out :" << ',' << out[i*IMG_SIZE*IMG_SIZE+c] << endl;
         }
     }
 
